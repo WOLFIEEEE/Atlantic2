@@ -1,0 +1,736 @@
+﻿.CommunityDropDownStyle {
+    border: solid 1px Gray;
+    font-family: Arial;
+    font-size: 10pt;
+}
+
+.CommunitySalesCenterHeader {
+    float: left;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    /*border-color:#FFFFFF; border-style:solid; border-width:1px; overflow:hidden;*/
+    background: #dcddde;
+}
+
+.CommunitySalesCenterHeaderText {
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: Verdana;
+    color: #LINK_COLOR#;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.CommunitySalesCenterHeaderText1 {
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: Verdana;
+    /*color: #6a6b6d;*/
+    color: #FONT_COLOR#;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.CommunitySalesCenterHeader1 {
+    float: left;
+    width: 75%;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    overflow: hidden;
+    background: #dcddde;
+    padding-left: 10px;
+}
+
+.CommunitySalesCenterHeader2 {
+    float: right;
+    width: 20%;
+    height: 100%;
+    overflow: hidden;
+    background: #dcddde;
+    margin: 0auto0auto;
+}
+
+.CommunitySalesCenterGallery {
+    float: left;
+    width: 100%;
+    height: 100%;
+    top: 92px;
+    vertical-align: top;
+    text-align: left;
+    border-color: #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+}
+
+#divCommunityTopLeftPanel {
+    float: left;
+    width: 72%;
+    /*height: 530px; */
+    /*border-style: solid; 	border-width: 1px;  	border-color: #00a9df;*/
+}
+
+#divCommunityTopRightPanelInner {
+    float: left;
+    width: 100%;
+    height: 100%;
+    /*border-style: solid; 	border-width: 1px;  	border-color: #00a9df;*/
+}
+
+.CommunitySalesCenterDetails {
+    float: left;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    overflow: hidden;
+    font-size: #FONT_SIZE#;
+    font-family: #FONT_NAME#;
+    color: #FONT_COLOR#;
+    text-align: left;
+}
+
+.CommunitySalesCenterDetailsH2 {
+    float: left;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    overflow: hidden;
+    font-size: #FONT_SIZE#;
+    font-family: #FONT_NAME#;
+    color: #FONT_COLOR#;
+    text-align: left;
+    display: inline;
+    font-weight: normal;
+}
+
+.divBannerText {
+    position: absolute;
+    top: 136px;
+    left: 118px;
+    width: 475px;
+    height: 65px;
+    overflow: hidden;
+    display: none;
+    /*text-align:center;*/
+}
+
+.CommunitySearchCriteriaText {
+    font-size: 7pt;
+    font-family: Verdana;
+    color: #LINK_COLOR#;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: none;
+    vertical-align: top;
+    padding-left: 5px;
+}
+
+.CommunityPhotoEnlargeText {
+    font-size: #FONT_SIZE#;
+    font-family: #FONT_NAME#;
+    color: #FONT_COLOR#;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: none;
+    vertical-align: top;
+    padding-left: 5px;
+}
+
+.CommunityLinkText {
+    font-size: 7pt;
+    font-family: Verdana;
+    color: #LINK_COLOR#;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: none;
+    vertical-align: top;
+    float: left;
+    cursor: pointer;
+    /*padding-left: 5px;*/
+}
+
+.CommunityGoogleLinkText {
+    height: 20px;
+    line-height: 20px;
+    font-size: 7pt;
+    font-family: Verdana;
+    color: #LINK_COLOR#;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: none;
+    float: right;
+    padding-left: 5px;
+}
+
+.CommunitySalesCenterDetailsText {
+    font-size: 7pt;
+    font-family: Verdana;
+    color: Gray;
+    text-align: left;
+    font-weight: bold;
+}
+
+.CommunityOffHoursDetailsText {
+    font-size: 7pt;
+    font-family: Verdana;
+    /*color: Gray;*/
+    color: #FONT_COLOR#;
+    text-align: left;
+    font-weight: bold;
+    /*padding-left: 5px;*/
+}
+
+.ContactUsMemoDetailsText {
+    font-size: #FONT_SIZE#;
+    font-family: #FONT_NAME#;
+    color: #FONT_COLOR#;
+    text-align: left;
+    /*font-weight: bold;*/
+    /*padding-left: 5px;*/
+}
+
+.CommunityPhoneTextBold {
+    font-size: 13pt;
+    font-family: Verdana;
+    /*color: #6a6b6d;*/
+    color: #FONT_COLOR#;
+    text-align: left;
+}
+
+
+
+.CommunitySalesFacebookTwitterIntegration {
+    float: left;
+    width: 100%;
+    height: 20px;
+    top: 92px;
+    vertical-align: top;
+    text-align: left;
+    overflow: hidden;
+}
+
+.CommunitySalesFacebookTwitterIntegrationInner {
+    margin: 0 auto 0 auto;
+    width: 500px;
+    height: 100%;
+    top: 92px;
+    vertical-align: top;
+    text-align: center;
+    overflow: hidden;
+    line-height: 100%;
+}
+
+.FacebookTwitterLink {
+    line-height: 20px;
+    font-family: Verdana;
+    font-size: 9px;
+    text-decoration: none;
+    color: #LINK_COLOR#;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.CommunityFacebookTwitterAlign {
+    margin: 0 auto 0 auto;
+    cursor: pointer;
+}
+
+.CommunitySharebyEmailAlign {
+    margin: 0 auto 0 auto;
+    cursor: pointer;
+    border-width: 0px;
+    text-decoration: none;
+    border-style: none;
+    vertical-align: bottom;
+}
+
+.CommunitySalesCenterDetailsTable {
+    float: left;
+    width: 100%;
+    height: 100%;
+    top: 92px;
+    vertical-align: top;
+    text-align: left;
+    overflow: hidden;
+}
+
+.CommunityTopBanner {
+    float: left;
+    width: 72%;
+    height: 72px;
+    @width: 72%;
+    @height: 72px;
+    vertical-align: top;
+    text-align: left;
+    /* overflow: hidden; */
+}
+
+.CommunityTopSearchCriteria {
+    float: right;
+    width: 27%;
+    height: 66px;
+    @width: 27%;
+    @height: 66px;
+    padding-top: 5px;
+    background-color: #dcddde;
+}
+
+#divCommunityTopRightPanel {
+    float: left;
+    height: 100%;
+    width: 27%;
+    @height: 100%;
+    @width: 27%;
+    vertical-align: top;
+    position: relative;
+}
+
+
+.CommunityRightContactDetails {
+    float: right;
+    width: 100%;
+    /*height: 215px;     @width:100%;*/
+    border-color: #dddedf;
+    border-style: solid;
+    border-width: 1px;
+}
+
+
+.CommunityRightCommunityAmenities {
+    float: right;
+    width: 100%;
+    /*height: 75%;   */
+    border-color: #dddedf;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.CommunitygridItemText {
+    font-family: Verdana;
+    font-size: 8pt;
+    /*color: #6a6b6d;*/
+    color: #FONT_COLOR#;
+    text-decoration: none;
+    text-align: center;
+    /*font-weight: bold;*/
+}
+
+
+.divGMapPanel {
+    display: none;
+    background-color: #FFFFFF;
+    border-color: Gray;
+    border-style: solid;
+    border-width: 1px;
+    z-index: 40000;
+    width: 800px;
+    position: absolute;
+    height: 600px;
+}
+
+.divCommunityGMapPanel {
+    background-color: #FFFFFF;
+    border-color: Blue;
+    border-style: solid;
+    border-width: 2px;
+    z-index: 40000;
+    width: 98%;
+    position: absolute;
+    height: 98%;
+}
+
+.divCommunityGMapMainPanel {
+    /*left:5px;       right:5px;     top:5px;  */
+    background-color: #FFFFFF;
+    z-index: 40000;
+    width: 778px;
+    position: absolute;
+    height: 550px;
+    vertical-align: middle;
+}
+
+.divCommunityGMapInnerPanel {
+    background-color: #FFFFFF;
+    z-index: 40000;
+    width: 100%;
+    /*position: absolute;*/
+    height: 100%;
+    padding-left: 5px;
+}
+
+.divCommunityGMapPanelInner {
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.divRegisterGMapPanelInner {
+    vertical-align: bottom;
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.divGMapPanelInner {
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.divLocalGMapPanelInner {
+    height: 95%;
+    background-color: #FFFFFF;
+}
+
+.divImagePanelInner {
+    height: 95%;
+    background-color: #FFFFFF;
+}
+
+.GMapCancelButton {
+    cursor: pointer;
+    position: absolute;
+    left: 730px;
+    top: 570px;
+}
+
+
+.divGMapFrame {
+    height: 100%;
+    background-color: #FFFFFF;
+    vertical-align: middle;
+}
+
+.divGMapFrameNew {
+    height: 100%;
+    background-color: #FFFFFF;
+    width: 100%;
+    margin: auto;
+}
+
+.GmapFrame {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    vertical-align: middle;
+}
+
+.LocalGmapImage {
+    margin: 10px 10px 0 10px;
+    background-color: #FFFFFF;
+    vertical-align: middle;
+}
+
+.LocalGmapFrame {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    vertical-align: middle;
+}
+
+.divGMapPanelNew {
+    display: none;
+    background-color: #FFFFFF;
+    border-color: Gray;
+    border-style: solid;
+    border-width: 1px;
+    z-index: 40000;
+    width: 800px;
+    position: absolute;
+    height: 695px;
+}
+
+.GmapFrameNew {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.GMapCancelButtonNew {
+    cursor: pointer;
+    position: absolute;
+    left: 720px;
+    top: 665px;
+    z-index: 1;
+}
+
+.GMapCancelButtonNewHide {
+    cursor: pointer;
+    position: absolute;
+    left: 720px;
+    top: 665px;
+    display: none;
+}
+
+.GMapCancelButtonNewShade {
+    position: absolute;
+    left: 720px;
+    top: 665px;
+}
+
+.GMapCancelButtonNewShadeHidden {
+    position: absolute;
+    left: 720px;
+    top: 665px;
+    display: none;
+}
+
+.divImageNew {
+    display: none;
+    background-color: #FFFFFF;
+    border-color: Gray;
+    border-style: solid;
+    border-width: 1px;
+    z-index: 40000;
+    width: 620px;
+    position: absolute;
+    height: 440px;
+}
+
+.divImageCancelButtonNew {
+    cursor: pointer;
+    position: absolute;
+    left: 272px;
+    /*550px;*/
+    top: 207px;
+    /*415px;*/
+}
+
+.divImageCaption {
+    left: 30px;
+    top: 415px;
+    font-family: Verdana;
+    font-size: 10pt;
+    font-weight: bold;
+    color: Gray;
+    text-align: left;
+    position: fixed;
+}
+
+.CommunitygridLink {
+    font-family: Verdana;
+    /*font-weight:bold;*/
+    font-size: 7pt;
+    font-weight: bold;
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+.CommunitygridHiddenLink {
+    font-family: Verdana;
+    /*font-weight:bold;*/
+    font-size: 7pt;
+    font-weight: bold;
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 10px;
+    display: none;
+}
+
+.CommunitygridItemText {
+    /*font-size: #FONT_SIZE#;
+    font-family: #FONT_NAME#;
+    color: #FONT_COLOR#;*/
+    font-family: Verdana;
+    font-size: 7pt;
+    /*color:Gray;*/
+    color: #FONT_COLOR#;
+    text-decoration: none;
+    text-align: center;
+    /*font-weight: bold;*/
+}
+
+.CommunitygridItemHeader {
+    font-size: 7pt;
+    font-family: Verdana;
+    /*color: Gray;*/
+    color: #FONT_COLOR#;
+    text-decoration: none;
+    text-align: center;
+    background-color: #dcdddf;
+    /*font-weight: bold;*/
+}
+
+.CommunitygridItemHeader a {
+    font-size: 7pt;
+    font-family: Verdana;
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    text-align: center;
+    background-color: #dcdddf;
+    /*font-weight: bold;*/
+}
+
+.CommunityhfChkRad {
+    /*padding: 0px 7px 7px 0px;*/
+    font-family: Verdana;
+    font-size: 7pt;
+    color: #333333;
+    border: 0px;
+    margin: 0px;
+}
+
+.hfdivCommunitySearch {
+    position: relative;
+    height: 100%;
+    /*width: 860px;*/
+    width: 950px;
+    @height: 100%;
+    /*width: 860px;*/
+    @width: 950px;
+    overflow: hidden;
+    /*	background-color:#eeeeee;*/
+}
+
+
+.hfdivMyAccount {
+    position: relative;
+    height: 100%;
+    /*width: 860px;*/
+    width: 975px;
+    @height: 100%;
+    /*width: 860px;*/
+    @width: 975px;
+    overflow: hidden;
+    /*	background-color:#eeeeee;*/
+}
+
+.divRegister {
+    display: none;
+    background-color: #FFFFFF;
+    border-color: Gray;
+    border-style: solid;
+    border-width: 1px;
+    z-index: 40000;
+    width: 450px;
+    position: fixed;
+    height: 380px;
+}
+
+.divRegisterCancelButtonNew {
+    cursor: pointer;
+    position: absolute;
+    left: 365px;
+    top: 350px;
+}
+
+.AboutUsPhoneTextBold {
+    font-size: 13pt;
+    font-family: Verdana;
+    color: #6a6b6d;
+    text-align: left;
+}
+
+
+.AboutUsTextBold {
+    font-size: 13pt;
+    font-family: Verdana;
+    color: #6a6b6d;
+    text-align: left;
+}
+
+.AboutUsDetailsText {
+    font-size: #FONT_SIZE#;
+    font-family: #FONT_NAME#;
+    color: #FONT_COLOR#;
+    text-align: left;
+}
+
+.divAboutUsGMapPanel {
+    left: 5px;
+    right: 5px;
+    top: 5px;
+    background-color: #FFFFFF;
+    z-index: 40000;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.divLocalMapPanelNew {
+    display: none;
+    background-color: #FFFFFF;
+    border-color: Gray;
+    border-style: solid;
+    border-width: 1px;
+    z-index: 40000;
+    width: 550px;
+    position: absolute;
+    height: 460px;
+}
+
+.divLocalMapCancelButtonNew {
+    cursor: pointer;
+    position: absolute;
+    left: 470px;
+    top: 430px;
+}
+
+.CommunitySpecialText {
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: Verdana;
+    /*color: #6a6b6d;*/
+    color: #FONT_COLOR#;
+    text-align: left;
+    font-weight: bold;
+}
+
+.CommunitySalesCenterHeaderHF {
+    float: left;
+    width: 75%;
+    height: 42px;
+    line-height: 42px;
+    text-align: left;
+    overflow: hidden;
+    background: #dcddde;
+    padding-left: 5px;
+}
+
+.CommunitySalesCenterHeaderTextHF {
+    /*font-size: 11pt;     font-family: Arial;     color: #00a9df;     text-align: left;     text-decoration: none;     text-transform: uppercase;*/
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: Verdana;
+    color: #LINK_COLOR#;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.CommunitySalesCenterHeaderTextHF1 {
+    /*font-size: 11pt;     font-family: Arial;     color: #6a6b6d;     text-align: left;*/
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: Verdana;
+    /*color: #6a6b6d;*/
+    color: #FONT_COLOR#;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.CommunitySalesCenterHeaderHF {
+    float: left;
+    width: 684px;
+    height: 42px;
+    line-height: 42px;
+    text-align: left;
+    overflow: hidden;
+    background: #dcddde;
+    padding-left: 10px;
+}
+
+.PopupCancelButtonText {
+    font-family: Arial Black;
+    font-size: 8pt;
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    font-weight: bold;
+}

@@ -1,0 +1,74 @@
+﻿.diviPadWidthFull
+{
+    width: 1030px;    
+}
+.hfdiviPadSearch
+{
+    position: relative;
+    height: 100%; 
+    width: 100%;    
+}
+#divTotalPanel
+{
+    position: relative;
+    width: 100%;
+}
+.dvTopBlackSearchCount
+{
+    float: left;
+    height: 45px;
+    width: 100%;
+    background-color: Black;
+    line-height: 45px;
+}
+#divLeftSearchPanel
+{
+    float: left;
+    width: 320px; 
+    position:absolute;
+    left:0px;
+    top:45px;
+}
+
+#divRightSearchResultPanel
+{
+    float: right;    
+    width: 700px;
+    vertical-align: top;    
+}
+
+.divViewButtonBG
+{    
+    text-align: center;
+    color: #00a9df;
+    height: 25px;    
+    width: 60px;
+    border-style:none;
+    background-color: #b1b2b4;
+    margin:auto;
+}
+.divRightPanelButton
+{
+    width: 60px;
+    vertical-align: baseline;
+    text-align: center;
+}
+.lnkViewButton
+{
+    font-family: Verdana;
+    font-size: 7pt;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: normal;   
+}
+.iPadImageS
+{
+    clear: inherit;
+    width: 65px;
+    height: 56px;
+    border: 0px;
+    margin-top: 12px;
+    margin-left: 15px;
+    position: absolute;    
+    z-index: 0;
+}

@@ -1,0 +1,642 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="RegisterMobile.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=320,user-scalable=false" />
+    <script src="jquery-1.3.2.min.js" type="text/javascript"></script>
+    
+      <script language="javascript" type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script language="javascript" type="text/javascript">
+        var statistics = "";
+        var pageTracker = _gat._getTracker(statistics);
+        pageTracker._trackPageview();
+    </script>
+    
+    <script src="jquery.client.js" type="text/javascript"></script>
+    <script src="jquery.client.js" type="text/javascript"></script>
+    <script src="jquery.watermarkinput.js" type="text/javascript"></script>
+    <script src="RegisterMobile.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        //        if ($.client.os == "iPhone/iPod") {
+        //            window.location = "/RegisterM/Register.htm";
+        //        }
+        //        else if ($.client.os == "iPhone/iPod") {
+        //            window.location = "/RegisterM/Register.htm";
+        //        }
+        //        else if ($.client.os == "iPad") {
+        //            window.location = "/RegisterP/Register.htm";
+        //        }
+
+        var isMobile = {
+            Android: function() {
+                return navigator.userAgent.match(/Android/i) ? true : false;
+            },
+            BlackBerry: function() {
+                return navigator.userAgent.match(/BlackBerry/i) ? true : false;
+            },
+            iOS: function() {
+                return navigator.userAgent.match(/iPhone|iPod/i) ? true : false;
+            },
+            Windows: function() {
+                return navigator.userAgent.match(/IEMobile/i) ? true : false;
+            },
+            any: function() {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+            }
+        };
+
+        function GetQueryStrings() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+        var scid = '';
+        var bedroomid = '';
+        var budgetid = '';       
+
+        $(document).ready(function() {
+                       
+        
+//            var retirnedIdList = GetQueryStringValue();
+
+//            scid = retirnedIdList["scid"];
+//            bedroomid = retirnedIdList["bedroomid"];
+//            budgetid = retirnedIdList["priceid"];
+
+//            var para1Text = "You have chosen the " + unescape(retirnedIdList["modeldesc"]) + " Model at " + unescape(retirnedIdList["county"]) + " Community for " + unescape(retirnedIdList["budgetdesc"]) + ".";
+//            $("#para1").html(para1Text);            
+           // if (isMobile.any()) {
+               // $("#dvContent").css("margin-top", "150px");
+//            } else {
+//                //$("#RightColumnMobile").css("height", "308px");
+//                $("#dvContent").css("margin-top", "120px");
+//            }
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <div id="fb-root">
+    </div>
+    <div style="width: 320px;margin-left:auto;margin-right:auto;">
+        <div class="ContentPlaceHolder">
+            <div class="RightColumn" id="RightColumnMobile" >
+                <div id="dvContainer" class="Container">                                
+                    <div id="dvHeader" class="HeaderCSS">
+                        <div id="imgPopUpHeader" > &nbsp; </div>                                              
+                    </div> 
+                    <div style="height:20px;clear:both;" > &nbsp; </div>                  
+                    <div id="dvContent" class="Contents"  >
+                        <div id="dvGrayBG" class="hfHide">
+                        </div>
+                        <div id="dvSuccess" class="SuccessMessage">
+                        </div>
+                        <div id="dvIncorrectCaptcha" class="IncorrectCaptchaMessage">
+                        </div>
+                        <div id="dvDupEmail" class="DuplicateEmailMessage">
+                        </div>
+                        <div id="dvRequired" class="RequiredMessage">
+                        </div>
+                        <div id="dvError" class="ErrorMessage">
+                        </div>
+                        <div id="dvInvalidInput" class="InvalidInputMessage">
+                        </div>
+                        <div id="dvFacebook" style="display: none;" class="Facebook">
+                            <div id="dvFBContainer" style="width: 209px;" onclick="Register.FBLoginButtonClicked();">
+                                <fb:login-button scope="email,user_website,publish_stream">Sign up with Facebook</fb:login-button>
+                            </div>
+                        </div>
+                        <div id="dvSalutation" class="ContentRow">
+                            <div class="LabelColumn">
+                                Salutation
+                            </div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <select id="ddlSalutation">
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvFirstName" class="ContentRow">
+                            <div class="LabelColumn">
+                                First Name
+                            </div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <input id="txtFirstName" type="text" onfocus="Utils.ShowLabel('dvFirstName')" onblur="Utils.ValidateAndHide('dvFirstName',this)"  ></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                            <div class="BottomError" ></div>
+                        </div>
+                        <div id="dvMiddleName" class="ContentRow">
+                            <div class="LabelColumn">
+                                Middle Name:
+                            </div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <input id="txtMiddleName" type="text" onfocus="Utils.ShowLabel('dvMiddleName')" onblur="Utils.ValidateAndHide('dvMiddleName',this)" ></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                            <div class="BottomError" ></div>
+                        </div>
+                        <div id="dvLastName" class="ContentRow">
+                            <div class="LabelColumn">
+                                Last Name
+                            </div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <input id="txtLastName" type="text" onfocus="Utils.ShowLabel('dvLastName')" onblur="Utils.ValidateAndHide('dvLastName',this)" ></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                            <div class="BottomError" ></div>
+                        </div>
+                        <div id="dvEmail" class="ContentRow">
+                            <div class="LabelColumn">
+                                Email
+                            </div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <input id="txtEmailAddress" type="text" onfocus="Utils.ShowLabel('dvEmail')" onblur="Utils.ValidateEmail('dvEmail',this)" ></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                            <div class="BottomError" ></div>
+                        </div>
+                        <div id="dvCompany" class="ContentRow">
+                            <div class="LabelColumn">
+                                Company
+                            </div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <input id="txtCompany" type="text" onblur="Register.ValidateEmptyField(this,'dvCompany')"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvTitle" class="ContentRow">
+                            <div class="LabelColumn">
+                                Title
+                            </div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <input id="txtTitle" type="text" onblur="Register.ValidateEmptyField(this,'dvTitle')"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvSex" class="ContentRow">
+                            <div class="LabelColumn">
+                                Sex
+                            </div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <select id="ddlSex">
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvAddress1" class="ContentRow">
+                            <div class="LabelColumn">
+                                Address(one)
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtAddress1" type="text" onblur="Register.ValidateEmptyField(this,'dvAddress1')"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvAddress2" class="ContentRow">
+                            <div class="LabelColumn">
+                                Address(two)
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtAddress2" type="text" onblur="Register.ValidateEmptyField(this,'dvAddress2')"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvCity" class="ContentRow">
+                            <div class="LabelColumn">
+                                City
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtCity" type="text" onblur="Register.ValidateEmptyField(this,'dvCity')"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvState" class="ContentRow">
+                            <div class="LabelColumn">
+                                State
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtState" type="text" onblur="Register.ValidateEmptyField(this,'dvState')"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvZip" class="ContentRow">
+                            <div class="LabelColumn">
+                                Zip
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtZip" type="text" onblur="Register.ValidateEmptyField(this,'dvZip'); Utils.ValidateZip(this);"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvCountry" class="ContentRow">
+                            <div class="LabelColumn">
+                                Country
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <select id="ddlCountry">
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvHomePhone" class="ContentRow">
+                            <div class="LabelColumn">
+                                Phone (Home)
+                            </div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <input id="txtHomePhone" type="text" onfocus="Utils.ShowLabel('dvHomePhone')" onblur="Utils.ValidateAndHide('dvHomePhone',this)" ></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvBusinessPhone" class="ContentRow">
+                            <div class="LabelColumn">
+                                Phone (Business)
+                            </div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <input id="txtBusinessPhone" type="text" onfocus="Utils.ShowLabel('dvBusinessPhone')" onblur="Utils.ValidateAndHide('dvBusinessPhone',this)" ></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvCell" class="ContentRow">
+                            <div class="LabelColumn">
+                                Cell
+                            </div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <input id="txtCell" type="text" onblur="Register.ValidateEmptyField(this,'dvCell'); Utils.ValidatePhoneFax(this);"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvFax" class="ContentRow">
+                            <div class="LabelColumn">
+                                Fax
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtFax" type="text" onblur="Register.ValidateEmptyField(this,'dvFax'); Utils.ValidatePhoneFax(this);"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvWebsite" class="ContentRow">
+                            <div class="LabelColumn">
+                                Website
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtWebsite" type="text" onblur="Register.ValidateEmptyField(this,'dvWebSite')"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvSource" class="ContentRow">
+                            <div class="LabelColumn">
+                                Source
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <select id="ddlSource">
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvSourceDetail" class="ContentRow">
+                            <div class="LabelColumn">
+                                Source Details
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtSourceDetails" type="text" onblur="Register.ValidateEmptyField(this,'dvSourceDetail')"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvComment" class="ContentRow">
+                            <div class="LabelColumn">
+                                Comments
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtComments" type="text" onblur="Register.ValidateEmptyField(this,'dvComment')"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvCaptcha" class="ContentRow">
+                            <div class="LabelColumn">
+                                Captcha
+                            </div>
+                            <div>
+                                <div class="CaptchaColumn">
+                                    <input id="txtCaptcha" type="text"></input><img src="#" id="imgCaptcha" alt="Captcha">
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvUID" class="ContentRow">
+                            <div class="LabelColumn">
+                                UID
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtUid" type="text"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvSC" class="ContentRow">
+                            <div class="LabelColumn">
+                                SalesCenter
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtSalesCenter" type="text"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvRF_URL" class="ContentRow">
+                            <div class="LabelColumn">
+                                RF URL
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtRefUrl" type="text"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvRF_Site" class="ContentRow">
+                            <div class="LabelColumn">
+                                RF Site
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="txtRfSite" type="text"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="Div1" class="ContentRow">
+                            <div class="LabelColumn">
+                                RF Site
+                            </div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <input id="Text1" type="text"></input>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvContact_Type" class="ContentRow">
+                            <div class="LabelColumn">
+                                Label</div>
+                            <div>
+                                <div class="ControlColumn">
+                                    <select id="ddlContact_Type">
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvRentalAgent" class="ContentRow">
+                            <div class="LabelColumn">
+                                Label</div>
+                            <div  class="ControlRow">
+                                <div class="ControlColumn">
+                                    <select id="ddlRentalAgent" onfocus="Utils.ShowLabel('dvRentalAgent')" onblur="Utils.ValidateAndHide('dvRentalAgent',this)">
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                                      <div class="BottomError"></div>
+                            </div>
+                        </div>
+                        <div id="dvreg_move" class="SurveyContentRow">
+                            <div class="LabelColumn">
+                                Label</div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <select id="ddlreg_move" onfocus="Utils.ShowLabel('dvreg_move')" onblur="Utils.ValidateAndHide('dvreg_move',this)" >
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                            <div class="BottomError"></div>
+                        </div>
+                        <div id="dvreg_pet" class="SurveyContentRow">
+                            <div class="LabelColumn">
+                                Label</div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <select id="ddlreg_pet" onfocus="Utils.ShowLabel('dvreg_pet')" onblur="Utils.ValidateAndHide('dvreg_pet',this)" >
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvreg_beds" class="SurveyContentRow">
+                            <div class="LabelColumn">
+                                Label</div>
+                            <div  class="ControlRow">
+                                <div class="ControlColumn">
+                                    <select id="ddlreg_beds" onfocus="Utils.ShowLabel('dvreg_beds')" onblur="Utils.ValidateAndHide('dvreg_beds',this)" >
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvreg_budget" class="SurveyContentRow">
+                            <div class="LabelColumn">
+                                Label</div>
+                            <div class="ControlRow">
+                                <div class="ControlColumn">
+                                    <select id="ddlreg_budget" onfocus="Utils.ShowLabel('dvreg_budget')" onblur="Utils.ValidateAndHide('dvreg_budget',this)" >
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                         <div id="dvreg_matchmaker" class="SurveyContentRow">
+                            <div class="LabelColumn">
+                                Label</div>
+                            <div class="ControlRow">
+                                <div class="ControlColumn">
+                                    <select id="ddlreg_matchmaker" onfocus="Utils.ShowLabel('dvreg_matchmaker')" onblur="Utils.ValidateAndHide('dvreg_matchmaker',this)" >
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvreg_comments" class="SurveyContentRow" >
+                            <div class="LabelColumn" style="height:20px;" >
+                                Label</div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <textarea id="txtreg_comments"  rows="5" cols="6"></textarea>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvreg_email" class="SurveyContentRow">
+                            <div class="LabelColumn">
+                                Label</div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <select id="ddlreg_email" onfocus="Utils.ShowLabel('dvreg_email')" onblur="Utils.ValidateAndHide('dvreg_email',this)" >
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvRegType" class="ContentRow">
+                            <div class="LabelColumn">
+                                Label</div>
+                            <div class="ControlRow">
+                                <div class="ControlColumn">
+                                    <select id="ddlRegType"  onfocus="Utils.ShowLabel('dvRegType')" onblur="Utils.ValidateAndHide('dvRegType',this)" >
+                                    </select>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                                      <div class="BottomError"></div>
+                            </div>
+                        </div>                                                
+                        <div id="dvNotes" class="ContentRow">
+                            <div class="LabelColumn">
+                                Follow-up Notes</div>
+                            <div class="ControlRow" >
+                                <div class="ControlColumn">
+                                    <input id="txtNotes"    onfocus="Utils.ShowLabel('dvNotes')" onblur="Utils.ValidateAndHide('dvNotes',this)"></input>
+                                      
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                            </div>
+                        </div>
+                        <div id="dvOrgSC" style="height:165px;" class="ContentRow">
+                            <div class="LabelColumn">
+                                Label</div>
+                            <div class="ControlRow">
+                                <div class="ControlColumn">
+                                    <div id="chklOrgSC"  style="height: 140px; overflow-y: scroll; border: solid 1px #7D7D7D;width: 288px;margin-top:2px;">
+                                    </div>
+                                </div>
+                                <div class="ValidationColumn">
+                                    *</div>
+                                     <div class="BottomError"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="Submit" class="Submit">
+                        <input id="btnSubmit" type="button" value="Submit"></input>&nbsp;&nbsp;<img id="imgLoading"
+                            src="../images/loading2.gif" alt="Processing" style="display: none;" />
+                    </div>                    
+                    <div id="dvFinalMessage" class="FinalMessage">
+                        &nbsp;
+                    </div>
+                    
+                </div>
+                <div id="dvModal" class="ModalWindow">
+                </div>
+                <div id="dvHiddenFields">
+                    <input id="hdnSubmitUrl" type="hidden"></input>
+                    <input id="hdnDupExists" type="hidden" value="0"></input>
+                    <input id="hdnTempEmail" type="hidden" value=""></input>
+                    <input id="hdnEmailExpression" type="hidden" value=""></input>
+                    <input id="hdnHPhoneExpression" type="hidden" value=""></input>
+                    <input id="hdnBPhoneExpression" type="hidden" value=""></input>
+                    <input id="hdnCellExpression" type="hidden" value=""></input>
+                    <input id="hdnZipExpression" type="hidden" value=""></input>
+                    <input id="hdnFaxExpression" type="hidden" value=""></input>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

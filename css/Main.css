@@ -1,0 +1,851 @@
+﻿.MainDivContainer
+{
+    float: left;
+    width: 100%;
+    height: 614px;
+}
+.MainLeftContainer
+{
+    float: left;
+    width: 100%;
+    height: 494px;
+}
+.FirstLeftContainer
+{
+    float: left;
+    width: 78%;
+    height: 494px;    
+    vertical-align: top;
+    text-align: left;
+    border-color: #dcddde;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+}
+.MiddleLeftContainer
+{
+    float: left;
+    width: 1%;
+    height: 494px;
+}
+.RightLeftContainer
+{
+    float: right;
+    width: 20%;
+    height: 494px;
+    border-color: #dcddde;
+    border-style: solid;
+    border-width: 1px;
+}
+.LeftFrame
+{
+    width: 100%;
+    height: 494px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.dvLabelContent
+{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-family: Tahoma;
+    font-size: 8pt; /*font-family: Arial, Myriad Pro,Sans-Serif;     font-size: 8pt;     font-weight: bold;     color: #666666;*/
+}
+.BottomMiddleContainer
+{
+    float: left;
+    width: 100%;
+    height: 10px;
+    border-color: #dcddde;
+}
+.BottomContainer
+{
+    position: relative;
+    float: left;
+    width: 973px;
+    height: 110px;
+    border-color: #00a9df;
+    border-style: solid;
+    border-width: 1px;
+}
+.DivAbsoulatePos
+{
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    top: 37px;
+    left: 86px;
+    font-family: Tahoma;
+    font-size: 8pt;
+}
+.DivAbsoulatePosTwo
+{
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    top: 37px;
+    left: 344px;
+    font-family: Tahoma;
+    font-size: 8pt;
+}
+.DivAbsoulatePosThree
+{
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    top: 37px;
+    left: 571px;
+    font-family: Tahoma;
+    font-size: 8pt;
+}
+.DivAbsoulatePosFour
+{
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    top: 37px;
+    left: 812px;
+    font-family: Tahoma;
+    font-size: 8pt;
+}
+.AnchorAbsulateOne
+{
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    top: 20px;
+    left: 86px;
+    font-family: Tahoma;
+    font-size: 8pt;
+    outline-style:none;
+}
+.AnchorAbsulateTwo
+{
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    top: 20px;
+    left: 344px;
+    font-family: Tahoma;
+    font-size: 8pt;
+    outline-style:none;
+}
+
+.AnchorAbsulateThree
+{
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    top: 20px;
+    left: 571px;
+    font-family: Tahoma;
+    font-size: 8pt;
+    outline-style:none;
+}
+
+.AnchorAbsulateFour
+{
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    top: 20px;
+    left: 812px;
+    font-family: Tahoma;
+    font-size: 8pt;
+    outline-style:none;
+}
+
+.BottomPartFont
+{
+    float: left;
+    width: 120px;
+    text-align: right;
+    color: #666666;
+}
+.BottomPartFontControl
+{
+    float: left;
+    width: 230px;
+    color: #666666;
+}
+.BottomPartFontControlCheckBox
+{
+    float: left;
+    width: 215px;
+    @width: 230px;
+    color: #666666;
+}
+.BottomPartSpeacer
+{
+    width: 350px;
+    height: 5px;
+}
+.BottomButton
+{
+    float: left;
+    width: 265px;
+    @width: 274px;
+    text-align: right;
+}
+.BottomPartDivWidth
+{
+    width: 350px;
+    height: 20px;
+}
+.BottomPartDivWidthCheckBox
+{    
+    width: 350px;
+    height: 40px;
+}
+.BottomPartImageDiv
+{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.navigationBar
+{
+    color: White;
+    font-size: 8pt;
+    font-family: Arial,Verdana;
+    font-weight: bold;
+    padding-left: 10px;
+}
+.BottomPartFontWithControl
+{
+    float: left;
+    width: 25px;
+    text-align: right;
+    color: #666666;
+}
+.BottomPartFontWithoutControl
+{
+    float: left;
+    width: 325px;
+    text-align: right;
+    color: #666666;
+}
+.TwoPartFont
+{
+    float: left;
+    width: 65px;
+    text-align: right;
+    color: #666666;
+}
+.TwoPartFontControl
+{
+    float: left;
+    width: 25px;
+    color: #666666;
+}
+.TwoPartFontControl1
+{
+    float: left;
+    width: 140px;
+    color: #666666;
+}
+
+.BottomButton1
+{
+    float: left;
+    width: 422px;
+    @width: 424px;
+    text-align: right;
+}
+.MaindivImageL
+{
+    /*background-image:url('../images/ThumbnailL.JPG');*/
+    position: relative;
+    margin: 17px auto auto auto; 
+    width:615px;
+	height:556px;
+	border:0px;
+	
+}
+.CommunityDotDiv
+{
+    position: relative;
+    width: 90%;
+    margin: 0px auto 0 auto;
+}
+.CommunityDotImage
+{
+    width: 295px;
+}
+.CommunityButtonDiv
+{
+    float: left;
+    text-align: left;
+    background: url(../images/small-nav-buttons.gif);
+    background-repeat: repeat-x;
+    margin: 0px auto 0 16px;
+    width: 65%;
+    height: 19px;
+}
+.CommunityListDiv
+{
+	position:relative;
+	width:90%;
+	overflow:auto;
+	margin: 20px auto 0 auto;
+	font-family:Tahoma;
+	font-size:9pt;
+   scrollbar-face-color:#909090;
+   scrollbar-arrow-color:#FFFFFF;
+   scrollbar-track-color:#B0B0B0;
+   scrollbar-shadow-color:rgb(100,100,100);
+   scrollbar-highlight-color:rgb(100,100,100);
+   scrollbar-3dlight-color:#E0E0E0;
+   scrollbar-darkshadow-Color:#606060;
+   height:400px;
+}
+.ComapreMainDiv
+{
+    float: left;
+    width: 963px;
+    height: 590px;
+    vertical-align: top;
+    text-align: left;
+    border-color: #00a9df;
+    border-style: solid;
+    border-width: 1px; 
+    padding-left:10px;   
+}
+.ComapreImageDiv
+{
+    padding-top:5px;
+    padding-left:5px;
+    float:left;
+    color: White; 
+	font-size: 8pt; 
+	font-family: Arial,Verdana; 
+	font-weight: bold;
+ } 
+.CommunityDetailsRightDiv
+{
+	position:relative;
+	width:90%;
+	overflow:auto;
+	margin: 20px auto 0 auto;
+	font-family:Tahoma;
+	font-size:9pt;
+   scrollbar-face-color:#909090;
+   scrollbar-arrow-color:#FFFFFF;
+   scrollbar-track-color:#B0B0B0;
+   scrollbar-shadow-color:rgb(100,100,100);
+   scrollbar-highlight-color:rgb(100,100,100);
+   scrollbar-3dlight-color:#E0E0E0;
+   scrollbar-darkshadow-Color:#606060;
+   height:290px;
+}
+.CommunityDetailsRightFrame
+{
+	position:relative;
+	width:90%;
+	overflow:auto;
+	margin: 20px auto 0 auto;
+	font-family:Tahoma;
+	font-size:9pt;
+   scrollbar-face-color:#909090;
+   scrollbar-arrow-color:#FFFFFF;
+   scrollbar-track-color:#B0B0B0;
+   scrollbar-shadow-color:rgb(100,100,100);
+   scrollbar-highlight-color:rgb(100,100,100);
+   scrollbar-3dlight-color:#E0E0E0;
+   scrollbar-darkshadow-Color:#606060;
+   height:202px;
+}
+
+.CommunityImage
+{
+	height: 19px;
+}
+
+.CommunityDetailsText
+{
+	margin-top: 10px; 
+	margin-left: 10px;
+}
+
+.CommunityDetailsGoogleFrame
+{
+	padding-top: 2px;
+}
+
+.CommunityDetailsGoogleLink
+{
+	margin-left: 105px;
+}
+
+.NextPrevActiveExtra
+{
+	font-size: 11px;
+}
+
+.CommunityDetailsTD1
+{
+	width: 500px;
+}
+
+.CommunityDetailsTD2
+{
+	width: 320px;
+	padding: 10px;
+}
+
+.CompareDivGrid
+{
+	width: 99%; 
+	height: 550px;
+}
+
+.CursorHand
+{
+	cursor: hand;
+}
+
+.CompareDivDetailsVisible
+{
+	/*visibility: visible;*/
+	display:block;
+	padding-left: 1px;
+	@padding-left: 0px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#00a9df;
+}
+
+.CompareDivDetailsNotVisible
+{
+	/*visibility: hidden;*/
+	display:none;
+	padding-left: 1px;
+	@padding-left: 0px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#00a9df;
+}
+
+.frmFloorPlan
+{
+    width:605px; 
+    height:430px; 
+}
+
+.noTopMargin
+{
+	margin-top:0px;
+}
+
+.marginLeft
+{
+	/*margin-left:10px;*/
+	margin-left:2px;
+}
+
+.modelLebel
+{
+	margin-left:10px;
+	cursor:hand; 
+	text-decoration: underline;
+}
+
+.displayNone
+{
+	display:none;
+}
+
+.showModelsTableWidth
+{
+	width:268px;
+}
+
+.showModelsLebelExtra
+{
+	vertical-align:super;
+	font-size:7px;
+}
+
+.showModelsImageButton
+{
+	height:16px;
+	width:16px;
+}
+
+.showModelsExtra2
+{
+	cursor:hand;
+	text-decoration: underline;
+}
+
+.showModelsTdWidth
+{
+	width: 10px;
+}
+
+.showModelsTdHeight
+{
+	height: 23px;
+}
+
+.legalDisclaimerImage
+{
+    position: absolute;    
+    top:17px;
+    left:20px;
+    width:590px;
+	height:455px;
+	border:0px;	
+}
+
+.legalDisclaimerBG
+{
+    position:relative;
+	background-image:url('../images/legalDisclaimerBG.png');
+	background-repeat:no-repeat;
+	height:478px;
+	margin-left:2px;
+}
+
+.legalDisclaimerFirstLeftContainer
+{
+    float: left;
+    width: 65%;
+    height: 510px;
+    vertical-align: top;
+    text-align: left;
+    border-color: #00a9df;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+}
+
+.legalDisclaimerRightLeftContainer
+{
+    float: right;
+    width: 33%;
+    height: 510px;
+    border-color: #00a9df;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.legalDisclaimerMainLeftContainer
+{
+    float: left;
+    width: 100%;
+    height: 510px;
+}
+
+.legalDisclaimerMainDivContainer
+{
+    float: left;
+    width: 100%;
+    height: 510px;
+}
+
+.communitiesDiv
+{
+	padding-top:5px;
+}
+
+.frameImage
+{
+	width:93%; 
+	height:92%;
+}
+.BottomPartDivWidthValidator
+{
+	position:relative;
+    width: 350px;
+    height: 20px;    
+}
+
+.validatorStyle
+{
+	position:absolute; 
+	top:21px; 
+	left:120px;
+}
+.ComapreMainDivNew
+{
+    float: left;
+    width: 963px;
+    height: 100%;
+    vertical-align: top;
+    text-align: left;
+    border-color: #00a9df;
+    border-style: solid;
+    border-width: 1px; 
+    padding-left:10px;   
+}
+.AvailabilityPageLink
+{
+    color:Black;
+    cursor:pointer;
+    text-decoration:underline;
+}
+.ModelsTopDiv
+{
+    float: left;
+    width: 963px;
+    /*height: 590px;*/
+    vertical-align: top;
+    text-align: left;
+    border-color: #00a9df;
+    border-style: solid;
+    border-width: 1px; 
+    padding-left:10px;   
+}
+
+.ModelsMiddleDiv
+{
+    float: left;
+    width: 963px;
+    /*height: 590px;*/
+    vertical-align: top;
+    text-align: left;
+    border-color: #00a9df;
+    border-style: solid;
+    border-width: 1px; 
+    padding-left:10px;   
+}
+
+.ModelsBottomDiv
+{
+    float: left;
+    width: 973px;
+    /*height: 590px;*/
+    vertical-align: top;
+    text-align: left;
+    border-color: #00a9df;
+    border-style: solid;
+    border-width: 1px; 
+}
+
+.ModlesTopSectionSpacer
+{
+    float:left; 
+    width:10px;
+    height:15px;
+}
+
+.ModelsTopLabels
+{
+    float:left; 
+    height:15px;        
+}
+
+.ModelsSeparatorBar
+{
+    background-color:Black; 
+    width:1px; 
+    height:15px;
+    float:left;
+}
+
+.ModelsCommunityOption
+{
+    width:270px;
+    float:left;
+    margin-left:50px;
+    margin-top:5px;
+}
+
+.ModelsTopRightdiv
+{
+    width:145px;
+    margin-top:22px;
+    float:left;
+}
+
+.ModelTopRightdivItem
+{
+    height:22px;
+    line-height:22px;
+    clear:both;
+}
+
+.ModelTopRightdivIcon
+{
+    float:left;
+    width:24px;
+    text-align:center;    
+}
+
+.ModelExteriorImageTop
+{
+	width:120px;
+	height:86px;
+	border:0px;
+	margin-top:9px;
+	margin-left:10px;
+}
+
+.ModelInfo
+{       
+    background-color:#dcdddf;    
+    width: 780px;
+    height:40px;
+    line-height :40px;  
+    margin: 0 auto 0 auto;  
+}
+
+.ModelSectionSpacer
+{
+    height:5px;
+    clear:both;
+}
+
+.ModelLotInfo
+{
+    margin-top:10px;
+    margin-left:20px;
+    margin-bottom:5px;
+}
+
+.ModelTopDivInner1
+{
+    padding-top:10px;
+    width:100%;
+}
+
+.ModelTopDivInner2
+{
+    padding-left:10px;
+    width:790px;
+    float:left;
+}
+
+.ModelAvailabilityNo
+{
+    color:#00a9df;
+    text-decoration:underline;
+}
+
+.floatLeft
+{
+    float:left;
+}
+
+.amber2BorderColor
+{
+    color:#00a9df;
+}
+
+.ModelAddFavoriteImage
+{    
+    border-width:0px;
+    margin-top:10px;
+    
+}
+
+.ModelpdfImage
+{
+    border-width:0px;
+    margin-top:3px;
+    @margin-top:4px;
+}
+
+.ModelFeaturepdfImage
+{
+    border-width:0px;
+    margin-top:3px;
+    @margin-top:4px;
+}
+
+.ModelMiddleInnerDiv1
+{
+    padding-top:10px; 
+    width:100%;
+}
+
+.ModelMiddleInnerDiv2
+{
+    width:640px;float:left;
+}
+
+.ModelRotatorControl
+{
+    margin-left:20px;
+}
+
+.ModelInfoContainer
+{
+    margin-top:10px;
+}
+
+.ModelAvailLink
+{
+	font-family:Verdana,Arial;
+	font-size:7pt;
+	font-weight:bold;
+	color:#00a9df;
+	margin-left:4px;
+	text-decoration:underline;
+	float:left;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.dvusefulllinks div[style="width:50%;float:left"] .dropdownLink a,
+form[action="./FAQ.aspx"] #copy a,
+#dvDisclamer div.head1
+{
+    color: #0080A9 !important;
+}
+
+.jcarousel-prev-horizontal,
+.jcarousel-next-horizontal{
+    filter: brightness(0.5) !important;
+}
+
+#divDO_1, #divDO_2, #divDO_3{
+    color: #767676 !important;
+}
+
+table > tbody > tr > td > div:nth-child(1){
+    height: 80px !important;
+}
+
+.dvHeader{
+    height: 45px !important;
+}
+
+form[action="./FAQ.aspx"] #ctl00_ContentPlaceHolder1_dvFAQText ul li,
+form[action="./FAQ.aspx"] #ctl00_ContentPlaceHolder1_dvFAQText p,
+form[action="./FAQ.aspx"] #ctl00_ContentPlaceHolder1_dvFAQText h1
+{
+    color: #767676 !important;
+}
+
+form[action="./FAQ.aspx"] #ctl00_ContentPlaceHolder1_dvFAQText p a{
+    color: #0080A9 !important;
+}
+
+/* form[action="./main.aspx"] #ctl00_dvFooter{
+    list-style: none !important;
+    display: flex !important;
+    padding: 0 !important;
+} */
+
+body.removeHover::before {
+    display: block !important;
+    content: "" !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: fixed !important;
+    z-index: 9999999999 !important;
+    top: 0 !important;
+    left: 0 !important;
+}

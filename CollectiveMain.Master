@@ -1,0 +1,807 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CollectiveMain.Master.cs"
+    Inherits="Aareas247Marketing.CollectiveMain" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="NYilc8rZLBliXIuRKIV-tJDFTBb4PmL5ocAkTFy6MJw" />
+    <link rel="SHORTCUT ICON" href="favicon.ico" />    
+      
+    <link rel="stylesheet" type="text/css" href="<%=ResolveUrl("CSSHandler.ashx?file=css/AboutUs.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=ResolveUrl("CSSHandler.ashx?file=css/Main.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=ResolveUrl("CSSHandler.ashx?file=css/styleNew.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=ResolveUrl("CSSHandler.ashx?file=css/homefinder.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=ResolveUrl("CSSHandler.ashx?file=css/News.css")%>" />
+    
+    <link rel="stylesheet" type="text/css" href="<%=_CssFile%>" />
+    <!--[if gte IE 8]>
+        <link rel="stylesheet" type="text/css" href="<%=ResolveUrl("~/css/IE8.css")%>" />
+    <![endif]-->
+ 
+    <script type="text/javascript" src="<%=ResolveUrl("~/js/Aareas247Marketing.js")%>"></script>
+
+    <script type="text/javascript" src="<%=ResolveUrl("~/js/Utility.js")%>"></script>
+
+    <script type="text/javascript" src="<%=ResolveUrl("~/js/jquery-1.3.2.min.js")%>"></script>    
+
+    <script type="text/javascript" src="<%=ResolveUrl("~/js/wz_jsgraphics.js")%>"></script>
+
+    <script language="javascript" type="text/javascript" src="<%=ResolveUrl("~/js/EditTemplate.js")%>"></script>
+    <script language="javascript" type="text/javascript" src="<%=ResolveUrl("~/js/jquery.cookie.js")%>"></script>
+
+    <style type="text/css">
+        .menuItem
+        {
+            float: left;
+            line-height: 30px;
+            margin-right: 17px;
+        }
+        div.hfVisible
+        {
+            background-color: #070707;
+            color: #ffffff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+            -moz-opacity: 0.3;
+            z-index: 30000;
+        }
+        div.hfNone
+        {
+            visibility: hidden;
+            display: none;
+        }
+    </style>
+
+
+    <script language="javascript" type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script language="javascript" type="text/javascript">
+        var statistics = "<%= _googleStatistics%>";
+        var pageTracker = _gat._getTracker(statistics);
+        pageTracker._trackPageview();
+    </script>
+  
+    <script language="javascript" type="text/javascript">
+
+        var isMobile = {
+            Android: function() {
+                return navigator.userAgent.match(/Android/i) ? true : false;
+            },
+            BlackBerry: function() {
+                return navigator.userAgent.match(/BlackBerry/i) ? true : false;
+            },
+            iOS: function() {
+                return navigator.userAgent.match(/iPhone|iPod/i) ? true : false;
+            },
+            iPad: function() {
+                return navigator.userAgent.match(/iPad/i) ? true : false;
+            },
+            Windows: function() {
+                return navigator.userAgent.match(/IEMobile/i) ? true : false;
+            },
+            any: function() {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.iPad() || isMobile.Windows());
+            }
+        };
+
+        var currSubMenu = null;
+        function SetBackGround(id) {
+            ResetBackGround();
+            document.getElementById(id).style.backgroundColor = "#dcdddf";
+        }
+        function ResetBackGround() {
+            document.getElementById('dvBack1').style.backgroundColor = "#ffffff";
+            document.getElementById('dvBack2').style.backgroundColor = "#ffffff";
+            document.getElementById('dvBack3').style.backgroundColor = "#ffffff";
+            document.getElementById('dvBack4').style.backgroundColor = "#ffffff";
+            document.getElementById('dvBack5').style.backgroundColor = "#ffffff";
+            document.getElementById('dvBack6').style.backgroundColor = "#ffffff";
+            document.getElementById('dvBack7').style.backgroundColor = "#ffffff";
+            document.getElementById('dvBack8').style.backgroundColor = "#ffffff";
+
+            document.getElementById('dvSignIn').style.backgroundColor = "#ffffff";
+            document.getElementById('dvSignOut').style.backgroundColor = "#ffffff";
+            document.getElementById('dvMyAccount').style.backgroundColor = "#ffffff";
+        }
+        function ShowSubMenu(obj) {
+            HideAllSubMenu();
+            ResetBackGround();
+            if (obj.innerHTML.search("NJ RENTAL APARTMENTS") >= 0) {
+                document.getElementById('dvShadow1').style.display = "";
+                document.getElementById('dvShadow1Inner').style.display = "";
+                document.getElementById('dvSubMenu1').style.display = '';
+                currSubMenu = document.getElementById('dvSubMenu1');
+            }
+            else if (obj.innerHTML.search("ABOUT US") >= 0) {
+                document.getElementById('dvShadow2').style.display = "";
+                document.getElementById('dvShadow2Inner').style.display = "";
+                document.getElementById('dvSubMenu2').style.display = '';
+                currSubMenu = document.getElementById('dvSubMenu2');
+                if (navigator.userAgent.match(/Safari/i)) {
+                    document.getElementById('dvShadow2').style.left = obj.offsetLeft - 12 + 'px';
+                    document.getElementById('dvShadow2Inner').style.left = obj.offsetLeft - 11 + 'px';
+                    document.getElementById('dvSubMenu2').style.left = obj.offsetLeft - 12 + 'px';
+                }
+            }
+            else if (obj.innerHTML.search("MY ACCOUNT") >= 0) {
+                document.getElementById('dvShadow3').style.display = "";
+                document.getElementById('dvShadow3Inner').style.display = "";
+                document.getElementById('dvSubMenu3').style.display = '';
+                if (navigator.appName == 'Netscape') {
+                    document.getElementById('dvShadow3').style.left = obj.offsetLeft - 12 + 'px';
+                    document.getElementById('dvShadow3Inner').style.left = obj.offsetLeft - 12 + 'px';
+                    document.getElementById('dvSubMenu3').style.left = obj.offsetLeft - 32 + 'px';
+                }
+                currSubMenu = document.getElementById('dvSubMenu3');
+            }
+            else if (obj.innerHTML.search("APARTMENT RESOURCE") >= 0) {
+                document.getElementById('dvShadow4').style.display = "";
+                document.getElementById('dvShadow4Inner').style.display = "";
+                document.getElementById('dvSubMenu4').style.display = '';
+                currSubMenu = document.getElementById('dvSubMenu4');
+                if (navigator.userAgent.match(/Safari/i)) {
+                    document.getElementById('dvShadow4').style.left = obj.offsetLeft - 16 + 'px';
+                    document.getElementById('dvShadow4Inner').style.left = obj.offsetLeft - 15 + 'px';
+                    document.getElementById('dvSubMenu4').style.left = obj.offsetLeft - 16 + 'px';
+                }
+            }
+            else {
+                //obj.style.text
+            }
+
+            if ($('a[href="/Register.aspx"]').length > 0) {
+                if (isMobile.iOS() || isMobile.Android() || isMobile.BlackBerry() || isMobile.Windows()) {
+                    var pathFromEmail = "/Registration_Mobile/RegisterMobile.htm?" + new Date().getMilliseconds();
+                    $('a[href="/Register.aspx"]').attr("href", pathFromEmail).attr("target", "_blank");                                        
+                }
+            }
+        }
+        function HideAllSubMenu() {
+            document.getElementById('dvSubMenu1').style.display = "none";
+            document.getElementById('dvSubMenu2').style.display = "none";
+            document.getElementById('dvSubMenu3').style.display = "none";
+            document.getElementById('dvSubMenu4').style.display = "none";
+
+            document.getElementById('dvShadow1').style.display = "none";
+            document.getElementById('dvShadow1Inner').style.display = "none";
+            document.getElementById('dvShadow2').style.display = "none";
+            document.getElementById('dvShadow2Inner').style.display = "none";
+            document.getElementById('dvShadow3').style.display = "none";
+            document.getElementById('dvShadow3Inner').style.display = "none";
+            document.getElementById('dvShadow4').style.display = "none";
+            document.getElementById('dvShadow4Inner').style.display = "none";
+        }
+        function HideSubMenu() {
+            if (currSubMenu) {
+                currSubMenu.style.display = "none";
+            }
+        }
+        function performSearch()
+        { alert('Ooops. Search is not implemented.'); }
+
+        function btnSignIn_Click() {
+            //debugger;
+            if (document.getElementById("dvMyAccount").style.display != 'none') {
+                window.location = "./Login.aspx?domain=<%=_domain%>&scid=<%=SID%>";
+            }
+            else {
+                document.getElementById("divGrayBG").className = "hfVisible";
+                //document.getElementById("divGrayBG").style.height = document.body.clientHeight + "px";
+                $("#divGrayBG").height(getPageSize()[1]);
+                //$("#divGrayBG").width(getPageSize()[0]);
+                window.frames['frmLogin'].location.href = "<%=_247URL %>/Marketing/Login.aspx?menu=false&ClientCSS=y&domain=<%=_domain%>&scid=<%=SID%>&templateID=<%=_templateId %>";
+                showElement();
+            }
+        }
+
+        function getPageSize() {
+            // handle IE 6
+            if ($.browser.msie && $.browser.version < 7) {
+                var scrollHeight = Math.max(
+				        document.documentElement.scrollHeight,
+				        document.body.scrollHeight
+			        );
+                var offsetHeight = Math.max(
+				        document.documentElement.offsetHeight,
+				        document.body.offsetHeight
+			        );
+                if (scrollHeight < offsetHeight) {
+                    pageHeight = $(window).height();
+                } else {
+                    pageHeight = scrollHeight;
+                }
+                // handle "good" browsers
+            } else {
+                pageHeight = $(document).height();
+            }
+            return new Array('100%', pageHeight);
+        }
+
+        function btnMyAccount_Click() {
+            window.location = "/Login.aspx?domain=<%=_domain%>&scid=<%=SID%>";
+        }
+
+        function btnSignOut_Click() {
+            var logoutURL = "<%= _247URL%>/Marketing/LoginStatus.aspx?op=logout&domain=<%= _domain%>";
+            var eleFrame = document.getElementById("ifrmStatus");
+            eleFrame.src = logoutURL;
+            setTimeout("goToLogin()", 1000);
+        }
+        function goToLogin() {
+            window.location = "/";
+        }
+
+        function GUIDGen() {
+            var result, i, j;
+            result = '';
+            for (j = 0; j < 32; j++) {
+                if (j == 8 || j == 12 || j == 16 || j == 20)
+                    result = result + '-';
+                i = Math.floor(Math.random() * 16).toString(16).toUpperCase();
+                result = result + i;
+            }
+            return result
+        }
+        function SaveAareasID() {
+            try {
+                if (!fetch_cookie("AareasID")) {
+                    set_cookie("AareasID", GUIDGen(), 9999);
+                }
+            }
+            catch (e) {
+                return ("error save aareasid");
+            }
+        }
+        SaveAareasID();
+
+
+
+
+
+
+        function showInlineDisclaimerPopup() {
+            //debugger;
+            document.getElementById("divGrayBG").className = "hfVisible";
+            $("#divGrayBG").height(getPageSize()[1]);
+            window.frames['frmDisclaimer'].location.href = '/LegalDisclaimer.aspx';
+
+            var myWidth = 0, myHeight = 0;
+            if (typeof (window.innerWidth) == 'number') {
+                //Non-IE    
+                myWidth = window.innerWidth;
+                myHeight = window.innerHeight;
+                myWidth = (myWidth / 2) - 220;
+                myHeight = (myHeight / 2) - 100;
+            } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+                //IE 6+ in 'standards compliant mode'    
+                myWidth = document.documentElement.clientWidth;
+                myHeight = document.documentElement.clientHeight;
+                myWidth = (myWidth / 2) - 220;
+                myHeight = (myHeight / 2) - 100;
+            } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+                //IE 4 compatible    
+                myWidth = document.body.clientWidth;
+                myHeight = document.body.clientHeight;
+                myWidth = (myWidth / 2) - 220;
+                myHeight = (myHeight / 2) - 100;
+            }
+
+            document.getElementById('divDisclaimer').style.left = myWidth + 'px';
+            document.getElementById('divDisclaimer').style.top = myHeight + 'px';
+            //document.getElementById('divLogin').style.visibility = "visible";
+            document.getElementById('divDisclaimer').style.display = "block";
+
+        }
+
+        function showElement() {
+            //debugger;
+            //hideScrollBar();
+            var myWidth = 0, myHeight = 0;
+            if (typeof (window.innerWidth) == 'number') {
+                //Non-IE    
+                myWidth = window.innerWidth;
+                myHeight = window.innerHeight;
+                myWidth = (myWidth / 2) - 230;
+                myHeight = (myHeight / 2) - 170;
+            } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+                //IE 6+ in 'standards compliant mode'    
+                myWidth = document.documentElement.clientWidth;
+                myHeight = document.documentElement.clientHeight;
+                myWidth = (myWidth / 2) - 230;
+                myHeight = (myHeight / 2) - 170;
+            } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+                //IE 4 compatible    
+                myWidth = document.body.clientWidth;
+                myHeight = document.body.clientHeight;
+                myWidth = (myWidth / 2) - 230;
+                myHeight = (myHeight / 2) - 170;
+            }
+
+            document.getElementById('divLogin').style.left = myWidth + 'px';
+            document.getElementById('divLogin').style.top = myHeight + 'px';
+            //document.getElementById('divLogin').style.visibility = "visible";
+            document.getElementById('divLogin').style.display = "block";
+            //hideScrollBar();
+        }
+
+        function CloseDisclaimerPopup() {
+            document.getElementById('divGrayBG').className = 'hfNone';
+            document.getElementById('divDisclaimer').style.display = "none";
+        }
+
+        function hideElement() {
+
+            //document.getElementById('divLogin').style.visibility = "hidden";
+            document.getElementById('divLogin').style.display = "none";
+            //ShowScrollBar();            
+        }
+
+        function CloseLoginPopup() {
+            document.getElementById('divGrayBG').className = 'hfNone';
+            hideElement();
+
+            var flag = document.getElementById("ctl00_hdnFlag").value;
+            var modelid = document.getElementById('ctl00_hdnModelId').value;
+            try {
+                if (modelid != "0") {
+                    var chk = document.getElementById("btnFavorites_" + modelid);
+                    var image = document.getElementById("imgFavorites");
+                    if (chk.checked) {
+                        document.getElementById("btnFavorites_" + modelid).checked = false;
+                        if (image) image.innerHTML = "Remove";
+                    }
+                    else {
+                        document.getElementById("btnFavorites_" + modelid).checked = true;
+                        if (image) image.innerHTML = "Save";
+                    }
+                    document.getElementById('ctl00_hdnModelId').value = "0";
+                }
+                else if (flag != "0" && flag == "siteplan") {
+                    document.getElementById("ctl00_hdnFlag").value = "0";
+                    var oifrm = document.getElementById("ifrmIsFavorite");
+                    oifrm.src = oifrm.src;
+                }
+                else {
+                    var hdnModel = document.getElementById('ctl00_ContentPlaceHolder1_hdnCurrentModelList');
+                    if (hdnModel) {
+                        var currentModelList = hdnModel.value;
+                        var modelValueList = currentModelList.split(',');
+                        for (var i = 0; i < modelValueList.length; i++) {
+                            var objChange = parent.parent.parent.document.getElementsByName(modelValueList[i]);
+                            if (objChange != null && objChange.length > 0) {
+
+                                objChange[0].innerHTML = "Save";
+                            }
+                        }
+                    }
+                }
+            }
+            catch (e) { document.getElementById('ctl00_hdnModelId').value = "0"; }
+        }
+        $(document).ready(function() {
+
+            if ($('a[href="Register.aspx"]').length > 0) {
+                if (isMobile.iOS() || isMobile.Android() || isMobile.BlackBerry() || isMobile.Windows()) {
+                    var pathFromEmail = "/Registration_Mobile/RegisterMobile.htm?" + new Date().getMilliseconds();
+                    //$('a[href="Register.aspx"]').removeAttr("href");
+                    $('a[href="Register.aspx"]').attr("href", pathFromEmail).attr("target", "_blank");
+                    //$('a[href="Register.aspx"]').attr("target", "_blank");
+                }
+            }
+
+        });
+    </script>
+
+    <title><%= _CompanyName %></title>
+    <meta http-equiv="Page-Enter" content="revealTrans(Duration=0,Transition=5)" />
+    <meta name="keywords" content=<%= _METAKeywords %> />
+    <meta name="description" content=<%= _METADescription %> />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="pageBody" runat="server" style="margin: 0px; padding:0px;">
+    <a class="skip-to-content" href="#ctl00_dvContentBody">Skip To Content</a>
+    <form id="form1" runat="server">
+
+    <script language="javascript" type="text/javascript" src="/js/wz_tooltip.js"></script>
+
+    <div id="dvMain" runat="server" class="dvMain">
+        <div id="dvHeader" runat="server" class="dvHeader" role="header">
+            <ul id="dvMainMenu" runat="server" class="dvMenu" role="navigation">
+                <asp:Repeater ID="rptMainMenu" runat="server">
+                    <ItemTemplate>
+                        <li class="menuItem"><a test class="<%# GetMenuStyle(DataBinder.Eval(Container.DataItem,"Link").ToString(),DataBinder.Eval(Container.DataItem,"Selected").ToString()) %>"
+                            href="<%# DataBinder.Eval(Container.DataItem,"Link")%>" target="_self" onmouseover="ShowSubMenu(this)"
+                            onclick="<%# "ChangeFCNew('ctl00_' + 'dvMainMenu',this,'"+ DataBinder.Eval(Container.DataItem,"Selected") +"');" %>">
+                            <%# DataBinder.Eval(Container.DataItem,"Text")%></a> </li>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <div id="dvSubMenu1" style="position: absolute; width: 210px; top: 25px; z-index: 10;
+                    vertical-align: top; left: 55px; display: none; background-color: White; border-color: #dcdddf;
+                    border-style: solid; border-width: 1px;">
+                    <div style="width: 206px; padding-bottom: 2px; background-color: White; padding-top: 2px;
+                        margin-left: 2px;">
+                        <div id="dvBack1" style="height: 30px; line-height: 30px; padding-left: 7px;">
+                            <a class="MenuAnew" href="<%=_domain %>/all-nj-apartments" onmouseover="SetBackGround('dvBack1')">
+                                ALL NJ APARTMENTS</a>
+                        </div>
+                        <div id="dvBack2" style="height: 30px; line-height: 30px; padding-left: 7px;">
+                            <a class="MenuAnew" href="<%=_domain %>/nj-active-adult-residences" onmouseover="SetBackGround('dvBack2')">
+                                NJ ACTIVE ADULT RESIDENCES</a>
+                        </div>
+                        <div id="dvBack3" style="height: 30px; line-height: 30px; padding-left: 7px;">
+                            <a class="MenuAnew" href="<%=_domain %>/nj-affordable-housing" onmouseover="SetBackGround('dvBack3')">
+                                NJ AFFORDABLE HOUSING</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvSubMenu2" aria-expanded="false" style="position: absolute; width: 175px; top: 25px; z-index: 10;
+                    background-color: White; left: 730px; display: none; border-color: #dcdddf; border-style: solid;
+                    border-width: 1px;">
+                    <div style="width: 171px; padding-top: 2px; background-color: White; padding-bottom: 2px;
+                        margin-left: 2px;">
+                        <div id="dvBack4" style="height: 30px; line-height: 30px; padding-left: 7px;">
+                            <a class="MenuAnew" href="<%=ResolveUrl("~/Register.aspx")%>" onmouseover="SetBackGround('dvBack4')">CONTACT
+                                US</a>
+                        </div>                        
+                        <div id="dvBack6" style="height: 30px; line-height: 30px; padding-left: 7px;">
+                            <a class="MenuAnew" onclick="javascript:showInlineDisclaimerPopup();" href="javascript:void(0)"
+                                onmouseover="SetBackGround('dvBack6')" aria-label="Legal Disclaimer, opens dialog at bottom of page">LEGAL DISCLAIMER</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvSubMenu3" style="position: absolute; width: 130px; top: 25px; z-index: 11;
+                    background-color: White; left: 818px; display: none; border-color: #dcdddf; border-style: solid;
+                    border-width: 1px;">
+                    <div style="width: 126px; background-color: White; padding-top: 2px; padding-bottom: 2px;
+                        margin-left: 2px;">
+                        <div id="dvSignIn" style="height: 30px; line-height: 30px; padding-left: 7px;">
+                            <a class="MenuAnew" onclick="javascript:btnSignIn_Click();" onmouseover="SetBackGround('dvSignIn')">
+                                SIGN IN</a>
+                        </div>
+                        <div id="dvSignOut" style="height: 30px; line-height: 30px; padding-left: 7px;">
+                            <a class="MenuAnew" onclick="javascript:btnSignOut_Click();" onmouseover="SetBackGround('dvSignOut')">
+                                SIGN OUT</a>
+                        </div>
+                        <div id="dvMyAccount" style="height: 30px; line-height: 30px; padding-left: 7px;">
+                            <a class="MenuAnew" onclick="javascript:btnMyAccount_Click();" onmouseover="SetBackGround('dvMyAccount')">
+                                MY BESTRENT HOME</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvSubMenu4" style="position: absolute; width: 210px; top: 25px; z-index: 10;
+                    vertical-align: top; left: 550px; display: none; background-color: White; border-color: #dcdddf;
+                    border-style: solid; border-width: 1px;">
+                    <div style="width: 206px; padding-bottom: 2px; background-color: White; padding-top: 2px;
+                        margin-left: 2px;">
+                        <div id="dvBack7" style="height: 30px; line-height: 30px; padding-left: 13px;">
+                            <a class="MenuAnew" href="<%=ResolveUrl("~/FAQ.aspx")%>" onmouseover="SetBackGround('dvBack7')">
+                                FAQ</a>
+                        </div>
+                        <div id="dvBack8" style="height: 30px; line-height: 30px; padding-left: 13px;">
+                            <a class="MenuAnew" href="<%=ResolveUrl("~/UsefulLink.aspx")%>" onmouseover="SetBackGround('dvBack8')">
+                                Useful Links</a>
+                        </div>
+                        <div id="dvBack5" style="height: 30px; line-height: 30px; padding-left: 13px;">
+                            <a class="MenuAnew" href="<%=ResolveUrl("~/News.aspx")%>" onmouseover="SetBackGround('dvBack5')">NEWS</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvShadow1" style="position: absolute; width: 189px; top: 2px; height: 23px;
+                    display: none; z-index: 11; left: 55px; border-left: solid 1px #dcdddf; border-top: solid 1px #dcdddf;
+                    border-right: solid 1px #dcdddf;">
+                </div>
+                <div id="dvShadow1Inner" style="position: absolute; width: 189px; top: 25px; height: 1px;
+                    display: none; z-index: 11; left: 56px; background-color: White;">
+                </div>
+                <div id="dvShadow2" style="position: absolute; width: 85px; top: 2px; height: 23px;
+                    display: none; z-index: 11; left: 730px; border-left: solid 1px #dcdddf; border-top: solid 1px #dcdddf;
+                    border-right: solid 1px #dcdddf;">
+                </div>
+                <div id="dvShadow2Inner" style="position: absolute; width: 85px; top: 25px; height: 1px;
+                    display: none; z-index: 12; left: 731px; background-color: White;">
+                </div>
+                <div id="dvShadow3" style="position: absolute; width: 110px; top: 2px; height: 23px;
+                    display: none; z-index: 11; left: 838px; border-left: solid 1px #dcdddf; border-top: solid 1px #dcdddf;
+                    border-right: solid 1px #dcdddf;">
+                </div>
+                <div id="dvShadow3Inner" style="position: absolute; width: 110px; top: 25px; height: 1px;
+                    display: none; z-index: 11; left: 839px; background-color: White;">
+                </div>
+                <div id="dvShadow4" style="position: absolute; width: 189px; top: 2px; height: 23px;
+                    display: none; z-index: 11; left: 550px; border-left: solid 1px #dcdddf; border-top: solid 1px #dcdddf;
+                    border-right: solid 1px #dcdddf;">
+                </div>
+                <div id="dvShadow4Inner" style="position: absolute; width: 189px; top: 25px; height: 1px;
+                    display: none; z-index: 13; left: 551px; background-color: White;">
+                </div>
+            </ul>
+            <div id="dvCommunityMenu" runat="server" class="dvMenu" aria-expanded="false">
+                <asp:Repeater ID="rptCommunityMenu" runat="server">
+                    <ItemTemplate>
+                        <div class="menuItem">
+                            <a class="<%# GetMenuStyle(DataBinder.Eval(Container.DataItem,"Link").ToString(),DataBinder.Eval(Container.DataItem,"Selected").ToString()) %>"
+                                href="<%# DataBinder.Eval(Container.DataItem,"Link")%>" target="_self" onclick="<%# "ChangeFCNew('ctl00_' + 'tblMainMenu',this,'"+ DataBinder.Eval(Container.DataItem,"Selected") +"');" %>">
+                                <%# DataBinder.Eval(Container.DataItem,"Text")%></a>
+                        </div>
+                    </ItemTemplate>
+                    <SeparatorTemplate>
+                        <span id="spanCommunity" style="width:19px;" class="menuSeparator">
+                            <img alt="" border="0" src="<%= _CommunityMenuSeparatorImage%>" height="13px" class="separatorImage" />
+                        </span>
+                    </SeparatorTemplate>
+                </asp:Repeater>
+            </div>
+        </div>
+        <div id="dvContentBody" role="main" runat="server" onmouseover="HideAllSubMenu();">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="Div1" class="dvBottomMenuSpace">
+        </div>
+        <div role="contentinfo">
+            <div id="dvFooter" runat="server" class="footer">
+        </div>       
+         <div id="Div3" class="dvHeaderSpace" style="height: 5px;">
+        </div>
+        <div id="dvCopyright" runat="server" class="divCopyright">            
+        </div>
+         <div id="Div2" class="dvHeaderSpace" style="height: 5px;">
+        </div>
+        <div class="footer" aareasTag="WebTemplate__182">
+            <%--<a class="footerLinkPower" target="_blank" href ="http://www.aareas.com">Powered by Aareas</a>--%>
+            <%=_footertext%>
+        </div>
+        </div>
+    </div>
+    <div id="divLogin" class="divLoginPanel">
+        <div class="divLoginPanelInner">
+            <%--<img id="btnCancel" src="<%=ResolveUrl("~/images/closelabel.png")%>" onclick="CloseLoginPopup();" class="loginCancelButton" />--%>
+            <div class="divLoginFrame" align="center">
+                <iframe id="frmLogin" class="loginFrame" name="frmLogin" src="/blank.htm" frameborder="0"
+                    scrolling="no" ></iframe>
+            </div>
+            <div id="dvCancel" class="loginCancelButton">
+                <asp:LinkButton ID="lnkLoginClose" runat="server" OnClientClick="CloseLoginPopup(); return false;"
+                    EnableViewState="false" Text="CLOSE X" CssClass="PopupCancelButtonText"></asp:LinkButton>
+            </div>
+        </div>
+    </div>
+    <div id="divDisclaimer" class="divDisclaimer">
+        <div class="divLoginPanelInner">
+            <%--<img id="Img1" src="<%=ResolveUrl("~/images/closelabel.png")%>" onclick="CloseDisclaimerPopup();" class="DisclaimerCancelButton" />--%>
+            <div class="divDisclaimerFame" align="center">
+                <iframe tabindex="-1" id="frmDisclaimer" class="DisclaimerFrame" name="frmDisclaimer" src="/blank.htm" frameborder="0"
+                    scrolling="no"></iframe>
+            </div>
+            <div class="DisclaimerCancelButton">
+                <asp:LinkButton ID="lnkDisclaimerClose" runat="server" OnClientClick="CloseDisclaimerPopup(); return false;"
+                    EnableViewState="false" Text="CLOSE X" CssClass="PopupCancelButtonText"></asp:LinkButton>
+            </div>
+        </div>
+    </div>
+    <div id="divGrayBG" class="hfNone">
+    </div>
+    <asp:HiddenField ID="hfRunScript" runat="server" Value="" />
+    <asp:HiddenField ID="hfSID" runat="server" Value="0" />
+    <%--//Added by Firoj on 04/08/2009 for TA369--%>
+    <asp:HiddenField ID="hfCurrentLeft" runat="server" Value="0" />
+    <%--//Added by Firoj on 04/08/2009 for TA369--%>
+    <asp:HiddenField ID="hfIncreament" runat="server" Value="20" />
+    <%--//Added by Firoj on 04/08/2009 for TA369--%>
+    <asp:HiddenField ID="hfModelId" runat="server" Value="0" />
+    <%--//Added by Firoj on 04/16/2009 for TA369--%>
+    <asp:HiddenField ID="HiddenField2" runat="server" Value="0" />
+    <asp:HiddenField ID="hdnModelId" runat="server" Value="0" />
+    <asp:HiddenField ID="hdnFlag" runat="server" Value="0" />
+    <asp:HiddenField ID="hfHideMenu" runat="server" Value="0" />
+    </form>
+
+    <script language="javascript" type="text/javascript">
+
+        if (navigator.platform == 'iPad') {
+            changecss('.menuSeparator', 'width', '17px');
+            //document.getElementById("spanSeparator").style.width = "12px";
+        }
+        else if (navigator.platform.indexOf('Mac') > -1) {
+            changecss('.menuSeparator', 'width', '18px');
+            //document.getElementById("spanSeparator").style.width = "12px";
+        }
+        else {
+            changecss('.menuSeparator', 'width', '20px');
+            //document.getElementById("spanSeparator").style.width = "20px";
+        }
+
+        var param = new Array();
+
+        CallEditPreview();
+
+        function clear() {
+            var objImg = $('[src$="/images/Information_icon.gif"]');
+            for (i = 0; i < objImg.length; i++) {
+                $(objImg[i]).remove();
+            }
+            param = new Array();
+        }
+        // debugger;
+
+
+        function CallEditPreview() {
+            clear();
+            var objHf = $("[id$='_hfRunScript']");
+            if (objHf[0].value != "") {
+                var objChange = $("[aareasTag]");
+                if (objChange.length > 0) {
+                    var TempType = "";
+                    var i;
+                    for (i = 0; i < objChange.length; i++) {
+                        var content = objChange[i];
+                        var _type = $(content).attr('aareasTag').split('__');
+                        TempType = _type[0];
+                        var TempTag = "";
+                        var isRecursive = false;
+                        if (_type.length > 2)
+                            TempTag = _type[2];
+                        if (_type.length > 3)
+                            isRecursive = _type[3];
+                        var objSplit = _type[1].split(';');
+                        var hfModel = document.getElementById('ctl00_hfModelId');
+                        var hfSID = document.getElementById('ctl00_hfSID');
+                        var ajaxSCID = "<%= SID%>";
+                        if (hfSID.value != "0" && TempType == "SalesCenter") {
+                            ajaxSCID = hfSID.value;
+                        }
+                        else if (hfSID.value != "0" && TempType == "Models") {
+                            ajaxSCID = hfSID.value;
+                        }
+                        var objDomain = "<%=_domain%>";
+                        var objBackUrl = "<%= _247URL%>";
+                        if (objSplit.length > 1) {
+                            var j;
+                            for (j = 0; j < objSplit.length; j++) {
+                                var TemplateId = objSplit[j];
+                                PushValues(TemplateId, content, TempType, ajaxSCID, objDomain, objBackUrl, TempTag, isRecursive);
+                            }
+                        }
+                        else {
+                            PushValues(objSplit[0], content, TempType, ajaxSCID, objDomain, objBackUrl, TempTag, isRecursive);
+                        }
+                    }
+                    param.reverse();
+                    GetNextToolTip();
+                }
+            }
+        }
+        function PushValues(templateID, content, tempType, ajaxSCID, objDomain, objBackUrl, tempTag, isRecursive) {
+            var obj = new Object();
+            obj.TemplateID = templateID;
+            obj.Content = content;
+            obj.TempType = tempType;
+            obj.AjaxSCID = ajaxSCID;
+            obj.ObjDomain = objDomain;
+            obj.ObjBackUrl = objBackUrl;
+            obj.TempTag = tempTag;
+            obj.IsRecursive = isRecursive;
+            param.push(obj);
+        }
+
+        function GetNextToolTip() {
+            if (param.length != 0) {
+                var obj = param.pop();
+                GetToolTipAndrID(obj.TemplateID, obj.Content, obj.TempType, obj.AjaxSCID, obj.ObjDomain, obj.ObjBackUrl, obj.TempTag, obj.IsRecursive);
+            }
+        }
+        function GetToolTipAndrID(TemplateId, objControl, TempalteType, ajaxSCID, objDomain, BackUrl, TempTag, IsRecursive) {
+            var hfModel = document.getElementById('ctl00_hfModelId');
+            var hfSID = document.getElementById('ctl00_hfSID');
+            var url = "/AjaxPage.aspx?TempId=" + TemplateId + "&SCID=" + ajaxSCID + "&TempType=" + TempalteType + "&ModelId=" + hfModel.value;
+            $.get(url, {}, function(resposeText) {
+                var objMsg = resposeText.split('__');
+                var rid = objMsg[0];
+                var tooltip = objMsg[1];
+                var scid = "0";
+                if (TempalteType == "SalesCenter") {
+                    if ($(objControl).attr('sid')) {
+                        rid = $(objControl).attr('sid');
+                        scid = rid;
+                    }
+                    else {
+                        rid = hfSID.value;
+                        scid = hfSID.value;
+                    }
+                    
+                }
+                else if (hfSID.value != "0" && TempalteType == "Models") {
+                    scid = hfSID.value;
+                }
+                else {
+                    scid = "<%= _defaultSC %>";
+                }
+                GenerateControl(objControl, tooltip, rid, TemplateId, TempalteType, scid, BackUrl, TempTag, IsRecursive);
+                GetNextToolTip();
+            });
+        }
+        if (document.getElementById('ctl00_hfHideMenu').value == "1") {
+            document.getElementById('ctl00_dvHeader').style.display = "none";
+            document.getElementById('ctl00_dvFooter').style.display = "none";
+            document.getElementById('dvCopyright').style.display = "none";
+            document.getElementById('ctl00_dvContentBody').style.width = "535px";
+
+
+        }
+
+        function changecss(theClass, element, value) {
+            var cssRules;
+
+            var added = false;
+            for (var S = 0; S < document.styleSheets.length; S++) {
+
+                if (document.styleSheets[S]['rules']) {
+                    cssRules = 'rules';
+                } else if (document.styleSheets[S]['cssRules']) {
+                    cssRules = 'cssRules';
+                } else {
+                    //no rules found... browser unknown
+                }
+
+                for (var R = 0; R < document.styleSheets[S][cssRules].length; R++) {
+                    if (document.styleSheets[S][cssRules][R].selectorText == theClass) {
+                        if (document.styleSheets[S][cssRules][R].style[element]) {
+                            document.styleSheets[S][cssRules][R].style[element] = value;
+                            added = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        $(".dvMenu li").each(function() {
+            var text = $(this).find("a").text().trim();
+            if (text === 'ABOUT US') {
+                $('#dvSubMenu2').insertAfter($(this).find("a"));
+            }
+            if (text === 'APARTMENT RESOURCE') {
+                $('#dvSubMenu4').insertAfter($(this).find("a"));
+            }
+            if (text === 'ABOUT US' || text === 'APARTMENT RESOURCE') {
+                $(this).find("a").attr("aria-expanded", "false");
+                $(this).find("a").click(function(){
+            $(this).attr("aria-expanded", $(this).attr("aria-expanded") == "false");
+                                    if($(this).attr("aria-expanded") == "true"){
+                                        ShowSubMenu($(this)[0]);
+                                    }else{
+                                        HideAllSubMenu();
+                                    }
+    });
+    }
+    });
+    document.addEventListener('keydown', function(event){
+		if(event.key === "Escape"){
+			document.body.classList.add("removeHover");
+            HideAllSubMenu();
+		}
+	});
+	document.addEventListener('mousemove', function(event){
+		document.body.classList.remove("removeHover");
+	});
+        console.log('Loaded');
+    });
+        
+        
+    </script>
+    
+    <iframe id="ifrmStatus" class="displayNone" src="<%= _247URL%>/Marketing/LoginStatus.aspx?op=status&domain=<%= _domain%>" />
+    <iframe id="ifmBackEnd" class="displayNone" src="<%= _247URL%>/Marketing/GetFrameUrl.aspx?FrameUrl=<%= Server.UrlEncode(Request.Url.ToString())%>" />
+</body>
+</html>

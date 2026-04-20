@@ -1,0 +1,123 @@
+﻿.NewsTopSearchCriteria
+{
+    float: right;
+    width: 27%;
+    height: 66px;
+    @width: 27%;
+    @height: 66px;
+    padding-top:5px;        
+    background-color: #dcddde;
+}
+
+.newsGridItemText
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    vertical-align:top;
+    float:left;
+}
+.newsGridItemTextBold
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    vertical-align:top;
+    float:left;
+    /*font-weight:bold;*/
+}
+
+.newsGridLinkItemText
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    text-align: center; /*font-weight: bold;*/
+    cursor:pointer;
+}
+
+.newsGridLinkItemTextBold
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    text-align: center; /*font-weight: bold;*/
+    cursor:pointer;
+    /*font-weight:bold;*/
+}
+
+.NewsGridItemHeader
+{
+    font-family: Arial;
+    font-size: 7pt;
+    color: Gray;
+    text-decoration: none;
+    text-align: center;
+    background-color: #FFFFFF; /*font-weight: bold;*/
+}
+
+.tdNewsImage
+{
+    width: 160px;
+    height:95px;    
+}
+
+.divNewsImageS
+{
+	/*background-image:url('../images/ThumbnailS.JPG');*/
+	width:160px;
+	height:95px;
+	text-align:left;
+}
+.NewsImageS
+{
+	width:160px;
+	height:95px;
+	border:0px;
+	margin-top:2px;		
+	position:absolute;
+	cursor:pointer;
+}
+
+.NewsDetailsText
+{
+    float: left;
+    width: 98%;
+    height: 100%;    
+    vertical-align: top;
+    overflow: hidden;
+    font-size: #FONT_SIZE#;
+    font-family: #FONT_NAME#;
+    color: #FONT_COLOR#;
+    text-align: left;
+}
+
+
+.divNewsImagePopup
+{
+    display: none;
+    background-color: #FFFFFF;
+    border-color: Gray;
+    border-style: solid;
+    border-width: 1px;
+    z-index: 40000;
+    width: 620px;
+    position: fixed;
+    height: 440px;
+}
+.divNewsImagePopupInner
+{
+    height: 95%;
+    background-color: #FFFFFF;
+}
+.divNewsImagePopupClose
+{
+    cursor: pointer;
+    position: absolute;
+    left: 550px;
+    top: 415px;
+}

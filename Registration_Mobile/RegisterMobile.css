@@ -1,0 +1,516 @@
+﻿body
+{
+    /*padding-left: 191px;*/ /*padding-top: 50px;*/
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    margin: auto;
+    width: 100%; /*background-image: url('../images/background.png');*/
+    background-color: #FFFFFF;
+}
+.ContentPlaceHolder
+{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Container
+{
+    width: 320px;
+    margin: auto;
+    display: block;
+}
+.HeaderCSS
+{
+    width: 320px; /*position: fixed;*/ /*top: 0px;*/ /*z-index: 10000;*/ /*background-image: url("commonbaner.jpg");*/ /*background-repeat: repeat-x;*/ /* height: 73px; */ /*display: none;*/ /*margin-top:12px;*/
+}
+
+.DuplicateEmailDiv
+{
+    vertical-align: middle;
+    background-color: #FFFFFF;
+    color: #04B404;
+    text-align: center;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    z-index: 30001;
+}
+
+.DuplicateEmailMessage
+{
+    color: #FF8000;
+    width: 310px;
+    height: 26px;
+    display: none;
+    text-align: left;
+}
+
+.DuplicateEmailButton
+{
+    background-color: #FFFFFF;
+    text-align: center;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    width: 490px;
+    height: 30px;
+}
+
+.ErrorDiv
+{
+    vertical-align: middle;
+    background-color: #FFFFFF;
+    color: #04B404;
+    text-align: center;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    z-index: 30001;
+}
+
+.ErrorMessage
+{
+    color: #FF8000;
+    width: 310px;
+    height: 26px;
+    display: none; /*margin-left: 205px;*/
+    text-align: left;
+}
+.ErrorButton
+{
+    background-color: #FFFFFF;
+    text-align: center;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    width: 490px;
+    height: 30px;
+}
+
+.SuccessDiv
+{
+    vertical-align: middle;
+    background-color: #FFFFFF;
+    color: #04B404;
+    text-align: center;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    z-index: 30001;
+}
+.SuccessMessage
+{
+    color: #FF8000;
+    width: 310px;
+    height: 26px;
+    display: none;
+    text-align: left;
+}
+.SuccessButton
+{
+    background-color: #FFFFFF;
+    text-align: center;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    width: 490px;
+    height: 30px;
+}
+
+.RequiredDiv
+{
+    vertical-align: middle;
+    background-color: #FFFFFF;
+    color: #04B404;
+    text-align: center;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    z-index: 30001;
+}
+
+.RequiredMessage
+{
+    color: #FF8000;
+    width: 310px;
+    height: 26px;
+    display: none;
+    text-align: left;
+}
+
+.RequiredButton
+{
+    background-color: #FFFFFF;
+    text-align: center;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    width: 490px;
+    height: 30px;
+}
+
+.IncorrectCaptchaDiv
+{
+    vertical-align: middle;
+    background-color: #FFFFFF;
+    color: #04B404;
+    text-align: center;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    z-index: 30001;
+}
+
+.IncorrectCaptchaMessage
+{
+    color: #FF8000;
+    width: 310px;
+    height: 26px;
+    display: none;
+    text-align: left;
+}
+
+.IncorrectCaptchaButton
+{
+    background-color: #FFFFFF;
+    text-align: center;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    width: 490px;
+    height: 30px;
+}
+
+.InvalidInputDiv
+{
+    vertical-align: middle;
+    background-color: #FFFFFF;
+    color: #04B404;
+    text-align: center;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    z-index: 30001;
+}
+
+.InvalidInputMessage
+{
+    color: #FF8000;
+    width: 310px;
+    height: 26px;
+    display: none; /*margin-left: 205px;*/
+    text-align: left;
+}
+
+.InvalidInputButton
+{
+    background-color: #FFFFFF;
+    text-align: center;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    width: 490px;
+    height: 30px;
+}
+
+
+.Contents
+{
+    padding-top: 0px;
+    padding-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.Facebook
+{
+    width: 425px; /*text-align: center;*/
+    margin-left: 205px;
+    margin-bottom: 5px;
+}
+.LabelColumn
+{
+    /*float: left;#000000 305*/
+    width: 279px;
+    color: #647482;
+    font-size: 10pt; /*font-family: "Helvetica Neue" ,HelveticaNeue, "Helvetica-Neue" ,Helvetica,sans-serif;*/
+    text-align: left;
+    padding-right: 5px; /*background-color: #F4F3F1;*/
+    height: 12px; /*background-color: #F4F3F1;*/ /*border: solid 1px #DCDDDF;     vertical-align: middle;*/
+    padding-left: 7px;
+    font-weight: bold;
+    vertical-align: middle;
+    display: none;
+    background-color: rgb(244, 243, 241);
+}
+
+.LabelColumnBig
+{
+    float: left;
+    width: 215px;
+    color: #000000;
+    font-size: 10pt; /*font-family: "Helvetica Neue" ,HelveticaNeue, "Helvetica-Neue" ,Helvetica,sans-serif;*/
+    text-align: right;
+    padding-right: 5px; /*background-color: #F4F3F1;*/
+    height: 64px; /*background-color: #F4F3F1;*/ /*border: solid 1px #DCDDDF;     vertical-align: middle;*/
+}
+
+.ControlColumn
+{
+    float: left;
+    width: 275px; /*height: 35px;*/
+    vertical-align: middle; /*border: solid 1px #DCDDDF;*/ /*text-align: left;290px*/
+}
+
+.ControlColumnBig
+{
+    float: left;
+    width: 305px;
+    height: 70px;
+    vertical-align: middle;
+}
+
+.ControlColumn input
+{
+    height: 48px;
+    width: 265px; /*border: solid 1px white;285px*/
+    vertical-align: middle;
+    font-size: 10pt; /*font-family: "Helvetica Neue" ,HelveticaNeue, "Helvetica-Neue" ,Helvetica,sans-serif;*/ /*padding-left:7px;*/
+    border: 0px; /* -webkit-appearance: none;*/
+}
+.ControlColumn textarea
+{
+    height: 60px;
+    width: 285px; /*border: solid 1px white;*/
+    vertical-align: middle;
+    font-size: 10pt; /*font-family: "Helvetica Neue" ,HelveticaNeue, "Helvetica-Neue" ,Helvetica,sans-serif;*/ /*padding-left:7px;*/
+}
+
+.ControlColumnBig textarea
+{
+    height: 60px;
+    width: 210px; /*border: solid 1px white;*/
+    vertical-align: middle;
+    font-size: 10pt; /*font-family: "Helvetica Neue" ,HelveticaNeue, "Helvetica-Neue" ,Helvetica,sans-serif;*/ /*padding-left:7px;*/
+}
+.ControlColumn select
+{
+    height: 50px;
+    width: 291px; /*border: solid 0px #ffffff;*/
+    font-size: 10pt; /*font-family: 'Helvetica Neue' ,HelveticaNeue, 'Helvetica-Neue' ,Helvetica,sans-serif;*/ /*padding: 5px;*/
+    line-height: 50px; /*-webkit-appearance: none;     line-height: 20px;         border: 1px solid #555;     background: #fff;*/
+}
+
+.ValidationColumn
+{
+    color: Red; /*display: none;*/
+    float: right;
+    width: 10px;
+}
+.ContentRow
+{
+    display: none; /*height: 30px;311px*/
+    clear: left;
+    border: solid 1px #DCDDDF;
+    width: 291px;
+}
+
+.SurveyContentRow
+{
+    /*height: 30px;*/
+    clear: left;
+    display: none;
+    border: solid 1px #DCDDDF;
+    width: 291px;
+}
+.Submit
+{
+    /*position: fixed;*/
+    bottom: 0px;
+    height: 40px;
+    width: 300px; /*background-color: gray;*/
+    z-index: 10000; /*padding-left: 220px;*/
+    clear: left;
+    text-align: left;
+    margin-left: 15px;
+}
+.Submit input
+{
+    position: static;
+    border: solid 2px #FFFFFF;
+    font-size: 14px;
+    color: White;
+    font-weight: bold;
+    height: 30px;
+    width: 80px;
+    float: left;
+    background-color: #DE8144;
+    cursor: pointer;
+}
+
+.ModalWindow
+{
+    position: absolute;
+    z-index: 99999;
+    background-color: #000;
+    display: none;
+}
+
+.CaptchaColumn
+{
+    float: left;
+    width: 604px;
+    height: 35px;
+    vertical-align: middle;
+    border: solid 1px #DCDDDF;
+}
+
+.CaptchaColumn input
+{
+    height: 30px;
+    width: 450px;
+    border: solid 1px white;
+    vertical-align: middle;
+    font-size: 13pt;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    padding-left: 7px;
+    float: left;
+}
+
+.hfVisible
+{
+    background-color: #070707;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    -moz-opacity: 0.3;
+    z-index: 30000;
+    display: block;
+}
+
+.hfHide
+{
+    display: none;
+}
+
+.FinalMessage
+{
+    color: #FF8000;
+    font-family: Verdana,Myriad Pro, Myriad, Helvetica, Arial, Sans-Serif;
+    margin-top: 100px;
+    width: 310px;
+    height: 70px;
+    text-align: center;
+    vertical-align: middle;
+    display: none;
+    float: left;
+}
+
+.LeftColumn
+{
+    /*border-left: solid 1px White;*/ /*width: 515px;*/
+    width: 479px;
+    float: left;
+    text-align: center;
+    height: 300px;
+}
+
+.RightColumn
+{
+    /*border-top: solid 1px White;*/ /*width: 515px;480px*/
+    width: 320px;
+    float: left; /*  height: 308px; */
+    text-align: left;
+}
+
+.Devider
+{
+    float: left;
+    width: 1px;
+    background-color: #07528d;
+    height: 498px;
+}
+
+.ShortDesc
+{
+    /*display:none;*/
+    text-align: center;
+    color: #2E3192;
+    margin-top: 50px;
+    line-height: 31px;
+    font-weight: bold;
+    word-spacing: 2px;
+    font-size: 15px;
+}
+
+.dvPriceDetails
+{
+    padding-left: 19px;
+    width: 358px;
+    margin: auto;
+    padding: auto;
+    text-align: left;
+    font-weight: normal;
+    font-size: 12px;
+}
+.Phone
+{
+    display: none;
+    margin-top: 90px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.Email
+{
+    display: none;
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.Address
+{
+    display: none;
+    margin-top: 35px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+.ControlRow
+{
+    display: inline-block;
+}
+.BottomError
+{
+    width: 283px; /*color: #647482;*/
+    font-size: 10pt;
+    text-align: left;
+    color: Red; /*padding-right: 5px;*/ /*background-color: #F4F3F1;*/
+    height: 20px; /*background-color: #FBEFEF; /*border: solid 1px #DCDDDF;*/
+    vertical-align: middle;
+    height: 20px;
+    clear: left;
+    display: none;
+    padding-left: 7px;
+    margin-left: 1px;
+}
+
+.ErrorInput
+{
+    height: 25px;
+    width: 285px;
+    border: 0;
+    vertical-align: middle; /*-webkit-appearance: none;*/
+    font-size: 13pt;
+    padding-left: 7px;
+    background-color: #FBEFEF;
+}
+
+.ContentRowError
+{
+    display: none; /*height: 35px;*/
+    clear: left;
+    border: solid 1px #DCDDDF;
+    width: 291px;
+    background-color: #FBEFEF;
+}

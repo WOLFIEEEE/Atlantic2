@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://bestrentnj.247salescenter.com/Webservice/247WS-Survey.asmx?wsdl" docRef="http://bestrentnj.247salescenter.com/Webservice/247WS-Survey.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://bestrentnj.247salescenter.com/Webservice/247WS-Survey.asmx" xmlns:q1="http://aareas.com/" binding="q1:SurveySoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://bestrentnj.247salescenter.com/Webservice/247WS-Survey.asmx" xmlns:q2="http://aareas.com/" binding="q2:SurveySoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

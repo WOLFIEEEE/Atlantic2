@@ -1,0 +1,1188 @@
+.hfdivNavigatorBar
+{
+    /*width:860px;*/
+    width: 100%;
+    height: 24px;
+    position: relative; /*left:9px; 	top:6px; 	/*background-image:url('../images/navbar.gif');*/
+    top: 0px;    
+    background-position: center;
+    color: White;
+    line-height: 24px;
+}
+td div:last-child {
+    display: block !important;
+}
+.hfNavigatorButton
+{
+    color: #333333;
+    font-family: Arial, Verdana;
+    font-size: 8pt;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    top: -7px;
+    cursor: pointer;
+    text-decoration: none;
+    color: White;
+}
+
+.hfLabel
+{
+    /*font-family: Verdana,Arial;
+    font-size: 7pt;
+    color: #333333;*/
+    font-size: #FONT_SIZE#;
+    font-family: #FONT_NAME#;
+    color: #FONT_COLOR#;
+}
+.hfAddressDirection
+{
+   font-family: Verdana,Arial;
+    font-size: 7pt;
+    color: Gray;    
+}
+
+.hfInfoWindowMainDiv
+{
+    padding-left:15px; 
+    /*padding-top:5px; 
+    padding-bottom:5px;*/ 
+    width:190px;        
+}
+.hfInfoWindowCloseDiv
+{
+    position:absolute; 
+    top:5px; 
+    @top:10px; 
+    left:190px;    
+    width:15px;
+    height:15px;
+    text-align:center;
+    font-size:8pt;
+    font-weight:bold;
+    color:#LINK_COLOR#;
+    cursor:pointer;
+    font-family:Arial Black;
+}
+.hfInfoWindowClose
+{
+    color:#LINK_COLOR#;
+    font-family:Verdana;
+    font-size:10pt;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.hfLabelColor
+{
+    color:White;
+    font-size:7pt;
+    font-family:Verdana,Arial;    
+}
+.hfLabelLink
+{
+    font-family: Verdana,Arial;
+    font-size: 7pt;
+    color: #333333;
+    text-decoration: underline;
+    cursor: hand;
+}
+
+.hfLabelBold
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    font-weight: bold;
+    color: #LINK_COLOR#; 
+    width:175px; 
+    white-space:pre-wrap;
+}
+.hfLabelHeader
+{
+    font-family: Arial;
+    font-size: 13pt;
+    color: #5a5a5c;
+    text-transform: uppercase;
+}
+
+.hfChkRad
+{
+    padding: 0px 7px 7px 0px;
+    font-family: Verdana,Arial;
+    font-size: 7pt;
+    color: #333333;
+    border: 0px;
+    margin: 0px;
+}
+
+
+.hfTxtInput
+{
+    padding: 0px;
+    width: 70px;
+    font-family: Verdana,Arial;
+    font-size: 7pt;
+    color: Gray;
+    margin: 0px;
+}
+.hfdivButtonBar
+{
+    /*position:absolute; 	left:462px; 	top:430px;*/ /*position:relative;*/
+    width: 1200px;
+    height: 19px;
+    vertical-align: middle; /*background-image:url('../images/small-nav-buttons.gif');*/
+}
+.hfButton
+{
+    font-family: Verdana,Arial;
+    font-size: 7pt;
+    color: White;
+    height: 12px;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    text-indent: 0px;
+    /*background-color: Gray;*/
+    background-color:#LINK_COLOR#;
+}
+.hfLinkButton
+{
+    font-family: Verdana,Arial;
+    font-size: 7pt;
+    color: White;
+    text-decoration: none;
+}
+.hfdivLocation
+{
+    position: absolute;
+    top: 0px;
+    width: 400px;
+    margin-left: 10px;
+    font-family: Verdana,Arial;
+    font-size: 7pt;
+    color: #333333;
+    z-index: 20001;
+}
+.hfLocationLink
+{
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 8pt;
+    color: #333333;
+    text-decoration: none;
+}
+.hfdivSelect
+{
+    position: absolute;
+    top: 15px; /*width:100px;*/
+    padding: 2px;
+    overflow: auto;
+    background-color: #eeeeee;
+    border-color: #C0C0C0;
+    border-style: solid solid solid solid;
+    border-width: 1px;
+    font-family: Verdana,Arial;
+    font-size: 7pt;
+    visibility: hidden; /*display:none;*/
+    z-index: 20001;
+}
+.hfdivSearch
+{
+    position: relative;
+    min-height:640px;
+    height: 100%; /*width: 860px;*/
+    width: 100%;
+    overflow: hidden; /*	background-color:#eeeeee;*/
+}
+.hfdivCoreSearch
+{
+    /*position:absolute;*/
+    position: relative; /*top:330px;*/
+    left: 0px;
+    width: 100%;
+    height: 473px;
+}
+.hfdivOptionB
+{
+    /*position:absolute;*/
+    position: relative;
+    top: 0px;
+    width: 460px;
+    height: 462px;
+    background-color: white;
+    opacity: 0.9;
+    filter: alpha(opacity=90); /*visibility:hidden;*/
+    display: none;
+}
+.hfdivOption
+{
+    /*position:absolute;*/
+    position: relative; /*top:426px;*/
+    top: 2px;
+    left: 8px; /*width:462px;*/
+    width: 100%;
+    display: none;
+}
+.hfOptionTable
+{
+    padding: 0px;
+    margin: 5px auto 0px 0px;
+    border-spacing: 0px;
+    border-width: 0px;
+    border-collapse: collapse;
+}
+.hfOptionCell
+{
+    padding: 0px;
+    margin: 0px;
+    font-size: #FONT_SIZE#;
+    font-family: #FONT_NAME#;
+    color: #FONT_COLOR#;    
+    border-spacing: 0px;
+    border-width: 0px;
+    vertical-align: top;
+    
+    padding-left: 5px; /*    font-weight: bold;*/
+}
+.hfFieldset
+{
+    border-width: 1px;
+    border-color: #C0C0C0;
+    border-style: solid none none none;
+}
+.hfFieldset2
+{
+    border-width: 1px;
+    border-color: #C0C0C0;
+    border-style: solid solid solid solid;
+}
+.hfdivMapBack
+{
+    /*position:absolute;*/
+    position: relative;
+    top: 5px;
+    left: 0px; /*background-image:url('../images/GMapS.JPG');*/ /*width:462px; 	height:336px;*/
+    vertical-align: top;
+    width: 250px;
+    height: 303px;
+    z-index: 0;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.hfdivMapBackFull
+{
+    position: absolute;
+    top: 0px;
+    background-image: url('../images/GMapL.JPG'); /*width:866px;*/
+    width: 100%;
+    height: 451px;
+    z-index: 20000;
+}
+
+.hfdivMap
+{
+    /*width:433px;     height:293px;*/
+    position: absolute;
+    min-width: 250px;
+    width: 250px;
+    height: 396px;
+    top: 20px; /*border-width:2px; 	/*border-style:solid; 	border-color:Blue;*/ /*margin-top:24px;*/ /*margin-left:12px;*/
+    border-left: solid 1px #dcdddf;
+    border-right: solid 1px #dcdddf;
+    border-bottom: solid 1px #dcdddf;
+}
+
+.hfdivMapFull
+{
+    /*width:837px;*/
+    width: 100%;
+    height: 408px;
+    border: 0px;
+    margin-top: 24px;
+    margin-left: 12px;
+}
+
+.hfdivButton
+{
+    position: absolute;
+    top: 244px;
+}
+.hfdivButtonCS
+{
+    position: absolute;
+    top: 680px;
+}
+.hfdivGrid
+{
+    /*position:absolute;*/
+    clear: both;
+    position: relative; /*left:462px;*/
+    top: 0px; /*height: 420px;*/ /*width: 398px;*/
+    width: 100%; /*scrollbar-face-color: #909090;     scrollbar-arrow-color: #FFFFFF;     scrollbar-track-color: #B0B0B0;     scrollbar-shadow-color: rgb(100,100,100);     scrollbar-highlight-color: rgb(100,100,100);     scrollbar-3dlight-color: #E0E0E0;     scrollbar-darkshadow-color: #606060;*/
+    min-height:410px;
+}
+
+.hfdivAvailability
+{
+    position: relative;
+    height: 550px;
+    width: 100%;
+    overflow: auto; /*border-color: #C0C0C0; 	border-style: solid none solid solid; 	border-width: 1px;*/
+    scrollbar-face-color: #909090;
+    scrollbar-arrow-color: #FFFFFF;
+    scrollbar-track-color: #B0B0B0;
+    scrollbar-shadow-color: rgb(100,100,100);
+    scrollbar-highlight-color: rgb(100,100,100);
+    scrollbar-3dlight-color: #E0E0E0;
+    scrollbar-darkshadow-color: #606060;
+}
+
+.hfGridTable
+{
+    /*width:376px;*/
+    width: 100%; /*border-style: solid; 	border-width:1px; 	border-color:#e7e7e9;*/ /*line-height:10px;*/ /*margin:2px;*/
+}
+.hfGridTableInTable
+{
+    border-style: none;
+}
+.hfGridTable2
+{
+    width: 100%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: Gray;
+    line-height: 10px;
+}
+
+
+.gridHeadings
+{
+    color: black;
+    font-family: Verdana, Arial;
+    font-size: 7pt;
+    font-weight: bold;
+    text-align: center;
+    height: 30px;
+    background-color: #444444;
+}
+
+.AlternatingItemStyle
+{
+    background-color: #e7e7e7;
+    color: #333333;
+    font-family: Verdana, Arial;
+    font-size: 7pt;
+    text-align: center;
+}
+.SelectedItemStyle
+{
+    background-color: #99cccc;
+    color: #4d4d4e;
+    font-family: Verdana, Arial;
+    font-size: 7pt;
+    text-align: center;
+}
+.ItemStyle
+{
+    background-color: White;
+    color: #4d4d4e;
+    font-family: Verdana, Arial;
+    font-size: 7pt;
+    text-align: center;
+}
+
+.hfProgress
+{
+    background-color: #070707;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;    
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    -moz-opacity: 0.3;
+    z-index: 30000;
+    text-align: center;
+    vertical-align: middle;
+    position:fixed;  
+    height:100%;
+    width:100%;  
+}
+
+
+.hfHidden
+{
+    visibility: hidden;
+    display: none;
+}
+.hfifrmSave
+{
+    border-style: none;
+    position: absolute;
+    width: 880px;
+    top: 236px;
+    height: 496px;
+    z-index: 30000;
+}
+
+.hfChkLabel
+{
+    font-family: Verdana,Arial;
+    font-size: 7pt;
+    color: #333333;
+    vertical-align: middle;
+}
+
+.divButtonPanelBackground
+{
+    float: left;
+    text-align: center; /*background-image:url('../images/small-nav-buttons.gif');*/
+    color: #00a9df;
+    height: 18px;
+    line-height: 18px;
+    width: 70px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: Gray;
+    background-color: #FFFFFF;
+    margin-left: 6px; /*margin-top:8px;*/
+    margin-top:0px;
+    @margin-top:-6px;
+}
+
+.divButtonPanelBackground1
+{    
+    text-align: center; /*background-image:url('../images/small-nav-buttons.gif');*/
+    color: #00a9df;
+    height: 18px;
+    line-height: 18px;
+    width: 70px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: Gray;
+    background-color: #FFFFFF; /*margin-left:8px;*/ /* margin-top:8px;*/
+   margin:auto;
+}
+
+.bottonNavigatebar
+{
+    font-family: Arial;
+    font-size: 8pt;
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    font-weight: normal;   
+}
+
+.gridItemText
+{
+     font-size: #FONT_SIZE#;
+    /*font-family: #FONT_NAME#;*/
+    color: #FONT_COLOR#;    
+    font-family: Arial,Verdana;    
+    text-decoration: none;
+    text-align: center; /*font-weight: bold;*/
+}
+.gridItemHeader
+{
+    font-family: Verdana;
+    font-size: 7pt;
+    /*color: Gray;*/
+    color: #FONT_COLOR#; 
+    text-decoration: none;
+    text-align: center;
+    background-color: #dcdddf; /*font-weight: bold;*/
+}
+
+.gridItemHeaderLink
+{
+    font-family: Verdana;
+    font-size: 7pt;
+    color: #LINK_COLOR#;
+    cursor:pointer;
+    text-decoration: none;
+    text-align: center;
+    background-color: #dcdddf; /*font-weight: bold;*/
+}
+
+.communityBoxText
+{
+    padding-left: 5px;
+    height: 14px;
+}
+
+.communityInfoLabel
+{
+    font-family: Arial,Verdana;
+    font-size: 9pt;
+    color: black;
+    text-decoration: none;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+
+.gridHeaderStyle
+{
+    font-family: Garamond,Verdana,Arial;
+    font-size: 9pt;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+.SearchOptionControl
+{
+    padding-left: 10px;
+}
+
+.SearchOptionCheckbox
+{
+    padding-left: 0px; /*width:100%;*/
+    clear: both;
+}
+
+.gridLink
+{
+    font-family: Verdana;
+    font-size: 7pt; /*font-weight:bold;*/
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 10px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.searchResultLabel
+{
+    float: left;
+    font-size: 8pt;
+    font-family: Arial,Verdana;
+    width: 370px;
+    margin-left: 240px;
+    font-weight: bold;
+}
+
+.divButtonImage
+{
+    float: left;
+    width: 30px;
+    padding-top: 0px; @padding-top:2px;
+cursor:pointer;
+}
+
+.divButtonImageClear
+{
+    float: left;
+    width: 25px;
+    padding-top: 0px; @padding-top:2px
+}
+
+.communityInfoStyle
+{
+    padding-left: 10px;
+    height: 13px;
+}
+
+.communityNameStyle
+{
+    font-size: 14pt;
+    font-family: Arial;
+    font-weight: normal;
+    color: #068ad4;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.communityNameStyleSub
+{
+    font-size: 7pt;
+    font-family: Arial;
+    font-weight: normal;
+    color: #068ad4;
+    text-transform: uppercase;
+}
+
+.communityNameStyleSubLink
+{
+    font-size: 7pt;
+    font-family: Arial;
+    font-weight: normal;
+    color: #068ad4;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#divTopLeftPanel
+{
+    float: left;
+    width: 71%; /*height: 530px; */ /*border-style: solid; 	border-width: 1px;  	border-color: #00a9df;*/
+}
+
+#divTopPanel
+{
+    position: relative;
+    width: 100%;
+}
+
+.divModels
+{
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    margin-top: -3px;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: #e7e7e9;
+}
+
+#divTopRightPanel
+{
+    float: left;
+    height: 580px;
+    width: 253;
+    vertical-align: top;
+}
+
+#divTopRightPanelInner
+{
+    float: left;
+    width: 253px;
+    height: 530px; /*border-style: solid; 	border-width: 1px;  	border-color: #00a9df;*/
+    /*position: fixed;*/
+}
+
+.spanNavigatorBar
+{
+    color: White;
+    font-size: 8pt;
+    font-family: Arial,Verdana;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#imgSearchoption
+{
+    position: relative;
+    top: 3px;
+    padding-left: 112px;
+}
+
+.divSeparator
+{
+    height: 10px;
+    width: 100%;
+    line-height: 60px;
+    float: left;
+}
+
+.divRightPanelButton
+{
+    width: 70px;
+    vertical-align: baseline;
+    text-align: center;
+}
+
+.divCommunityHomeButton
+{
+    width: 120px;
+    vertical-align: top;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.divCommunityClearButton
+{
+    width: 130px;
+    vertical-align: top;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.divBottonPanel
+{
+    width: 100%; /*border-style: solid;  	border-width: 1px;     border-color: #00a9df;*/
+}
+
+.divCommunityHeartsButton
+{
+    width: 140px;
+    vertical-align: top;
+    text-align: left;
+    padding-left: 5px;
+}
+
+#divSeparator
+{
+    width: 7px;
+    float: left;
+}
+
+.divRadioButton
+{
+    text-align: left;
+    float: left;
+    width: 46%;
+    margin-left: 2px;
+}
+
+.divRightpanelSpaceHolder
+{
+    height: 5px;
+}
+
+#imgMoreoption
+{
+    position: relative;
+    top: 3px;
+    padding-left: 80px;
+}
+
+.divInterestRate
+{
+    visibility: hidden;
+}
+
+.divHorizontalPlaceHolder
+{
+    float: left;
+    width: 10px;
+}
+
+.divWidthFull
+{
+    width: 100%;
+}
+
+.divMiddleAlign
+{
+    width: 100%; /*margin:0 auto 0 auto;*/
+}
+
+.divVerticalPlaceHolder
+{
+    height: 5px;
+}
+
+.divAlignleft
+{
+    float: left;
+}
+
+.cursorPointer
+{
+    cursor: pointer;
+}
+
+.tdLeft
+{
+    width: 25%;
+    vertical-align: top;
+}
+
+.communityInfo
+{
+    height: 28px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: #e7e7e9;
+}
+
+.tdImage
+{
+    width: 95px;
+    padding-left: 5px;
+}
+
+.scIdMarker
+{
+    position: relative;
+    top: -28px; @top:-30px;
+left:2px;
+text-align:center;
+width:14px;
+cursor:pointer;
+color:White;
+font-size:7pt;
+}
+
+.markerImage
+{
+    position: relative;
+    top: 4px;
+    cursor: pointer;
+}
+
+.communityInfo1
+{
+    height: 16px;
+    padding-left: 5px;
+}
+
+.communityInfo2
+{
+    height: 20px;
+    padding-left: 5px;
+}
+
+.communityInfo3
+{
+    height: 20px;
+}
+
+.tdCommunityInfo
+{
+    width: 480px;
+}
+
+.tdMarker
+{
+    width: 10%;
+}
+
+.tdCommunityInfoGrid
+{
+    width: 75%;
+    vertical-align: top;
+}
+
+.communityInfoSpacer
+{
+    height: 2px;
+}
+
+.searchImageDiv1
+{
+    padding-left: 28px;
+    margin-top: 3px;
+}
+
+.searchImageDiv2
+{
+    float: left;
+    width: 5px;
+}
+
+.paddingleft10px
+{
+    padding-left: 10px;
+}
+.hfdivAvailabilityNew
+{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /*border-color: #C0C0C0; 	border-style: solid none solid solid; 	border-width: 1px;*/
+    scrollbar-face-color: #909090;
+    scrollbar-arrow-color: #FFFFFF;
+    scrollbar-track-color: #B0B0B0;
+    scrollbar-shadow-color: rgb(100,100,100);
+    scrollbar-highlight-color: rgb(100,100,100);
+    scrollbar-3dlight-color: #E0E0E0;
+    scrollbar-darkshadow-color: #606060;
+}
+.hfTableMainNew
+{
+    margin-top: 4px;
+    margin-left: 6px;
+    width: 954px;
+    height: 430px;
+}
+
+.collapsExpandeImage
+{
+    padding-left: 740px;
+}
+
+.textbox
+{
+    padding: 0px;
+    font-family: Arial, Verdana; /*color: #d6d6d6;*/
+    color: #848686;
+    margin: 0px;
+    font-size: 12px;
+}
+
+.regularTextbox
+{
+    padding: 0px;
+    font-family: Arial, Verdana;
+    color: #000000;
+    margin: 0px;
+    font-size: 12px;
+}
+
+.gridItemHiddenText
+{
+    display: none;
+}
+
+.textboxHeader
+{
+    font-family: Verdana,Arial;
+    font-size: 10px;
+    font-weight: bold;
+    color: #333333;
+    border: 0px;
+    margin: 0px;
+}
+.homeTypePanel
+{
+    padding-left: 2px;
+    font-family: Verdana,Arial;
+    font-size: 7pt;
+    color: #333333;
+    border: 0px;
+}
+
+.txtBedroomMin
+{
+    margin: 0px 0px 2px;
+}
+
+.txtBathroomMin
+{
+    margin: 0px 0px 2px;
+}
+
+.txtSqftMin
+{
+    margin: 0px 0px 2px;
+}
+
+.txtStoriesMin
+{
+    margin: 0px 0px 2px;
+}
+
+.txtGarageMin
+{
+    margin: 0px 0px 2px 20px;
+}
+
+.txtGarageMax
+{
+    margin: 0px 0px 2px 20px;
+}
+
+.lblGarageHeader
+{
+    margin-left: 20px;
+}
+
+.dvGarage
+{
+    float: left;
+    width: 90px;
+}
+
+.dvStories
+{
+    float: left;
+    width: 75px;
+}
+
+.dvSQFT
+{
+    float: left;
+    width: 60px;
+    height: 60px;
+}
+
+.dvBathroom
+{
+    float: left;
+    width: 60px;
+}
+
+.dvBedroom
+{
+    float: left;
+    width: 60px;
+}
+
+.txtPriceMin
+{
+    margin: 0px 0px 2px;
+}
+
+.txtMonthlyPriceMin
+{
+    margin: 0px 0px 2px; @margin:0px0px2px-15px;
+}
+
+.txtMonthlyPriceMax
+{ @margin-left:-15px;
+}
+
+.txtInterestRate
+{
+    margin: 0px 0px 2px;
+}
+
+.txtYearofloan
+{
+    margin: 0px 0px 2px 19px;
+}
+
+.hrColor
+{
+    color: #d6d6d6;
+}
+
+.displayNone
+{
+    display: none;
+}
+#dvPrice
+{
+    float: left;
+    width: 90px;
+}
+
+#monthlyPayment
+{
+    float: left;
+    width: 100px;
+    margin-left: 15px;
+}
+
+#dvSpacer
+{
+    clear: both; @clear:none;
+}
+
+#dvHomeSearch
+{
+    clear: both; @padding-top:100px;
+}
+
+
+.communiyOptions
+{
+    padding-top: 3px;
+    font-size: 10pt;
+    border-spacing: 0px;
+    border-width: 0px;
+    vertical-align: top;
+}
+.NewSearchDiv
+{
+    height: 215px;
+    width: 252px;
+    background-color: #dcdddf;
+}
+.MapUpperDiv
+{
+    height: 20px;
+    line-height: 20px;
+    width: 100%;
+    background-color: #dcdddf;
+    border-left: solid 1px #dcdddf;
+    border-right: solid 1px #dcdddf;
+    border-top: solid 1px #dcdddf;
+}
+.DropDownStyle
+{
+    font-family: Arial;
+    font-size: 10pt;
+    color: #000000;
+    border-left: solid 1px Gray;
+    border-right: solid 1px Gray;
+    border-bottom: solid 1px Gray;
+    border-top: solid 1px Gray;
+}
+.DropDownStyle1
+{
+    font-family: Arial;
+    font-size: 7pt;
+    color: #626262;
+}
+.gridLinkFav
+{
+    font-family: Verdana;
+    font-size: 7pt; /*font-weight:bold;*/
+    color: #LINK_COLOR#;
+    text-decoration: none;        
+    font-weight:bold;
+}
+.gridItemTextPrice
+{
+    font-family: Arial,Verdana;
+    font-size: 10pt;
+    /*color: Gray;*/
+    color: #FONT_COLOR#;
+    text-decoration: none;
+    text-align: center; /*font-weight: bold;*/
+}
+.SalesCenterNameLink
+{
+    text-decoration: none; 
+    display:inline; 
+    cursor:pointer; 
+    /*color: #00a9df; */
+    color:#LINK_COLOR#;
+    font-size: 7pt;    
+}
+.MoreLessLink
+{
+    text-decoration: none;
+     display:inline; 
+     cursor:pointer; 
+     /*color: #00a9df; */
+     color:#LINK_COLOR#;
+     font-size: 7pt;
+}
+.SearchGridSCName
+{
+    cursor:pointer; 
+    display:inline;
+    text-decoration: underline;
+    font-size: 7pt; 
+    color:#LINK_COLOR#; 
+    text-transform: uppercase;
+}
+.SearchGridSCInfo
+{    
+    text-decoration: none;     
+    cursor:default;
+    display:inline-block;     
+    color: #FONT_COLOR#;
+}
+.SearchGridPhoneInfo
+{
+    display:inline; 
+    text-decoration: none; 
+    font-size: 7pt;     
+    text-transform: uppercase;      
+    color: #FONT_COLOR#;    
+}
+.SearchModeText
+{
+    /*color: Gray;*/
+    color: #FONT_COLOR#;    
+    font-family: Arial;
+    font-size: 7pt;
+}
+.GridHeaderTitleText
+{    
+    height: 20px; 
+    background-color: #dcdddf; 
+    font-family: Arial;
+    font-size: 8pt; 
+    line-height: 20px; 
+    /*color: #606060; */
+    color: #FONT_COLOR#;
+    position: relative; 
+    padding-left: 5px;            
+}
+.NoResultFoundText
+{
+    /*color: #00A9DF;*/
+    color: #FONT_COLOR#;
+    font-weight:bold;
+    font-family:Arial;
+}

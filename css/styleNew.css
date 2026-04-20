@@ -1,0 +1,553 @@
+﻿body {
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.item-list li {
+    margin: 0 5px;
+}
+
+.CommunitySalesFacebookTwitterIntegrationInner ul {
+    padding: 0;
+    margin: 0;
+}
+
+#ctl00_ContentPlaceHolder1_panPhoneoffHours ul {
+    padding: 0;
+    */ list-style: none;
+    margin: 0;
+}
+
+#ctl00_ContentPlaceHolder1_panPhoneoffHours ul li {
+    width: 100%;
+    list-style
+}
+
+.CommunitySalesFacebookTwitterIntegrationInner li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.item-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item-list h2 {
+    margin: 0;
+}
+
+.skip-to-content {
+    border: 1px solid #000;
+    color: #000;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: inline-block;
+    position: absolute;
+    left: -99em;
+    top: 5px;
+    transition: .3s all;
+}
+
+.skip-to-content:focus {
+    left: 20px;
+}
+
+A:active {
+    text-decoration: none;
+}
+
+.menuItem font {
+    color: #A36A00;
+}
+
+.menuItem font {
+    color: #A36A00;
+}
+
+*:focus {
+    outline: 1px solid #000 !important;
+}
+
+*:focus img {
+    border: 2px solid #000 !important;
+}
+
+.dvMain {
+    margin: 0 auto 0 auto;
+    max-width: 975px;
+    min-width: 975px;
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer ul li {
+    display: inline-block;
+    border-right: 1px solid #294f98;
+    padding-right: 5px;
+}
+
+.dvHeader {
+    vertical-align: top;
+    width: 970px;
+    /*height:86px;*/
+    height: 30px;
+    line-height: 30px;
+}
+
+.dvHeaderSpace {
+    clear: both;
+    position: relative;
+    width: 100%;
+    height: 11px;
+}
+
+.dvBottomMenuSpace {
+    clear: both;
+    position: relative;
+    width: 100%;
+    height: 10px;
+}
+
+.logoCompany {
+    position: relative;
+    float: left;
+    padding-left: 0px;
+    line-height: 64px;
+}
+
+.loginControl {
+    position: relative;
+    float: right;
+    padding-right: 0px;
+    line-height: 64px;
+}
+
+.dvSearchControl {
+    position: relative;
+    float: right;
+    padding-right: 10px;
+    line-height: 64px;
+    @padding-top: 2px;
+}
+
+.searchButton {
+    position: relative;
+    float: left;
+    padding-top: 4px;
+    @padding-top: 0px;
+}
+
+.dvMenu {
+    z-index: 100;
+    position: fixed;
+    float: left;
+    line-height: 30px;
+    height: 30px;
+    width: 960px;
+    /*padding-left:9px;*/
+    /*vertical-align:middle;*/
+    background-color: White;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.MenuA {
+    font-size: 10pt;
+    font-family: Arial;
+    font-weight: bold;
+    /*color: #00A9DF;*/
+    color: #LINK_COLOR#;
+    cursor: pointer;
+    line-height: 30px;
+    outline-style: none;
+    /*text-transform: uppercase;*/
+}
+
+.MenuSelected {
+    font-size: 10pt;
+    font-family: Arial;
+    font-weight: bold;
+    /*color: #00A9DF;*/
+    color: #LINK_COLOR#;
+    cursor: pointer;
+    line-height: 30px;
+    outline-style: none;
+    text-transform: uppercase;
+}
+
+.loginText {
+    font-size: 8pt;
+    font-family: Verdana;
+    font-weight: bold;
+    font-style: normal;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.loggedInUserText {
+    font-size: 8pt;
+    font-family: Verdana;
+    font-weight: bolder;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.cursorNoPointer {
+    cursor: default;
+}
+
+.footer {
+    /*font-family: Arial;     font-size: 8pt;     color: #808080;*/
+    font-size: #FONT_SIZE#;
+    font-family: #FONT_NAME#;
+    color: #FONT_COLOR#;
+    text-align: left;
+    width: 975px;
+    margin: auto auto auto 0px;
+}
+
+.divCopyRightText {
+    font-size: 7pt;
+    font-family: Verdana;
+    color: Gray;
+    text-align: center;
+    line-height: 10px;
+}
+
+.firstFooterLink {
+    font-size: 8pt;
+    padding-right: 5px;
+    font-family: Arial;
+    color: #LINK_COLOR#;
+    outline-style: none;
+    text-transform: uppercase;
+}
+
+.footerLink {
+    font-size: 8pt;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: Arial;
+    color: #LINK_COLOR#;
+    outline-style: none;
+    text-transform: uppercase;
+}
+
+.divSearchTextBox {
+    position: relative;
+    float: left;
+    padding-top: 23px;
+    @padding-top: 20px;
+}
+
+.searchTextBox {
+    font-size: 13px;
+    @font-size: 13px;
+    border: 0px;
+}
+
+.loginItem {
+    float: left;
+    background-position: center;
+    /*padding-left:5px; */
+    padding-right: 5px;
+}
+
+.loginTitlePosition {
+    float: left;
+    padding-right: 5px;
+    @padding-top: 1px;
+}
+
+.divLoginPanel {
+    display: none;
+    background-color: White;
+    z-index: 40000;
+    width: 440px;
+    position: fixed;
+    height: 370px;
+}
+
+.divDisclaimer {
+    display: none;
+    background-color: White;
+    z-index: 40000;
+    width: 440px;
+    position: absolute;
+    height: 200px;
+}
+
+.DisclaimerCancelButton {
+    cursor: pointer;
+    position: absolute;
+    left: 355px;
+    top: 170px;
+    font-family: Verdana;
+    font-size: 13pt;
+}
+
+.divLoginPanelInner {
+    height: 100%;
+    background-color: White;
+    border-color: Gray;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.loginCancelButton {
+    cursor: pointer;
+    position: absolute;
+    left: 355px;
+    top: 340px;
+}
+
+.hfVisible {
+    background-color: #070707;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    -moz-opacity: 0.3;
+    z-index: 30000;
+}
+
+.hfNone {
+    visibility: hidden;
+    display: none;
+}
+
+.divCopyright {
+    width: 100%;
+    /*font-size: 7pt;     font-family: Verdana;     color: Gray;*/
+    font-size: #FONT_SIZE#;
+    font-family: #FONT_NAME#;
+    color: #FONT_COLOR#;
+    margin: auto;
+}
+
+.divLoginFrame {
+    height: 100%;
+    background-color: White;
+}
+
+.loginFrame {
+    width: 430px;
+    height: 330px;
+    background-color: White;
+}
+
+.divDisclaimerFame {
+    height: 100%;
+    background-color: White;
+}
+
+.DisclaimerFrame {
+    width: 400px;
+    height: 170px;
+    background-color: White;
+    margin: 10px auto auto auto;
+    /*padding: 10px 0px 10px 10px;*/
+}
+
+.pwA {
+    text-decoration: none;
+    font-family: Arial;
+    font-weight: 500;
+    font-size: 10px;
+    color: #999999;
+}
+
+.pwB {
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    color: #999999;
+    margin: 0px;
+    padding: 0px;
+}
+
+.OutLineBorder {
+    outline-style: none;
+}
+
+.menuSeparator {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    width: 16px;
+}
+
+.separatorImage {
+    position: relative;
+}
+
+.divBanner {
+    float: left;
+    height: 64px;
+    width: 847px;
+}
+
+.MenuAnew {
+    font-size: 9pt;
+    font-family: Arial;
+    font-weight: bold;
+    /*color: #00A9DF;*/
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    cursor: pointer;
+    outline-style: none;
+    text-transform: uppercase;
+}
+
+.MenuSelectednew {
+    font-size: 9pt;
+    font-family: Arial;
+    font-weight: bold;
+    /*color: #00A9DF;*/
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    cursor: pointer;
+    outline-style: none;
+    text-transform: uppercase;
+}
+
+.footerLinkPower {
+    font-size: 8pt;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: Arial;
+    color: #LINK_COLOR#;
+    text-decoration: none;
+    outline-style: none;
+}
+
+
+.divImageM {
+    /*background-image:url('../images/ThumbnailM.JPG');*/
+    position: relative;
+    width: 219px;
+    height: 178px;
+    text-align: left;
+    /*cursor: pointer;*/
+}
+
+.ImageM {
+    width: 195px;
+    height: 125px;
+    border: 0px;
+    /*margin-top:9px; 	margin-left:10px;*/
+    cursor: hand;
+    outline-style: none;
+}
+
+.ImageS {
+    clear: inherit;
+    width: 65px;
+    height: 56px;
+    border: 0px;
+    margin-top: 4px;
+    margin-left: 6px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 0;
+}
+
+li {
+    line-height: 12pt;
+    font-size: #FONT_SIZE#;
+    font-family: #FONT_NAME#;
+    color: #FONT_COLOR#;
+}
+
+.ScName {
+    position: absolute;
+    top: 125px;
+    @top: 130px;
+    left: 0px;
+    font-family: Arial;
+    /*font-size: 7pt;*/
+    font-size: #FONT_SIZE#;
+    color: #LINK_COLOR#;
+    text-transform: uppercase;
+}
+
+.ScInfo {
+    position: absolute;
+    top: 138px;
+    @top: 143px;
+    left: 0px;
+    /*font-size: 7pt;*/
+    font-size: #FONT_SIZE#;
+    font-family: Arial;
+    color: #FONT_COLOR#;
+}
+
+.PhoneInfo {
+    position: absolute;
+    left: 0px;
+    top: 152px;
+    @top: 157px;
+
+    /*font-size: 7pt;*/
+    font-size: #FONT_SIZE#;
+    font-family: Arial;
+    color: #FONT_COLOR#;
+}
+
+.dvLightBoxNextVisible {
+    position: absolute;
+    margin-top: 401px;
+    margin-left: 42px;
+    height: 29px;
+    width: 38px;
+    z-index: 10000;
+    background-color: White;
+    background-image: url("../images/nextlabel.gif");
+    background-position: left;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10pt;
+    font-weight: bold;
+    display: block;
+    color: #666;
+}
+
+.dvLightBoxPrevVisible {
+    position: absolute;
+    margin-top: 400px;
+    float: left;
+    height: 29px;
+    width: 38px;
+    z-index: 10000;
+    background-color: White;
+    background-image: url("../images/prevlabel.gif");
+    background-position: left;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10pt;
+    font-weight: bold;
+    display: block;
+    color: #666;
+}
+
+.menuSeparator {
+    width: 18px;
+}
