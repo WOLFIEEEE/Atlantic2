@@ -375,6 +375,20 @@ document.addEventListener('DOMContentLoaded', function () {
     	$('<h1>Heading Title</h1>').insertBefore($(this));
   	});
 
+	// BES-SR-26-6011527 — Useful Links: external links must announce they
+	// open in a new tab. Content comes from CMS WebTemplate, so hydrate here.
+	$('.dvusefulllinks a[href]').each(function () {
+		var $a = $(this);
+		var href = $a.attr('href') || '';
+		var isExternal = /^https?:\/\//i.test(href) &&
+			href.indexOf(window.location.hostname) === -1;
+		if (!isExternal) return;
+		$a.attr('target', '_blank').attr('rel', 'noopener noreferrer');
+		if (!$a.find('.sr-only').length) {
+			$a.append('<span class="sr-only"> (opens in new window)</span>');
+		}
+	});
+
 	$(".CommunityTopBanner a img").attr("alt", "Best Rent NYC.com banner");
 
 	$('form[action="./Main.aspx"] div[aareastag="SalesCenter__187"] h3').each(function () {
