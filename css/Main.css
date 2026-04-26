@@ -859,3 +859,9 @@ form[action="./UniqueFeature.aspx"] .a11y_rem span,
 form[action="./UniqueFeature.aspx"] .a11y_rem div {
     color: #595959 !important;
 }
+
+/* BES-SR-26-5645010 — Unique Features: links indicated by color alone.
+   Add underline so interactivity is visible without relying on hue. */
+form[action="./UniqueFeature.aspx"] .a11y_rem a[href] {
+    text-decoration: underline !important;
+}
