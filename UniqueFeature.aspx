@@ -25,7 +25,7 @@
                     <div style="height: 9px; width: 100%; float: left;">
                     </div>
                     <div>
-                        <h1 class="sr-only">Unique features</h1>
+                        <h1 class="AboutUsPhoneTextBold" style="padding-left: 10px; margin: 0 0 10px 0;">Unique Features</h1>
                         <div id="dvFAQText" class="a11y_rem" runat="server" style="float: left; width: 948px; height: 100%;">
                         </div>
                     </div>
