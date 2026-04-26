@@ -57,12 +57,20 @@
                             <div style="padding-left: 10px;">
                                 <h2 class="AboutUsDetailsText" style="margin: 0; padding: 0; display: inline-block;">Register</h2>
                             </div>
+                            <div style="padding-left: 10px; padding-right: 10px; margin-top: 6px;">
+                                <p id="registerFormHelp" class="AboutUsDetailsText" style="margin: 0 0 8px 0;">
+                                    Complete all required fields marked with * and use Submit at the end of the form.
+                                    If the embedded form is difficult to use with your device, open the form in a new window.
+                                </p>
+                                <a class="AboutUsDetailsText" href="https://bestrentnyc.247salescenter.com/register.aspx?EditMode=0&amp;SC=76&amp;RF=1&amp;PW=1" target="_blank" rel="noopener noreferrer">Open registration form in a new window</a>
+                            </div>
                             <div style="height: 8px; width: 100%; float: left;">
                             </div>
                             <div align="center" style="padding-left: 10px; height: 900px; width: 450px;">
                                 <iframe id="frContent" name="frContent"
                                     title="Registration form"
                                     aria-label="Registration form"
+                                    aria-describedby="registerFormHelp"
                                     lang="en"
                                     align="middle" scrolling="no"
                                     style="position: relative; width: 100%; height: 95%;"

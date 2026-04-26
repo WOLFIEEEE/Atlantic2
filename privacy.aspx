@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/CollectiveMain.Master" AutoEventWireup="true"
+Ôªø<%@ Page Language="C#" MasterPageFile="~/CollectiveMain.Master" AutoEventWireup="true"
     %>
 
 <%@ MasterType TypeName="Aareas247Marketing.CollectiveMain" %>
@@ -154,16 +154,16 @@ color:#333333'>&nbsp;</span></p>
 <div class=MsoNormal style='margin-bottom:7.5pt;background:white'><b><span
 style='font-size:10.0pt;color:#333333'>&nbsp;</span></b></div>
 <br/>
-<div style='font-size:12pt;color:#333333;font-family: "Arial",sans-serif;'><span role="heading" aria-level="1">PRIVACY STATEMENT</span><div>
+<h1 class=MsoNormal style='margin-bottom:7.5pt;background:white'><span style='font-size:12.0pt;color:#333333'>PRIVACY STATEMENT</span></h1>
 <br/>
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
-style='font-size:10.0pt;color:#333333'>BestRentNYC (ìwe,î ìus,î ìourî) is the
-owner and operator of the BestRentNYC service (the ìServiceî), currently
-provided via a website at https://bestrentnj.com (the ìSiteî). </span></p>
+style='font-size:10.0pt;color:#333333'>BestRentNYC (‚Äúwe,‚Äù ‚Äúus,‚Äù ‚Äúour‚Äù) is the
+owner and operator of the BestRentNYC service (the ‚ÄúService‚Äù), currently
+provided via a website at https://bestrentnj.com (the ‚ÄúSite‚Äù). </span></p>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>We take the privacy and security of the personally-identifiable
-information (ìPersonal Informationî) of our users (ìyou,î ìyourî or ìuserî) very
+information (‚ÄúPersonal Information‚Äù) of our users (‚Äúyou,‚Äù ‚Äúyour‚Äù or ‚Äúuser‚Äù) very
 seriously. This Privacy Statement outlines what Personal Information we may
 collect about you and how we may use it.</span></p>
 
@@ -175,9 +175,9 @@ have registered with us and provide us with your email address, we may notify
 you using the email address you provide of any changes where we are required to
 do so.</span></p>
 
-<p class=MsoNormal style='margin-bottom:7.5pt;background:white'><u><span
-style='font-size:10.0pt;color:#333333' aria-level="2" role="heading">What Information Do We Collect and How
-Do We Use It?</span></u></p>
+<h2 class=MsoNormal style='margin-bottom:7.5pt;background:white;font-weight:bold;'><span
+style='font-size:11.0pt;color:#333333;font-weight:bold;'>What Information Do We Collect and How
+Do We Use It?</span></h2>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>If you register to use this Service, or
@@ -222,15 +222,15 @@ information, and other Personal Information about you. Currently, our rental app
 are in hard copy (and thus outside the scope of this Privacy Statement), but at
 a future date we may make applications available online.</span></p>
 
-<p class=MsoNormal style='margin-bottom:7.5pt;background:white'><u><span  aria-level="2" role="heading"
-style='font-size:10.0pt;color:#333333'>Cookies</span></u></p>
+<h2 class=MsoNormal style='margin-bottom:7.5pt;background:white;font-weight:bold;'><span
+style='font-size:11.0pt;color:#333333;font-weight:bold;'>Cookies</span></h2>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>We may also collect information about
 how you use Service through the use of cookies, web beacons and other similar
 technologies as part of improving the content and functionality of the Service.
 Most websites download files to your device as browsing data for storage in a
-particular folder, often called a cache. </span><span style='font-size:10.0pt'>†</span></p>
+particular folder, often called a cache. </span><span style='font-size:10.0pt'>¬†</span></p>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>Cookies are unique identifiers that we
@@ -249,7 +249,7 @@ by changing the add-on's settings or visiting the website of its manufacturer. <
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>Cookies allow you to take advantage of
-some of the Serviceís features. If you turn off cookies, then those features
+some of the Service‚Äôs features. If you turn off cookies, then those features
 may not work, or they may not work in the same manner. Cookies are also used to
 display particular content and to set session identifiers for visitors who
 voluntarily join user areas.</span></p>
@@ -260,26 +260,26 @@ web tags, 1x1 GIFs, and by other names), which send data from your browser back
 to us about how you use the Service. You may also set your browser to refuse
 web beacons. </span></p>
 
-<p class=MsoNormal style='margin-bottom:7.5pt;background:white'><u><span  aria-level="2" role="heading"
-style='font-size:10.0pt;color:#333333'>Aggregate Information and Non-Personal
-Information</span></u></p>
+<h2 class=MsoNormal style='margin-bottom:7.5pt;background:white;font-weight:bold;'><span
+style='font-size:11.0pt;color:#333333;font-weight:bold;'>Aggregate Information and Non-Personal
+Information</span></h2>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>Any information that is not Personal
-Information is ìNon-Personal Information.î We use Non-Personal Information,
+Information is ‚ÄúNon-Personal Information.‚Äù We use Non-Personal Information,
 which does not identify individuals, to monitor customer traffic patterns to
 the website and particular pages of the Service, as well as site usage, in
 order to help us improve the design and layout of the content. We may aggregate
 Non-Personal Information into larger data sets that show trends, but which do
 not identify individuals.</span></p>
 
-<p class=MsoNormal style='margin-bottom:7.5pt;background:white'><u><span  aria-level="2" role="heading"
-style='font-size:10.0pt;color:#333333'>Who Will Have Access to Your Personal
-Information?</span></u></p>
+<h2 class=MsoNormal style='margin-bottom:7.5pt;background:white;font-weight:bold;'><span
+style='font-size:11.0pt;color:#333333;font-weight:bold;'>Who Will Have Access to Your Personal
+Information?</span></h2>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>Your Personal Information may be made
-available by us to our licensors and business partners (ìPartnersî). We
+available by us to our licensors and business partners (‚ÄúPartners‚Äù). We
 sometimes employ other companies and individuals to perform functions on our
 behalf, for example providing technical support for the systems where your Personal
 Information is held. They may need access to your Personal Information in order
@@ -300,8 +300,8 @@ any Personal Information stored in one country or jurisdiction would not be
 forwarded to another country or jurisdiction, except in compliance with
 current, applicable laws and regulations.</span></p>
 
-<p class=MsoNormal style='margin-bottom:7.5pt;background:white'><u><span  aria-level="2" role="heading"
-style='font-size:10.0pt;color:#333333'>United States and International Transfer</span></u></p>
+<h2 class=MsoNormal style='margin-bottom:7.5pt;background:white;font-weight:bold;'><span
+style='font-size:11.0pt;color:#333333;font-weight:bold;'>United States and International Transfer</span></h2>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>We currently provide the Service from
@@ -327,8 +327,8 @@ including all Personal Information, may form part of the assets transferred,
 although it will still only be used in accordance with the current version of this
 Privacy Statement.</span></p>
 
-<p class=MsoNormal style='margin-bottom:7.5pt;background:white'><u><span  aria-level="2" role="heading"
-style='font-size:10.0pt;color:#333333'>How We Protect Your Information</span></u></p>
+<h2 class=MsoNormal style='margin-bottom:7.5pt;background:white;font-weight:bold;'><span
+style='font-size:11.0pt;color:#333333;font-weight:bold;'>How We Protect Your Information</span></h2>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>We have in place privacy and security
@@ -336,8 +336,8 @@ policies which are intended to ensure, as far as reasonably possible, the
 security and integrity of all our information, including your Personal
 Information. </span></p>
 
-<p class=MsoNormal style='margin-bottom:7.5pt;background:white'><u><span  aria-level="2" role="heading"
-style='font-size:10.0pt;color:#333333'>Children</span></u></p>
+<h2 class=MsoNormal style='margin-bottom:7.5pt;background:white;font-weight:bold;'><span
+style='font-size:11.0pt;color:#333333;font-weight:bold;'>Children</span></h2>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>Our Service is not directed to persons
@@ -346,14 +346,14 @@ become aware that your young person has provided us with Personal Information
 or other information without your express consent, please contact us at </span><a
 href="mailto:Legal@Informationform.com"><span style='font-size:10.0pt'>Legal@Informationform.com</span></a><span
 style='font-size:10.0pt;color:#333333'>. We will then remove the information,
-and we will terminate the young personís account.</span></p>
+and we will terminate the young person‚Äôs account.</span></p>
 
-<p class=MsoNormal style='margin-bottom:7.5pt;background:white'><u><span  aria-level="2" role="heading"
-style='font-size:10.0pt;color:#333333'>Access and Correction</span></u></p>
+<h2 class=MsoNormal style='margin-bottom:7.5pt;background:white;font-weight:bold;'><span
+style='font-size:11.0pt;color:#333333;font-weight:bold;'>Access and Correction</span></h2>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>The Service is not currently designed to
-allow each registered user to modify the userís own data, but that may be
+allow each registered user to modify the user‚Äôs own data, but that may be
 changed in future versions of the Service. In addition, if we process Personal
 Information about you, then you may have a right under data privacy law to
 request access to your Personal Information (for which we may charge a small
@@ -372,9 +372,9 @@ to data privacy in the Services, please contact </span><a
 href="mailto:info@informationform.com"><span style='font-size:10.0pt'>info@informationform.com</span></a><span
 style='font-size:10.0pt;color:#333333'>.</span></p>
 
-<p class=MsoNormal style='margin-bottom:7.5pt;background:white'><u><span  aria-level="2" role="heading"
-style='font-size:10.0pt;color:#333333'>Opting Out of Further Communications from
-Us</span></u></p>
+<h2 class=MsoNormal style='margin-bottom:7.5pt;background:white;font-weight:bold;'><span
+style='font-size:11.0pt;color:#333333;font-weight:bold;'>Opting Out of Further Communications from
+Us</span></h2>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>If you have elected to receive
@@ -387,14 +387,14 @@ of subsequent electronic communications to you. You should clearly state on all
 communications: your name, username (if any), registration details (if any) and
 the part of the Service you have questions about.</span></p>
 
-<p class=MsoNormal style='margin-bottom:7.5pt;background:white'><u><span  aria-level="2" role="heading"
-style='font-size:10.0pt;color:#333333'>Your California Privacy Rights</span></u></p>
+<h2 class=MsoNormal style='margin-bottom:7.5pt;background:white;font-weight:bold;'><span
+style='font-size:11.0pt;color:#333333;font-weight:bold;'>Your California Privacy Rights</span></h2>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>If you are a California resident,
 California Civil Code Section 1798.83 permits you to request information
 regarding the disclosure of your Personal Information by us to third parties
-for the third partiesí direct marketing purposes. To make such a request,
+for the third parties‚Äô direct marketing purposes. To make such a request,
 please send an email to </span><a href="mailto:Legal@informationform.com"><span
 style='font-size:10.0pt'>Legal@informationform.com</span></a><span
 style='font-size:10.0pt;color:#333333'>, or send us postal mail at:</span></p>
@@ -405,8 +405,8 @@ Highway 1, Edison, NJ 08817, U.S.A. </span></p>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>Pursuant to California Civil Code
-Section 1798.83(c)(2), we may share usersí Personal Information with Partners, affiliate
-companies, or others outside BestRentNJ for those partiesí direct marketing use.
+Section 1798.83(c)(2), we may share users‚Äô Personal Information with Partners, affiliate
+companies, or others outside BestRentNJ for those parties‚Äô direct marketing use.
 </span></p>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
@@ -422,8 +422,8 @@ does not ensure complete or comprehensive removal of the content or information
 you have posted and that there may be circumstances in which the law does not
 require or allow removal, even if requested.</span></p>
 
-<p class=MsoNormal style='margin-bottom:7.5pt;background:white'><u><span  aria-level="2" role="heading"
-style='font-size:10.0pt;color:#333333'>Version Control</span></u></p>
+<h2 class=MsoNormal style='margin-bottom:7.5pt;background:white;font-weight:bold;'><span
+style='font-size:11.0pt;color:#333333;font-weight:bold;'>Version Control</span></h2>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>Last updated July 2018.</span></p>
@@ -432,7 +432,7 @@ style='font-size:10.0pt;color:#333333'>Last updated July 2018.</span></p>
 style='font-size:10.0pt;color:#333333'>Prior versions: None.</span></p>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
-style='font-size:10.0pt;color:#333333'>© BestRentNYC 2018.</span></p>
+style='font-size:10.0pt;color:#333333'>¬© BestRentNYC 2018.</span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>&nbsp;</span></p>
 
@@ -441,3 +441,5 @@ style='font-size:10.0pt;color:#333333'>© BestRentNYC 2018.</span></p>
 </body>
 
 </asp:Content>
+
+
