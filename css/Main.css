@@ -849,3 +849,13 @@ body.removeHover::before {
     top: 0 !important;
     left: 0 !important;
 }
+
+/* BES-CC-26-1376147 — Unique Features: gray text on white was 3.94:1.
+   Darken to #595959 (>=7:1 on white) for AA/AAA on small text. */
+form[action="./UniqueFeature.aspx"] .a11y_rem,
+form[action="./UniqueFeature.aspx"] .a11y_rem p,
+form[action="./UniqueFeature.aspx"] .a11y_rem li,
+form[action="./UniqueFeature.aspx"] .a11y_rem span,
+form[action="./UniqueFeature.aspx"] .a11y_rem div {
+    color: #595959 !important;
+}
