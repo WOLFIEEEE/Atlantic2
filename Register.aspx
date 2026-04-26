@@ -50,21 +50,24 @@
                         <div style="float: left; width: 49%; height: 1000px; border-color: Gray; border-style: solid;
                             border-width: 1px;">
                             <div style="padding-left: 10px; padding-top: 10px;">
-                                <span class="AboutUsPhoneTextBold">Contact Us</span>
+                                <h1 class="AboutUsPhoneTextBold" style="margin: 0; padding: 0; display: inline-block;">Contact Us</h1>
                             </div>
                             <div style="height: 8px; width: 100%; float: left;">
                             </div>
-                            <%--<div style="padding-left: 10px;">
-                                <span class="AboutUsDetailsText">To subscribe to one or more of our info lists, and
-                                    create your free account, please fill out the registration form. You'll be able
-                                    to save your favorite floor plans for frequent viewing, get community news and special
-                                    offers, reserve a home or apartment online, and more. </span>
-                            </div>--%>
+                            <div style="padding-left: 10px;">
+                                <h2 class="AboutUsDetailsText" style="margin: 0; padding: 0; display: inline-block;">Register</h2>
+                            </div>
                             <div style="height: 8px; width: 100%; float: left;">
                             </div>
                             <div align="center" style="padding-left: 10px; height: 900px; width: 450px;">
-                                <iframe id="frContent" aria-label="Register Form" align="middle" scrolling="no" name="frContent" style="position: relative;
-                                    width: 100%; height: 95%;" frameborder="0" src="https://bestrentnyc.247salescenter.com/register.aspx?EditMode=0&amp;SC=76&amp;RF=1&amp;PW=1"></iframe>
+                                <iframe id="frContent" name="frContent"
+                                    title="Registration form"
+                                    aria-label="Registration form"
+                                    lang="en"
+                                    align="middle" scrolling="no"
+                                    style="position: relative; width: 100%; height: 95%;"
+                                    frameborder="0"
+                                    src="https://bestrentnyc.247salescenter.com/register.aspx?EditMode=0&amp;SC=76&amp;RF=1&amp;PW=1"></iframe>
                             </div>
                         </div>
                         <div style="float: right; width: 49%; height: 1000px; border-color: Gray; border-style: solid;
