@@ -833,6 +833,16 @@ form[action="./FAQ.aspx"] #ctl00_ContentPlaceHolder1_dvFAQText p a{
     color: #0080A9 !important;
 }
 
+/* BES-CC-26-4274161 — FAQ "Frequently Asked Questions" was #00A9DF on white
+   (2.17:1). Darken page heading to #006D8B (~5.99:1) and question headings
+   to #595959 (~7:1) so both meet WCAG 1.4.3 AA. */
+form[action="./FAQ.aspx"] #copy h1.faq-page-heading {
+    color: #006D8B !important;
+}
+form[action="./FAQ.aspx"] #copy h2.faq-question-heading {
+    color: #595959 !important;
+}
+
 /* form[action="./main.aspx"] #ctl00_dvFooter{
     list-style: none !important;
     display: flex !important;

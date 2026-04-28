@@ -325,15 +325,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		'aria-level': '1',
 	});
 
-	$('form[action="./FAQ.aspx"] #copy h2').attr({
-		role: 'heading',
-		'aria-level': '1',
-	});
-
-	$('form[action="./FAQ.aspx"] #copy h1').attr({
-		role: 'heading',
-		'aria-level': '2',
-	});
+	// FAQ semantic structure fix lives inline in FAQ.aspx
+	// (BES-SR-26-5825488 / BES-SR-26-8300860) for guaranteed execution.
 
 	$('.dvusefulllinks div[style="width:50%;float:left"]').attr('role', 'list');
 	$('.dvusefulllinks div[style="width:50%;float:left"] .dropdownLink').attr(
