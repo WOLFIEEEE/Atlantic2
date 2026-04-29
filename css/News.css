@@ -85,11 +85,12 @@
 
 .NewsDetailsText
 {
-    float: left;
     width: 98%;
-    height: 100%;    
+    height: auto;
     vertical-align: top;
-    overflow: hidden;
+    overflow: visible;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     font-size: #FONT_SIZE#;
     font-family: #FONT_NAME#;
     color: #FONT_COLOR#;
