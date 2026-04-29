@@ -62,13 +62,36 @@
         (function () {
             function normalizeCommunityHeadings() {
                 // Keep one heading per community card (the card title). Any
-                // headings coming from CMS body text are made presentational
-                // so heading navigation remains meaningful without changing
-                // visual typography.
+                // headings coming from CMS body text are demoted to regular
+                // blocks so screen readers announce each line naturally,
+                // without exposing them in heading navigation.
                 var nestedHeadings = document.querySelectorAll('.item-list li div[sid] h2, .item-list li div[sid] h3');
                 for (var i = 0; i < nestedHeadings.length; i++) {
                     var heading = nestedHeadings[i];
-                    heading.setAttribute('role', 'presentation');
+                    var demoted = document.createElement('div');
+                    var computed = window.getComputedStyle(heading);
+
+                    demoted.innerHTML = heading.innerHTML;
+                    demoted.className = heading.className || '';
+                    demoted.style.cssText = heading.style.cssText || '';
+
+                    // Preserve computed heading typography/spacing so visual
+                    // layout does not shift when switching from h2/h3 to div.
+                    demoted.style.display = 'block';
+                    demoted.style.fontFamily = computed.fontFamily;
+                    demoted.style.fontSize = computed.fontSize;
+                    demoted.style.fontWeight = computed.fontWeight;
+                    demoted.style.lineHeight = computed.lineHeight;
+                    demoted.style.letterSpacing = computed.letterSpacing;
+                    demoted.style.textTransform = computed.textTransform;
+                    demoted.style.textAlign = computed.textAlign;
+                    demoted.style.color = computed.color;
+                    demoted.style.marginTop = computed.marginTop;
+                    demoted.style.marginBottom = computed.marginBottom;
+                    demoted.style.marginLeft = computed.marginLeft;
+                    demoted.style.marginRight = computed.marginRight;
+
+                    heading.parentNode.replaceChild(demoted, heading);
                 }
             }
 
