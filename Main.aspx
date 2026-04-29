@@ -5,17 +5,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="divWidthFull testclass">
         <div style="position: relative">
-            <h1 role="none">
+            <h1 style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
+                BestRentNYC Rental Apartments
+            </h1>
+            <div>
             <a href="http://www.bestrentnyc.com" style="text-decoration: none;">
-                <img id="imgBanner" runat="server" src="~/images/bestrentnyc_banner.jpg" alt="" enableviewstate="false"
+                <img id="imgBanner" runat="server" src="~/images/bestrentnyc_banner.jpg" alt="BestRentNYC" enableviewstate="false"
                 border="0" />
                 </a>
-            </h1>
+            </div>
             <div style="position: absolute; top: 90px; left: 300px; text-align: center;" aareastag="WebTemplate__173">
-                <h1 style="text-align: center; font-family: Verdana; font-size: 10px;
+                <div style="text-align: center; font-family: Verdana; font-size: 10px;
                     font-weight: bold; color: black;">
 
-                    <%= _BText %></h1>
+                    <%= _BText %></div>
             </div>
         </div>
         <div style="height: 10px;">
@@ -55,4 +58,25 @@
         </ul>
         <div style="clear:both">&nbsp;</div>
     </div>
+    <script type="text/javascript">
+        (function () {
+            function normalizeCommunityHeadings() {
+                // Keep one heading per community card (the card title). Any
+                // headings coming from CMS body text are made presentational
+                // so heading navigation remains meaningful without changing
+                // visual typography.
+                var nestedHeadings = document.querySelectorAll('.item-list li div[sid] h2, .item-list li div[sid] h3');
+                for (var i = 0; i < nestedHeadings.length; i++) {
+                    var heading = nestedHeadings[i];
+                    heading.setAttribute('role', 'presentation');
+                }
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', normalizeCommunityHeadings);
+            } else {
+                normalizeCommunityHeadings();
+            }
+        })();
+    </script>
 </asp:Content>
