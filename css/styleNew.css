@@ -280,8 +280,21 @@ A:active {
     background-color: White;
     z-index: 40000;
     width: 440px;
-    position: absolute;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     height: 200px;
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
+    overflow: hidden;
+}
+
+/* Keep dialog clean at normal zoom; only add scrolling on short viewports. */
+@media (max-height: 520px) {
+    .divDisclaimer {
+        overflow-y: auto;
+    }
 }
 
 .DisclaimerCancelButton {

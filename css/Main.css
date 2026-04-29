@@ -875,3 +875,13 @@ form[action="./UniqueFeature.aspx"] .a11y_rem div {
 form[action="./UniqueFeature.aspx"] .a11y_rem a[href] {
     text-decoration: underline !important;
 }
+
+/* BES-BZ-26-3637932 / BES-BZ-26-2443098 (1.4.4 / 1.4.10)
+   Allow top nav + skip link to remain usable with text resize. */
+.skip-to-content:focus {
+    position: fixed !important;
+    top: 8px !important;
+    left: 8px !important;
+    z-index: 70000 !important;
+    background: #ffffff !important;
+}

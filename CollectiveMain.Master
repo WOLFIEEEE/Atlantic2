@@ -273,32 +273,13 @@
             document.getElementById("divGrayBG").className = "hfVisible";
             $("#divGrayBG").height(getPageSize()[1]);
             window.frames['frmDisclaimer'].location.href = '/LegalDisclaimer.aspx';
-
-            var myWidth = 0, myHeight = 0;
-            if (typeof (window.innerWidth) == 'number') {
-                //Non-IE    
-                myWidth = window.innerWidth;
-                myHeight = window.innerHeight;
-                myWidth = (myWidth / 2) - 220;
-                myHeight = (myHeight / 2) - 100;
-            } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
-                //IE 6+ in 'standards compliant mode'    
-                myWidth = document.documentElement.clientWidth;
-                myHeight = document.documentElement.clientHeight;
-                myWidth = (myWidth / 2) - 220;
-                myHeight = (myHeight / 2) - 100;
-            } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
-                //IE 4 compatible    
-                myWidth = document.body.clientWidth;
-                myHeight = document.body.clientHeight;
-                myWidth = (myWidth / 2) - 220;
-                myHeight = (myHeight / 2) - 100;
-            }
-
-            document.getElementById('divDisclaimer').style.left = myWidth + 'px';
-            document.getElementById('divDisclaimer').style.top = myHeight + 'px';
-            //document.getElementById('divLogin').style.visibility = "visible";
-            document.getElementById('divDisclaimer').style.display = "block";
+            // BES-BZ-26-7548226 (1.4.10) — avoid fixed pixel offsets so the
+            // dialog reflows at 200%/400% zoom and different viewport sizes.
+            var disclaimer = document.getElementById('divDisclaimer');
+            disclaimer.style.left = '50%';
+            disclaimer.style.top = '50%';
+            disclaimer.style.transform = 'translate(-50%, -50%)';
+            disclaimer.style.display = "block";
 
         }
 
