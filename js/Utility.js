@@ -279,8 +279,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	$('#divDisclaimer').attr({
 		role: 'dialog',
-		'aria-label': 'Legal disclaimer',
+		'aria-modal': 'true',
+		'aria-labelledby': 'divDisclaimerTitle',
 	});
+	$('#divDisclaimer').removeAttr('aria-label');
 
 	$('form[action="./Main.aspx"] .testclass h1').removeAttr('role');
 
@@ -406,7 +408,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 	$("table h2.SearchGridPhoneInfo").attr("role", "none");
 
-	$("a#ctl00_lnkDisclaimerClose").attr("role", "button");
+	$("a#ctl00_lnkDisclaimerClose").attr({
+		role: "button",
+		"aria-label": "Close legal disclaimer dialog"
+	});
 
 	$(".a11y_rem .dropdowns a").removeAttr("href");
 	$(".a11y_rem .dropdowns a").attr("role","none");

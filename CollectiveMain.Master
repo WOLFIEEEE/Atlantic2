@@ -70,6 +70,21 @@
             outline: none;
             white-space: nowrap;
         }
+        .menuDialogHint {
+            display: inline-block;
+            margin-left: 4px;
+            font-size: 10px;
+            text-transform: none;
+            color: #4c4c4c;
+        }
+        .divDisclaimerTitle {
+            margin: 8px 12px 0 12px;
+            font-family: Verdana;
+            font-size: 13px;
+            font-weight: bold;
+            color: #333333;
+            text-align: left;
+        }
         div.hfVisible
         {
             background-color: #070707;
@@ -300,6 +315,7 @@
 
 
 
+        var lastDisclaimerTrigger = null;
         function showInlineDisclaimerPopup() {
             //debugger;
             document.getElementById("divGrayBG").className = "hfVisible";
@@ -308,10 +324,16 @@
             // BES-BZ-26-7548226 (1.4.10) — avoid fixed pixel offsets so the
             // dialog reflows at 200%/400% zoom and different viewport sizes.
             var disclaimer = document.getElementById('divDisclaimer');
+            lastDisclaimerTrigger = document.activeElement;
+            disclaimer.removeAttribute('aria-label');
             disclaimer.style.left = '50%';
             disclaimer.style.top = '50%';
             disclaimer.style.transform = 'translate(-50%, -50%)';
             disclaimer.style.display = "block";
+            disclaimer.setAttribute('aria-hidden', 'false');
+
+            var title = document.getElementById('divDisclaimerTitle');
+            if (title) { title.focus(); }
 
         }
 
@@ -348,7 +370,12 @@
 
         function CloseDisclaimerPopup() {
             document.getElementById('divGrayBG').className = 'hfNone';
-            document.getElementById('divDisclaimer').style.display = "none";
+            var disclaimer = document.getElementById('divDisclaimer');
+            disclaimer.style.display = "none";
+            disclaimer.setAttribute('aria-hidden', 'true');
+            if (lastDisclaimerTrigger && typeof lastDisclaimerTrigger.focus === 'function') {
+                lastDisclaimerTrigger.focus();
+            }
         }
 
         function hideElement() {
@@ -467,8 +494,8 @@
                                 US</a>
                         </div>                        
                         <div id="dvBack6" style="height: 30px; line-height: 30px; padding-left: 7px;">
-                            <a class="MenuAnew" role="menuitem" onclick="javascript:showInlineDisclaimerPopup();" href="javascript:void(0)"
-                                onmouseover="SetBackGround('dvBack6')" aria-label="Legal Disclaimer, opens dialog at bottom of page">LEGAL DISCLAIMER</a>
+                            <a class="MenuAnew" role="button" onclick="javascript:showInlineDisclaimerPopup();" href="javascript:void(0)"
+                                onmouseover="SetBackGround('dvBack6')" aria-haspopup="dialog" aria-controls="divDisclaimer" aria-label="Open legal disclaimer dialog">LEGAL DISCLAIMER<span class="menuDialogHint"> (dialog)</span></a>
                         </div>
                     </div>
                 </div>
@@ -589,16 +616,17 @@
             </div>
         </div>
     </div>
-    <div id="divDisclaimer" class="divDisclaimer">
+    <div id="divDisclaimer" class="divDisclaimer" role="dialog" aria-modal="true" aria-labelledby="divDisclaimerTitle" aria-hidden="true" tabindex="-1">
         <div class="divLoginPanelInner">
             <%--<img id="Img1" src="<%=ResolveUrl("~/images/closelabel.png")%>" onclick="CloseDisclaimerPopup();" class="DisclaimerCancelButton" />--%>
+            <h2 id="divDisclaimerTitle" class="divDisclaimerTitle" tabindex="-1">Legal Disclaimer</h2>
             <div class="divDisclaimerFame" align="center">
-                <iframe tabindex="-1" id="frmDisclaimer" class="DisclaimerFrame" name="frmDisclaimer" src="/blank.htm" frameborder="0"
+                <iframe tabindex="-1" id="frmDisclaimer" class="DisclaimerFrame" name="frmDisclaimer" src="/blank.htm" title="Disclaimer details" frameborder="0"
                     scrolling="no"></iframe>
             </div>
             <div class="DisclaimerCancelButton">
                 <asp:LinkButton ID="lnkDisclaimerClose" runat="server" OnClientClick="CloseDisclaimerPopup(); return false;"
-                    EnableViewState="false" Text="CLOSE X" CssClass="PopupCancelButtonText"></asp:LinkButton>
+                    EnableViewState="false" Text="CLOSE" CssClass="PopupCancelButtonText"></asp:LinkButton>
             </div>
         </div>
     </div>

@@ -7,8 +7,8 @@
     <title>Legal Disclaimer</title>
     <link rel="stylesheet" type="text/css" href="css/Main.css" />
 </head>
-<body >
-    <form id="form1" runat="server">
+<body>
+    <form id="form1" runat="server" role="presentation">
     <input id="247URL" type="hidden" value="<%=_247URL%>" />    
     <input id="SCID" type="hidden" value="<%=SID%>" />
     <div>
