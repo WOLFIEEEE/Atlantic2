@@ -885,3 +885,34 @@ form[action="./UniqueFeature.aspx"] .a11y_rem a[href] {
     z-index: 70000 !important;
     background: #ffffff !important;
 }
+
+/* BES-BZ-26-3469918 / BES-BZ-26-8487288 (1.4.10)
+   Prevent long apartment tooltip content from getting clipped. */
+form[action*="nyc-rental-apartments"] .CommunitySalesCenterDetails,
+form[action*="nyc-rental-apartments"] .CommunitySalesCenterDetailsH2,
+form[action*="nyc-rental-specials"] .CommunitySalesCenterDetails,
+form[action*="nyc-rental-specials"] .CommunitySalesCenterDetailsH2 {
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* wz_tooltip container/body IDs are injected at runtime. Keep tooltips readable
+   and allow vertical scrolling for large content instead of cut-off text. */
+#WzTtDiV {
+    z-index: 65000 !important;
+    max-width: min(440px, calc(100vw - 24px)) !important;
+    max-height: none !important;
+    width: auto !important;
+    overflow: visible !important;
+}
+
+#WzBoDy {
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+#WzBoDyI {
+    width: 100% !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
