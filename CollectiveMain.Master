@@ -36,7 +36,39 @@
         {
             float: left;
             line-height: 30px;
-            margin-right: 17px;
+            margin-right: 14px;
+        }
+        /* Keep header/menu in normal flow even if nav wraps to a second line,
+           preventing overlap with content below. */
+        #ctl00_dvHeader {
+            height: auto !important;
+            min-height: 45px;
+        }
+        #ctl00_dvMainMenu {
+            height: auto !important;
+            min-height: 30px;
+        }
+        /* BES-KN-26-5007335 — compact chevron next to hover-only triggers.
+           Non-focusable and non-clickable so anchor remains the only tab stop. */
+        .menuItem--disclosure {
+            position: relative;
+            padding-right: 10px;
+        }
+        .menuItem--disclosure .menuToggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            pointer-events: none;
+            cursor: default;
+        }
+        .menuItem a.MenuA,
+        .menuItem a.MenuSelected {
+            outline: none;
+            white-space: nowrap;
         }
         div.hfVisible
         {
@@ -425,7 +457,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="dvSubMenu2" aria-expanded="false" style="position: absolute; width: 175px; top: 25px; z-index: 10;
+                <div id="dvSubMenu2" style="position: absolute; width: 175px; top: 25px; z-index: 10;
                     background-color: White; left: 730px; display: none; border-color: #dcdddf; border-style: solid;
                     border-width: 1px;">
                     <div style="width: 171px; padding-top: 2px; background-color: White; padding-bottom: 2px;
@@ -747,35 +779,54 @@
         }
 
     document.addEventListener('DOMContentLoaded', function () {
-        $(".dvMenu li").each(function() {
-            var text = $(this).find("a").text().trim();
-            if (text === 'ABOUT US') {
-                $('#dvSubMenu2').insertAfter($(this).find("a"));
+        // BES-KN-26-5007335 — the anchor is the single keyboard target.
+        // The chevron is a non-focusable visual hint (tabindex=-1,
+        // aria-hidden) so it shares the anchor's focus ring instead of
+        // being its own tab stop.
+        $(".dvMenu li").each(function () {
+            var $li = $(this);
+            var $a = $li.find("a");
+            var text = $a.text().trim();
+            if (text !== 'ABOUT US' && text !== 'APARTMENT RESOURCE') return;
+
+            var subId = (text === 'ABOUT US') ? '#dvSubMenu2' : '#dvSubMenu4';
+            $(subId).insertAfter($a);
+
+            $li.addClass('menuItem--disclosure');
+            var anchor = $a[0], li = $li[0];
+            $a.attr({ 'aria-haspopup': 'true', 'aria-expanded': 'false', 'aria-controls': subId.substring(1) });
+
+            function setOpen(open) {
+                $a.attr('aria-expanded', open ? 'true' : 'false');
+                if (open) { ShowSubMenu(anchor); } else { HideAllSubMenu(); }
             }
-            if (text === 'APARTMENT RESOURCE') {
-                $('#dvSubMenu4').insertAfter($(this).find("a"));
+
+            $('<span class="menuToggle" aria-hidden="true" tabindex="-1">\u25BE<\/span>').insertAfter($a);
+
+            $a.click(function (e) { e.preventDefault(); setOpen($a.attr('aria-expanded') !== 'true'); });
+            $a.keydown(function (e) {
+                var k = e.which || e.keyCode;
+                if (k === 13 || k === 32) { e.preventDefault(); setOpen($a.attr('aria-expanded') !== 'true'); }
+            });
+
+            // Close when focus leaves both the trigger and the submenu items.
+            $li.bind('focusout', function () {
+                setTimeout(function () {
+                    if (!li.contains(document.activeElement)) { setOpen(false); }
+                }, 0);
+            });
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "Escape") {
+                document.body.classList.add("removeHover");
+                HideAllSubMenu();
+                $('.dvMenu a[aria-expanded="true"]').attr('aria-expanded', 'false');
             }
-            if (text === 'ABOUT US' || text === 'APARTMENT RESOURCE') {
-                $(this).find("a").attr("aria-expanded", "false");
-                $(this).find("a").click(function(){
-            $(this).attr("aria-expanded", $(this).attr("aria-expanded") == "false");
-                                    if($(this).attr("aria-expanded") == "true"){
-                                        ShowSubMenu($(this)[0]);
-                                    }else{
-                                        HideAllSubMenu();
-                                    }
-    });
-    }
-    });
-    document.addEventListener('keydown', function(event){
-		if(event.key === "Escape"){
-			document.body.classList.add("removeHover");
-            HideAllSubMenu();
-		}
-	});
-	document.addEventListener('mousemove', function(event){
-		document.body.classList.remove("removeHover");
-	});
+        });
+        document.addEventListener('mousemove', function () {
+            document.body.classList.remove("removeHover");
+        });
         console.log('Loaded');
     });
         
