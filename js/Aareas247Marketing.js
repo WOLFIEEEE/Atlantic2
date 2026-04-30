@@ -144,34 +144,195 @@ searchGridSCInfos.forEach(searchGridSCInfo => {
   // Replace the original element with the new div
   searchGridSCInfo.parentNode.replaceChild(newDiv, searchGridSCInfo);
 });
-// Get the table element by its id
-const table = document.querySelector('#divTopPanel table');
+// BES-SR-26-* (rental list pages) — these patches must re-run whenever
+// AjaxPanelB / AjaxPanelC re-populate, so wrap them as one idempotent
+// function and trigger from both an initial delay and a MutationObserver.
+window.__applyA11yToRentalTable = function () {
+    var SR_ONLY = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;';
 
-// Check if the table exists
-if (table) {
-  // Add the summary attribute to the table
-  table.setAttribute('summary', "It's Describe Apartment Details");
-} else {
-  console.error('Table not found');
-}
+    // BES-SR-26-5142933 / BES-SR-26-9256154 — every rental-list view
+    // (HomeSearch.aspx with /nyc-rental-apartments, /nyc-rental-specials,
+    // and the NJ variants) needs exactly one document H1. Inject a
+    // visually-hidden one derived from the URL slug so AT users have a
+    // primary heading regardless of which mode the layout is in. Idempotent.
+    if (!document.getElementById('a11y-page-h1')) {
+        var ACRONYMS = { nyc: 'NYC', nj: 'NJ', faq: 'FAQ', llc: 'LLC' };
+        var slug = (window.location.pathname.match(/[^/]+$/) || [''])[0]
+            .toLowerCase()
+            .replace(/\.aspx$/i, '');
+        // Only treat URL-style hyphenated slugs as page titles; the bare
+        // ASPX filename (e.g. "HomeSearch") falls back to the default.
+        var pageTitle = 'Rental Communities';
+        if (slug.indexOf('-') !== -1) {
+            pageTitle = slug
+                .split('-')
+                .filter(Boolean)
+                .map(function (w) {
+                    return ACRONYMS[w] || (w.charAt(0).toUpperCase() + w.slice(1));
+                })
+                .join(' ');
+        }
+        var mount = document.getElementById('divTopPanel') ||
+            document.querySelector('.divWidthFull') ||
+            document.body;
+        if (mount) {
+            var h1 = document.createElement('h1');
+            h1.id = 'a11y-page-h1';
+            h1.textContent = pageTitle;
+            h1.style.cssText = SR_ONLY;
+            mount.insertBefore(h1, mount.firstChild);
+        }
+    }
 
-const communityLinks = document.querySelectorAll('.CommunityLinkText');
+    // BES-SR-26-6945332 / BES-SR-26-1559629 — replace obsolete `summary`
+    // with a visually-hidden, well-formed <caption>. Scope strictly to the
+    // rental grid: a table that has rental header cells AND isn't a
+    // presentation/list table. (Earlier this was matching news tables and
+    // their inner layout tables because they share the #divTopPanel id.)
+    var RENTAL_CAPTION = 'Apartment communities with contact information, available unit sizes, starting rents, and current specials.';
+    document.querySelectorAll('table').forEach(function (t) {
+        var role = (t.getAttribute('role') || '').toLowerCase();
+        var isRentalGrid = !!t.querySelector('td.gridItemHeader, th.gridItemHeader, td.CommunitygridItemHeader, th.CommunitygridItemHeader');
 
-    // Create a new <ul> element
-    const ulEElement = document.createElement('ul');
+        // Clean up captions previously inserted onto the wrong tables.
+        if (!isRentalGrid) {
+            var existing = t.querySelector(':scope > caption');
+            if (existing && existing.textContent.trim() === RENTAL_CAPTION) {
+                existing.parentNode.removeChild(existing);
+            }
+            return;
+        }
 
-    // Loop through each community link and move it into a <li> within the <ul>
-    communityLinks.forEach(link => {
-        const liElement = document.createElement('li');
-        liElement.appendChild(link.cloneNode(true)); // Clone the link to preserve its attributes and content
-        ulEElement.appendChild(liElement);
-        link.parentNode.removeChild(link); // Remove the original link from its parent
+        // Don't caption tables explicitly marked as not-a-data-table.
+        if (role === 'presentation' || role === 'none' || role === 'list') return;
+
+        t.removeAttribute('summary');
+        if (!t.querySelector(':scope > caption')) {
+            var cap = document.createElement('caption');
+            cap.textContent = RENTAL_CAPTION;
+            cap.style.cssText = SR_ONLY;
+            t.insertBefore(cap, t.firstChild);
+        }
     });
 
-    // Find the last <tr> element in the table and append the <ul> to it
+    // BES-SR-26-7877345 / BES-SR-26-5429296 — promote header cells (both
+    // `td.CommunitygridItemHeader` and `td.gridItemHeader`) to <th scope="col">.
+    document.querySelectorAll('td.CommunitygridItemHeader, td.gridItemHeader').forEach(function (td) {
+        var th = document.createElement('th');
+        th.scope = 'col';
+        if (td.className) th.className = td.className;
+        var styleAttr = td.getAttribute('style');
+        if (styleAttr) th.setAttribute('style', styleAttr);
+        var widthAttr = td.getAttribute('width');
+        if (widthAttr) th.setAttribute('width', widthAttr);
+        th.innerHTML = td.innerHTML;
+        td.parentNode.replaceChild(th, td);
+    });
+
+    // BES-SR-26-5142933 / BES-SR-26-8349763 / BES-SR-26-9256154 /
+    // BES-SR-26-1028420 — server emits each property card title as
+    // <h1 class="SearchGridSCName"> with role="heading" aria-level="2".
+    // Replace with a true <h2> so heading semantics are correct.
+    document.querySelectorAll('.SearchGridSCName').forEach(function (el) {
+        if (el.tagName.toLowerCase() === 'h2') return;
+        var h2 = document.createElement('h2');
+        h2.innerHTML = el.innerHTML;
+        if (el.className) h2.className = el.className;
+        var styleAttr = el.getAttribute('style');
+        if (styleAttr) h2.setAttribute('style', styleAttr);
+        // Strip the redundant role/aria-level overrides since the tag is now correct.
+        el.parentNode.replaceChild(h2, el);
+    });
+
+    // BES-SR-26-6945332 / BES-SR-26-1559629 — phone numbers were rendered
+    // as <h2 class="SearchGridPhoneInfo" role="none">, which is a heading
+    // that doesn't introduce content. Replace with <div> so they're plain
+    // text in the cell and don't pollute heading navigation.
+    document.querySelectorAll('h2.SearchGridPhoneInfo, .SearchGridPhoneInfo').forEach(function (el) {
+        if (el.tagName.toLowerCase() === 'div') return;
+        var d = document.createElement('div');
+        d.innerHTML = el.innerHTML;
+        if (el.className) d.className = el.className;
+        var styleAttr = el.getAttribute('style');
+        if (styleAttr) d.setAttribute('style', styleAttr);
+        el.parentNode.replaceChild(d, el);
+    });
+
+    // BES-SR-26-5110461 / BES-SR-26-1335214 — give linked images in the
+    // rental grid a meaningful alt derived from the row's heading / link
+    // label / filename. Targets the image's own class (`.ImageS`) so it
+    // works regardless of which container variant (#AjaxPanel,
+    // #AjaxPanelB/C, divTopPanel, .hfdivGrid) the row is mounted in.
+    var imgSel = [
+        'img.ImageS',
+        '#divTopPanel a img',
+        '#AjaxPanel a img',
+        '#AjaxPanelB a img',
+        '#AjaxPanelC a img',
+        '.hfdivGrid a img'
+    ].join(', ');
+    document.querySelectorAll(imgSel).forEach(function (img) {
+        if (img.alt && img.alt.trim()) return;
+        var link = img.closest('a');
+        var label = '';
+        // Look for the row's title regardless of whether it's still <h1>,
+        // already-demoted <h2>, or one of the known classed elements.
+        var row = (link && link.closest('tr, .SearchGridSCRow, li')) || img.closest('tr');
+        if (row) {
+            var titleEl = row.querySelector('.SearchGridSCName, .CommunityLinkText, h1, h2, h3');
+            if (titleEl) label = titleEl.textContent.trim();
+        }
+        if (!label && link) {
+            // Sibling-link fallback: the image link (#aSCImage) and the
+            // title link (#aSC) live side-by-side in the same cell.
+            var cell = link.closest('td, div');
+            if (cell) {
+                var sibTitle = cell.querySelector('.SearchGridSCName, .CommunityLinkText');
+                if (sibTitle) label = sibTitle.textContent.trim();
+            }
+        }
+        if (!label && link) {
+            if (link.getAttribute('aria-label')) label = link.getAttribute('aria-label');
+            else if (link.title) label = link.title;
+            else if (link.href) {
+                try {
+                    var file = new URL(link.href, document.baseURI).pathname
+                        .split('/').pop().replace(/[-_]/g, ' ').replace(/\.[a-z]+$/i, '').trim();
+                    if (file) label = file;
+                } catch (e) { /* noop */ }
+            }
+        }
+        img.setAttribute('alt', label || 'Property photo');
+    });
+
+    // Defensive: server-side patch sometimes appends an empty <ul></ul>
+    // sibling to the table when no .CommunityLinkText exist. Strip empty
+    // lists so they don't show up in AT structure navigation.
+    document.querySelectorAll('#divTopPanel ul, #AjaxPanelB ul, #AjaxPanelC ul').forEach(function (ul) {
+        if (!ul.children.length && !ul.textContent.trim()) ul.parentNode.removeChild(ul);
+    });
+};
+
+// Initial run after AJAX has had a moment to populate.
+window.__applyA11yToRentalTable();
+
+// Build a UL of .CommunityLinkText anchors only when such links exist on
+// the page; otherwise the previous code injected an empty <ul></ul>
+// after the last table row of any page (including News, polluting the
+// news grid with an orphaned empty list).
+const communityLinks = document.querySelectorAll('.CommunityLinkText');
+if (communityLinks.length) {
+    const ulEElement = document.createElement('ul');
+    communityLinks.forEach(link => {
+        const liElement = document.createElement('li');
+        liElement.appendChild(link.cloneNode(true));
+        ulEElement.appendChild(liElement);
+        link.parentNode.removeChild(link);
+    });
     const tableRows = document.querySelectorAll('table tr');
     const lastRow = tableRows[tableRows.length - 1];
-    lastRow.insertAdjacentElement('afterend', ulEElement);
+    if (lastRow) lastRow.insertAdjacentElement('afterend', ulEElement);
+}
 
 // Get the elements with the classes .jcarousel-prev and .jcarousel-next
 const jcarouselPrev = document.querySelector('.jcarousel-prev');
@@ -241,32 +402,12 @@ const imageElement = parentImgElement.querySelector('img');
     // Replace the existing content with the new ul element
     parentElement.innerHTML = "";
     parentElement.appendChild(ulElement);
-    // Select all <td> elements with the class .CommunitygridItemHeader
-const tdElements = document.querySelectorAll('td.CommunitygridItemHeader');
-
-// Loop through each <td> element
-tdElements.forEach(td => {
-    // Create a new <th> element
-    const th = document.createElement('th');
-    // Copy the class of the <td> to the <th>
-    th.className = td.className;
-    // Copy the content of the <td> to the <th>
-    th.textContent = td.textContent;
-    // Replace the <td> with the new <th> in the DOM
-    td.parentNode.replaceChild(th, td);
-});
-// Select all <p> elements with the class .hfOptionCell
-const pElements = document.querySelectorAll('.hfOptionCell p,.CommunitySpecialText span');
-
-// Loop through each <p> element
-pElements.forEach(p => {
-    // Create a new <h2> element
-    const h2 = document.createElement('h2');
-    // Copy the content of the <p> to the <h2>
-    h2.textContent = p.textContent;
-    // Replace the <p> with the new <h2> in the DOM
-    p.parentNode.replaceChild(h2, p);
-});
+    // (TH/scope promotion is now inside __applyA11yToRentalTable so it
+    //  re-runs after every AJAX repaint of the rental panels.)
+// BES-SR-26-2250801 — previously this block converted body copy in
+// .hfOptionCell / .CommunitySpecialText into <h2>, which is exactly what
+// the audit flags ("headings used as body text"). Leave the original
+// <p>/<span> markup intact; semantic section titles are added elsewhere.
 
     // Get all elements with the class CommunitySalesCenterDetailsH2
 const elements = document.querySelectorAll('.CommunitySalesCenterDetailsH2');
@@ -282,12 +423,18 @@ elements.forEach(element => {
     // Replace the original element with the new div
     element.parentNode.replaceChild(newDiv, element);
 });
-// Find all tables inside elements with the class CommunitySalesCenterDetailsTable
+// BES-SR-26-5261897 — replace the obsolete `summary` attribute with a
+// visually-hidden <caption> so the description is grammatically correct
+// and exposed to all AT.
 const tables = document.querySelectorAll('.CommunitySalesCenterDetailsTable table');
-
-// Loop through each table and set the summary attribute
 tables.forEach(table => {
-    table.setAttribute('summary', 'It describes Community Details');
+    table.removeAttribute('summary');
+    if (!table.querySelector('caption')) {
+        const cap = document.createElement('caption');
+        cap.textContent = 'Available floor plans with bedroom, bathroom, square footage, starting rent, and specials.';
+        cap.style.cssText = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;';
+        table.insertBefore(cap, table.firstChild);
+    }
 });
 
     setTimeout(function() {
@@ -354,65 +501,31 @@ if (listItems.length > 0) {
         var footerlogo = document.querySelector(".footerText a:nth-child(4)");
         footerlogo.setAttribute("aria-label", "Home - Aareas interactive");
         
-        // Find all elements with the class .gridItemHeader
-const gridItemHeaders = document.querySelectorAll('.gridItemHeader');
-
-// Loop through each element and replace it with a th element
-gridItemHeaders.forEach(element => {
-    const thElement = document.createElement('th'); // Create a th element
-    thElement.textContent = element.textContent; // Copy the text content
-
-    // Preserve inline styles
-    const inlineStyle = element.getAttribute('style');
-    if (inlineStyle) {
-        thElement.setAttribute('style', inlineStyle); // Set the preserved inline style
+    // (rental-table patches now handled by __applyA11yToRentalTable above
+    //  with a MutationObserver, so they re-apply on every AJAX repaint.)
+    if (typeof window.__applyA11yToRentalTable === 'function') {
+        window.__applyA11yToRentalTable();
     }
 
-    // Preserve classes
-    const classes = element.getAttribute('class');
-    if (classes) {
-        thElement.setAttribute('class', classes); // Set the preserved classes
+    }, 500);
+
+    // BES-SR-26-* — observe the AJAX rental panels and re-apply patches
+    // every time the server replaces their innerHTML. This is the key
+    // change: previously these patches only ran once on DOMContentLoaded
+    // (before AJAX had populated the panels), so the bad markup survived.
+    var rentalContainers = ['AjaxPanelB', 'AjaxPanelC', 'divTopPanel']
+        .map(function (id) { return document.getElementById(id); })
+        .filter(Boolean);
+    if (rentalContainers.length && typeof MutationObserver !== 'undefined') {
+        var rentalObserver = new MutationObserver(function () {
+            if (typeof window.__applyA11yToRentalTable === 'function') {
+                window.__applyA11yToRentalTable();
+            }
+        });
+        rentalContainers.forEach(function (c) {
+            rentalObserver.observe(c, { childList: true, subtree: true });
+        });
     }
-
-    element.parentNode.replaceChild(thElement, element); // Replace the td with th
-});
-// Select the element with the class .SearchGridSCName
-const element = document.querySelector('.SearchGridSCName');
-
-// Check if the element exists
-if (element) {
-    // Create a new <h2> element
-    const newElement = document.createElement('h2');
-
-    // Copy the content of the existing <h1> to the new <h2>
-    newElement.innerHTML = element.innerHTML;
-
-    // Copy the current class of the existing <h1> to the new <h2>
-    newElement.className = element.className;
-
-    // Replace the existing <h1> with the new <h2> in the DOM
-    element.parentNode.replaceChild(newElement, element);
-} else {
-    console.error('Element with class .SearchGridSCName not found.');
-}
-// Get all elements with the class .SearchGridPhoneInfo
-const elements = document.querySelectorAll('.SearchGridPhoneInfo');
-
-elements.forEach(element => {
-  // Create a new div element
-  const newDiv = document.createElement('div');
-  
-  // Copy the current class from the element to the new div
-  newDiv.className = element.className;
-  
-  // Copy the inner HTML content from the element to the new div
-  newDiv.innerHTML = element.innerHTML;
-  
-  // Replace the old element with the new div
-  element.parentNode.replaceChild(newDiv, element);
-});
-
-    }, 500); // 3000 milliseconds = 3 seconds
 });
 
 

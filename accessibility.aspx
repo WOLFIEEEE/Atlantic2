@@ -214,9 +214,9 @@ style='font-size:10.0pt;color:#333333'>Middlesex Management is under agreement w
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>Contact 280 Park Avenue South Associates, 363 Gowanus Developers LLC, Tower 111 LLC d/b/a The Continental, Tower 31 LLC With Your Accessibility Questions</span></p>
 
-<p role="heading" aria-level="2" class=MsoNormal style='margin-bottom:7.5pt;background:white'><u><span
-style='font-size:10.0pt;color:#333333'>What Information Do We Collect and How
-Do We Use It?</span></u></p>
+<p role="heading" aria-level="2" class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
+style='font-size:10.0pt;color:#333333;font-weight:bold'>What Information Do We Collect and How
+Do We Use It?</span></p>
 
 <p class=MsoNormal style='margin-bottom:7.5pt;background:white'><span
 style='font-size:10.0pt;color:#333333'>Please be aware that our efforts are ongoing. If, at any time, you have specific questions or concerns about the accessibility of any 280 Park Avenue South Associates, 363 Gowanus Developers LLC, Tower 111 LLC d/b/a The Continental, Tower 31 LLC. Web pages, or if you d like additional assistance please contact us at <a href="mailto:accessibility@AtlanticRDC.com">accessibility@AtlanticRDC.com</a> or by telephone at (732) 596-8413. If you do encounter an accessibility issue, please be sure to specify the Web page in your email, and we will make all reasonable efforts to make that page accessible for you.</span></p>

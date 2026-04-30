@@ -348,9 +348,6 @@
     <script language="javascript" type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
  <script language="javascript" type="text/javascript" src="js/jquery.cookie.js"></script>
     <div class="divWidthFull">
-        <h1 style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
-            BestRentNYC Rental Communities
-        </h1>
         <div class="hfdivSearch">
             <div id="divTopPanel">
                 <div id="divTopLeftPanel">

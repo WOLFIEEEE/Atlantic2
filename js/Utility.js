@@ -413,8 +413,94 @@ document.addEventListener('DOMContentLoaded', function () {
 		"aria-label": "Close legal disclaimer dialog"
 	});
 
-	$(".a11y_rem .dropdowns a").removeAttr("href");
-	$(".a11y_rem .dropdowns a").attr("role","none");
+	// BES-SR-26-9495235 / BES-SR-26-3734067 — Unique Features.
+	// The CMS renders the list as alternating sibling pairs:
+	//   <div class="dropdowns" onclick="expandcontent('scN')">N. Heading:</div>
+	//   <div id="scN" class="switchcontent"><div class="dropdownLink"><a>...</a></div>...</div>
+	// Restructure into a single semantic <ol>, with each <li> containing
+	// the heading text and a nested <ul> of the community links.
+	// (Click-to-expand is dropped — content is short, expand was hover-style
+	// and didn't add value; eliminating it also fixes the role="none"/cursor
+	// mismatch the audit flagged.)
+	(function rebuildUniqueFeaturesList() {
+		var container = document.querySelector('.a11y_rem #container') ||
+			document.querySelector('.a11y_rem');
+		if (!container || container.getAttribute('data-a11y-list') === '1') return;
+		var headings = container.querySelectorAll(':scope > .dropdowns, .dropdowns');
+		if (!headings.length) return;
+
+		var ol = document.createElement('ol');
+		ol.className = 'a11y-unique-features';
+		ol.style.cssText = 'margin: 8px 0 16px 0; padding-left: 24px;';
+
+		Array.prototype.forEach.call(headings, function (heading) {
+			var li = document.createElement('li');
+			li.style.cssText = 'margin-bottom: 12px; font-family: Verdana, Arial, sans-serif; color: #294f98;';
+
+			// Pull the heading text, stripping the visual "N. " prefix since
+			// <ol> now provides numbering.
+			var headingText = heading.textContent
+				.replace(/^\s*\d+[\.\)]\s*/, '')
+				.trim();
+			// Use <strong> so the question reads as an emphasized title
+			// (matching the original bold/blue styling) but at a readable
+			// size — the CMS's 7pt was illegibly small.
+			var headingEl = document.createElement('strong');
+			headingEl.style.cssText = 'font-family: Verdana, Arial, sans-serif; color: #294f98; font-size: 13px; font-weight: bold; line-height: 1.4;';
+			headingEl.textContent = headingText;
+			li.appendChild(headingEl);
+
+			// Find the matching .switchcontent via the onclick handler id.
+			var contentId = '';
+			var onclickAttr = heading.getAttribute('onclick') || '';
+			var m = onclickAttr.match(/expandcontent\(['"]([^'"]+)['"]\)/);
+			if (m) contentId = m[1];
+			var content = contentId ? document.getElementById(contentId) : null;
+
+			if (content) {
+				var anchors = content.querySelectorAll('.dropdownLink a, a');
+				if (anchors.length) {
+					var ul = document.createElement('ul');
+					ul.style.cssText = 'margin: 4px 0 0 0; padding-left: 18px; font-family: Verdana, Arial, sans-serif; font-size: 12px; font-weight: normal;';
+					Array.prototype.forEach.call(anchors, function (a) {
+						var subLi = document.createElement('li');
+						subLi.style.cssText = 'margin: 2px 0;';
+						var clone = a.cloneNode(true);
+						// Real link, real role — strip any role="none" override
+						// the CMS or earlier scripts may have injected.
+						clone.removeAttribute('role');
+						clone.removeAttribute('tabindex');
+						// Strip the legacy <font> wrappers so the rebuilt
+						// list inherits the readable size we set above.
+						clone.querySelectorAll('font').forEach(function (f) {
+							var parent = f.parentNode;
+							while (f.firstChild) parent.insertBefore(f.firstChild, f);
+							parent.removeChild(f);
+						});
+						subLi.appendChild(clone);
+						ul.appendChild(subLi);
+					});
+					li.appendChild(ul);
+				}
+				if (content.parentNode) content.parentNode.removeChild(content);
+			}
+
+			ol.appendChild(li);
+			if (heading.parentNode) heading.parentNode.removeChild(heading);
+		});
+
+		container.appendChild(ol);
+		container.setAttribute('data-a11y-list', '1');
+	})();
+
+	// BES-SR-26 (Useful Links iframe missing title) — CMS body may inject
+	// untitled iframes. Provide a sensible fallback so screen readers don't
+	// announce the URL.
+	$('.dvusefulllinks iframe, .a11y_rem iframe').each(function () {
+		if (!this.title || !this.title.trim()) {
+			this.title = $(this).attr('aria-label') || 'Embedded content';
+		}
+	});
 
 	$('.hfdivCommunitySearch').each(function () {
     var $container = $(this);
