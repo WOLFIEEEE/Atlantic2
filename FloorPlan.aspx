@@ -336,7 +336,7 @@
     <div id="divLogin" class="divLoginPanel">
         <div class="divLoginPanelInner">
             <div class="divLoginFrame" align="center">
-                <iframe id="frmLogin" class="loginFrame" name="frmLogin" src="blank.htm" frameborder="0"
+                <iframe id="frmLogin" class="loginFrame" name="frmLogin" src="blank.htm" title="Sign in form" frameborder="0"
                     scrolling="no" ></iframe>
             </div>
             <div id="dvCancel" class="loginCancelButton">
@@ -350,7 +350,7 @@
     <div id="divDisclaimer" class="divDisclaimer">
         <div class="divLoginPanelInner">
             <div class="divDisclaimerFame" align="center" test>
-                <iframe tabindex="-1" id="frmDisclaimer" class="DisclaimerFrame" name="frmDisclaimer" src="blank.htm"
+                <iframe tabindex="-1" id="frmDisclaimer" class="DisclaimerFrame" name="frmDisclaimer" src="blank.htm" title="Disclaimer details"
                     frameborder="0" scrolling="no" ></iframe>
             </div>
             <div class="DisclaimerCancelButton">
