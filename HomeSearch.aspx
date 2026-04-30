@@ -348,6 +348,9 @@
     <script language="javascript" type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
  <script language="javascript" type="text/javascript" src="js/jquery.cookie.js"></script>
     <div class="divWidthFull">
+        <h1 style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
+            BestRentNYC Rental Communities
+        </h1>
         <div class="hfdivSearch">
             <div id="divTopPanel">
                 <div id="divTopLeftPanel">
@@ -359,9 +362,9 @@
                             height: 100%; background-color: Transparent;">
                             <div style="position: absolute; top: 20%; width: 100%; display: table-cell; text-align: center;
                                 vertical-align: middle;">
-                                <h1 style="position: relative; text-align: center; font-family: Verdana; font-size: 10px;
+                                <h2 style="position: relative; text-align: center; font-family: Verdana; font-size: 10px;
                                     font-weight: bold; color: White;">
-                                    <%=_txtBannerPath %></h1>
+                                    <%=_txtBannerPath %></h2>
                             </div>
                         </div>
                     </div>
@@ -452,7 +455,7 @@
                     <div id="dvPage3Grid" class="divBottonPanel">
                         <div class="hfdivGrid" style="min-height: 330px;">
                             <div style="position: absolute; top: 0px; @top: 1px; left: 0px; z-index: 100;">
-                                <div id="dvHeaderPage3" class="GridHeaderTitleText">
+                                <div id="dvHeaderPage3" class="GridHeaderTitleText" role="heading" aria-level="2">
                                     RENTAL COMMUNITIES
                                 </div>
                             </div>
@@ -657,12 +660,12 @@
     <asp:HiddenField ID="hdnCurrentModelList" runat="server" Value="" EnableViewState="false" />
     <input type="hidden" id="hdnImagefilter" value="" enableviewstate="false" />
     <input type="hidden" id="hdnAnonymousSearch" value="" enableviewstate="false" />
-    <div id="divGMap" class="divGMapPanelNew">
+    <div id="divGMap" class="divGMapPanelNew" role="dialog" aria-modal="true" aria-label="Community location map">
         <div class="divGMapPanelInner">
-            <img id="Img1" src="images/closelabel.png" onclick="CloseGMapPopup();" class="GMapCancelButtonNew" />
-            <img id="Img5" src="images/labelclose_shade.png" class="GMapCancelButtonNewShadeHidden" />
+            <img id="Img1" src="images/closelabel.png" alt="Close map" onclick="CloseGMapPopup();" class="GMapCancelButtonNew" />
+            <img id="Img5" src="images/labelclose_shade.png" alt="" class="GMapCancelButtonNewShadeHidden" />
             <div class="divGMapFrame" align="center">
-                <iframe id="frmGMap" class="GmapFrameNew" name="frmGMap" src="blank.htm" frameborder="0"
+                <iframe id="frmGMap" class="GmapFrameNew" name="frmGMap" src="blank.htm" title="Community location map" frameborder="0"
                     scrolling="no"></iframe>
             </div>
         </div>

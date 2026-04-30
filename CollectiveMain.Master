@@ -324,7 +324,17 @@
             // BES-BZ-26-7548226 (1.4.10) — avoid fixed pixel offsets so the
             // dialog reflows at 200%/400% zoom and different viewport sizes.
             var disclaimer = document.getElementById('divDisclaimer');
-            lastDisclaimerTrigger = document.activeElement;
+            // BES-SR-26-2694514 — when launched from the About Us submenu,
+            // the inner anchor is hidden on close (submenu collapses), so
+            // restoring focus to it is a no-op. Remap to the visible parent
+            // (ABOUT US trigger) which contains the disclaimer link.
+            var trigger = document.activeElement;
+            var headerSub = document.getElementById('dvSubMenu2');
+            if (headerSub && trigger && headerSub.contains(trigger)) {
+                var aboutUsTrigger = document.getElementById('menuTrigger_about_us');
+                if (aboutUsTrigger) { trigger = aboutUsTrigger; }
+            }
+            lastDisclaimerTrigger = trigger;
             disclaimer.removeAttribute('aria-label');
             disclaimer.style.left = '50%';
             disclaimer.style.top = '50%';
@@ -455,7 +465,7 @@
     <script language="javascript" type="text/javascript" src="/js/wz_tooltip.js"></script>
 
     <div id="dvMain" runat="server" class="dvMain">
-        <div id="dvHeader" runat="server" class="dvHeader" role="header">
+        <div id="dvHeader" runat="server" class="dvHeader" role="banner">
             <ul id="dvMainMenu" runat="server" class="dvMenu" role="menubar" aria-label="Main navigation" aria-orientation="horizontal">
                 <asp:Repeater ID="rptMainMenu" runat="server">
                     <ItemTemplate>
@@ -465,21 +475,21 @@
                             <%# DataBinder.Eval(Container.DataItem,"Text")%></a> </li>
                     </ItemTemplate>
                 </asp:Repeater>
-                <div id="dvSubMenu1" style="position: absolute; width: 210px; top: 25px; z-index: 10;
+                <div id="dvSubMenu1" role="menu" aria-label="NJ Rental Apartments submenu" aria-hidden="true" style="position: absolute; width: 210px; top: 25px; z-index: 10;
                     vertical-align: top; left: 55px; display: none; background-color: White; border-color: #dcdddf;
                     border-style: solid; border-width: 1px;">
                     <div style="width: 206px; padding-bottom: 2px; background-color: White; padding-top: 2px;
                         margin-left: 2px;">
                         <div id="dvBack1" style="height: 30px; line-height: 30px; padding-left: 7px;">
-                            <a class="MenuAnew" href="<%=_domain %>/all-nj-apartments" onmouseover="SetBackGround('dvBack1')">
+                            <a class="MenuAnew" role="menuitem" href="<%=_domain %>/all-nj-apartments" onmouseover="SetBackGround('dvBack1')">
                                 ALL NJ APARTMENTS</a>
                         </div>
                         <div id="dvBack2" style="height: 30px; line-height: 30px; padding-left: 7px;">
-                            <a class="MenuAnew" href="<%=_domain %>/nj-active-adult-residences" onmouseover="SetBackGround('dvBack2')">
+                            <a class="MenuAnew" role="menuitem" href="<%=_domain %>/nj-active-adult-residences" onmouseover="SetBackGround('dvBack2')">
                                 NJ ACTIVE ADULT RESIDENCES</a>
                         </div>
                         <div id="dvBack3" style="height: 30px; line-height: 30px; padding-left: 7px;">
-                            <a class="MenuAnew" href="<%=_domain %>/nj-affordable-housing" onmouseover="SetBackGround('dvBack3')">
+                            <a class="MenuAnew" role="menuitem" href="<%=_domain %>/nj-affordable-housing" onmouseover="SetBackGround('dvBack3')">
                                 NJ AFFORDABLE HOUSING</a>
                         </div>
                     </div>
@@ -499,21 +509,21 @@
                         </div>
                     </div>
                 </div>
-                <div id="dvSubMenu3" style="position: absolute; width: 130px; top: 25px; z-index: 11;
+                <div id="dvSubMenu3" role="menu" aria-label="My Account submenu" aria-hidden="true" style="position: absolute; width: 130px; top: 25px; z-index: 11;
                     background-color: White; left: 818px; display: none; border-color: #dcdddf; border-style: solid;
                     border-width: 1px;">
                     <div style="width: 126px; background-color: White; padding-top: 2px; padding-bottom: 2px;
                         margin-left: 2px;">
                         <div id="dvSignIn" style="height: 30px; line-height: 30px; padding-left: 7px;">
-                            <a class="MenuAnew" onclick="javascript:btnSignIn_Click();" onmouseover="SetBackGround('dvSignIn')">
+                            <a class="MenuAnew" role="menuitem" href="javascript:void(0);" onclick="javascript:btnSignIn_Click();" onmouseover="SetBackGround('dvSignIn')">
                                 SIGN IN</a>
                         </div>
                         <div id="dvSignOut" style="height: 30px; line-height: 30px; padding-left: 7px;">
-                            <a class="MenuAnew" onclick="javascript:btnSignOut_Click();" onmouseover="SetBackGround('dvSignOut')">
+                            <a class="MenuAnew" role="menuitem" href="javascript:void(0);" onclick="javascript:btnSignOut_Click();" onmouseover="SetBackGround('dvSignOut')">
                                 SIGN OUT</a>
                         </div>
                         <div id="dvMyAccount" style="height: 30px; line-height: 30px; padding-left: 7px;">
-                            <a class="MenuAnew" onclick="javascript:btnMyAccount_Click();" onmouseover="SetBackGround('dvMyAccount')">
+                            <a class="MenuAnew" role="menuitem" href="javascript:void(0);" onclick="javascript:btnMyAccount_Click();" onmouseover="SetBackGround('dvMyAccount')">
                                 MY BESTRENT HOME</a>
                         </div>
                     </div>
@@ -565,7 +575,7 @@
                     display: none; z-index: 13; left: 551px; background-color: White;">
                 </div>
             </ul>
-            <div id="dvCommunityMenu" runat="server" class="dvMenu" aria-expanded="false">
+            <div id="dvCommunityMenu" runat="server" class="dvMenu" role="navigation" aria-label="Community shortcuts">
                 <asp:Repeater ID="rptCommunityMenu" runat="server">
                     <ItemTemplate>
                         <div class="menuItem">
@@ -603,16 +613,16 @@
         </div>
         </div>
     </div>
-    <div id="divLogin" class="divLoginPanel">
+    <div id="divLogin" class="divLoginPanel" role="dialog" aria-modal="true" aria-label="Sign in">
         <div class="divLoginPanelInner">
             <%--<img id="btnCancel" src="<%=ResolveUrl("~/images/closelabel.png")%>" onclick="CloseLoginPopup();" class="loginCancelButton" />--%>
             <div class="divLoginFrame" align="center">
-                <iframe id="frmLogin" class="loginFrame" name="frmLogin" src="/blank.htm" frameborder="0"
+                <iframe id="frmLogin" class="loginFrame" name="frmLogin" src="/blank.htm" title="Sign in form" frameborder="0"
                     scrolling="no" ></iframe>
             </div>
             <div id="dvCancel" class="loginCancelButton">
                 <asp:LinkButton ID="lnkLoginClose" runat="server" OnClientClick="CloseLoginPopup(); return false;"
-                    EnableViewState="false" Text="CLOSE X" CssClass="PopupCancelButtonText"></asp:LinkButton>
+                    EnableViewState="false" Text="Close" CssClass="PopupCancelButtonText"></asp:LinkButton>
             </div>
         </div>
     </div>
@@ -890,7 +900,7 @@
         
     </script>
     
-    <iframe id="ifrmStatus" class="displayNone" src="<%= _247URL%>/Marketing/LoginStatus.aspx?op=status&domain=<%= _domain%>" />
-    <iframe id="ifmBackEnd" class="displayNone" src="<%= _247URL%>/Marketing/GetFrameUrl.aspx?FrameUrl=<%= Server.UrlEncode(Request.Url.ToString())%>" />
+    <iframe id="ifrmStatus" class="displayNone" title="Login status" aria-hidden="true" src="<%= _247URL%>/Marketing/LoginStatus.aspx?op=status&domain=<%= _domain%>" />
+    <iframe id="ifmBackEnd" class="displayNone" title="Backend support frame" aria-hidden="true" src="<%= _247URL%>/Marketing/GetFrameUrl.aspx?FrameUrl=<%= Server.UrlEncode(Request.Url.ToString())%>" />
 </body>
 </html>

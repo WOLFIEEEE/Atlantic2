@@ -263,13 +263,13 @@
                                 <div align="right" style="float: right; width: 240px; padding-right: 5px; color: Gray;
                                     text-align: right; font-family: Verdana; font-size: 10px;">
                                     <a href="#" onclick="history.go(-1);return false;" class="CommunitySearchCriteriaText"
-                                        id="lnkBackToSearch">« Return to search result</a>
+                                        id="lnkBackToSearch">ï¿½ Return to search result</a>
                                 </div>
                                 <div style="height: 3px; width: 240px; float: left;">
                                 </div>
                                 <div align="right" style="float: right; width: 240px; padding-right: 5px; color: Gray;
                                     text-align: right; font-family: Verdana; font-size: 10px;">
-                                    <a href="<%=_Type%>" class="CommunitySearchCriteriaText" id="lnkNewSeach">« Start new
+                                    <a href="<%=_Type%>" class="CommunitySearchCriteriaText" id="lnkNewSeach">ï¿½ Start new
                                         search</a>
                                 </div>
                                 <div style="float: right; padding-right: 5px; padding-top: 10px;">
@@ -429,22 +429,22 @@
             </div>
         </div>
     </div>
-    <iframe id="ifrmSave" class="hfifrmSave displayNone" frameborder="no"></iframe>
-    <div id="divGMap" class="divGMapPanel">
+    <iframe id="ifrmSave" class="hfifrmSave displayNone" title="Save action frame" aria-hidden="true" frameborder="no"></iframe>
+    <div id="divGMap" class="divGMapPanel" role="dialog" aria-modal="true" aria-label="Community location map">
         <div class="divGMapPanelInner">
             <%--<img id="btnGMapCancel" src="<%=ResolveUrl("~/images/closelabel.png")%>" onclick="CloseGMapPopup('frmGMap');"
                 class="GMapCancelButton" />--%>
             <div class="divGMapFrame" align="center">
-                <iframe id="frmGMap" class="GmapFrame" name="frmGMap" src="/blank.htm" frameborder="0"
+                <iframe id="frmGMap" class="GmapFrame" name="frmGMap" src="/blank.htm" title="Community location map" frameborder="0"
                     scrolling="no"></iframe>
             </div>
             <div class="GMapCancelButton">
                 <asp:LinkButton ID="lnkGMapClose" runat="server" OnClientClick="CloseGMapPopup('frmGMap'); return false;"
-                    EnableViewState="false" Text="CLOSE X" CssClass="PopupCancelButtonText"></asp:LinkButton>
+                    EnableViewState="false" Text="Close" CssClass="PopupCancelButtonText"></asp:LinkButton>
             </div>
         </div>
     </div>
-    <div id="divLocalMap" class="divLocalMapPanelNew">
+    <div id="divLocalMap" class="divLocalMapPanelNew" role="dialog" aria-modal="true" aria-label="Local area map">
         <div class="divLocalGMapPanelInner">
             <%--<img id="Img4" src="<%=ResolveUrl("~/images/closelabel.png")%>" onclick="CloseGMapPopup('divLocalMap');"
                 class="divLocalMapCancelButtonNew" />--%>
@@ -452,11 +452,11 @@
                 <%--<iframe id="frmLocalMap" class="GmapFrame" name="frmLocalMap" src="/blank.htm" frameborder="0"
                     scrolling="no" runat="server"></iframe>--%>
                 <%--width="530px" height="415px"--%>
-                <img id="imgLocalMap" class="LocalGmapImage" src="/blank.htm" alt="" />
+                <img id="imgLocalMap" class="LocalGmapImage" src="/blank.htm" alt="Local area map" />
             </div>
             <div id="dvLocalMapClose" class="divLocalMapCancelButtonNew">
                 <asp:LinkButton ID="lnkLocalMapClose" runat="server" OnClientClick="CloseGMapPopup('divLocalMap'); return false;"
-                    EnableViewState="false" Text="CLOSE X" CssClass="PopupCancelButtonText"></asp:LinkButton>
+                    EnableViewState="false" Text="Close" CssClass="PopupCancelButtonText"></asp:LinkButton>
             </div>
         </div>
     </div>
@@ -464,18 +464,18 @@
     </div>
     <div id="divNavigatorBar" class="hfdivNavigatorBar" style="display: none;">
     </div>
-    <div id="divFloorPlan" class="divGMapPanelNew">
+    <div id="divFloorPlan" class="divGMapPanelNew" role="dialog" aria-modal="true" aria-label="Floor plan details">
         <div class="divGMapPanelInner">
             <%--<img id="Img1" src="<%=ResolveUrl("~/images/closelabel.png")%>" onclick="CloseGMapPopup('frmFloorPlan');"
                 class="GMapCancelButtonNew" />--%>
             <%--<img id="Img5" src="<%=ResolveUrl("~/images/labelclose_shade.png")%>" class="GMapCancelButtonNewShadeHidden" />--%>
             <div class="divGMapFrame" align="center">
-                <iframe id="frmFloorPlan" class="GmapFrameNew" name="frmFloorPlan" src="/blank.htm"
+                <iframe id="frmFloorPlan" class="GmapFrameNew" name="frmFloorPlan" src="/blank.htm" title="Floor plan details"
                     frameborder="0" scrolling="no"></iframe>
             </div>
             <div id="dvFloorPlanClose" class="GMapCancelButtonNew">
                 <asp:LinkButton ID="lnlFloorPlanClose" runat="server" OnClientClick="CloseGMapPopup('frmFloorPlan'); return false;"
-                    EnableViewState="false" Text="CLOSE X" CssClass="PopupCancelButtonText"></asp:LinkButton>
+                    EnableViewState="false" Text="Close" CssClass="PopupCancelButtonText"></asp:LinkButton>
             </div>
             <div id="dvFloorPlanCloseHide" class="GMapCancelButtonNewShadeHidden">
                 <asp:LinkButton ID="LinkButton3" runat="server" OnClientClick="return false;" EnableViewState="false"
@@ -483,21 +483,21 @@
             </div>
         </div>
     </div>
-    <div id="divRegister" class="divRegister">
+    <div id="divRegister" class="divRegister" role="dialog" aria-modal="true" aria-label="Registration form">
         <div class="divGMapPanelInner">
             <%--<img id="Img3" src="<%=ResolveUrl("~/images/closelabel.png")%>" onclick="CloseGMapPopup('frmRegister');"
                 class="divRegisterCancelButtonNew" />--%>
             <div class="divGMapFrame" align="center">
-                <iframe id="frmRegister" class="GmapFrameNew" name="frmRegister" src="/blank.htm"
+                <iframe id="frmRegister" class="GmapFrameNew" name="frmRegister" src="/blank.htm" title="Registration form"
                     frameborder="0" scrolling="no"></iframe>
             </div>
             <div class="divRegisterCancelButtonNew">
                 <asp:LinkButton ID="LinkButton1" runat="server" OnClientClick="CloseGMapPopup('frmRegister'); return false;"
-                    EnableViewState="false" Text="CLOSE X" CssClass="PopupCancelButtonText"></asp:LinkButton>
+                    EnableViewState="false" Text="Close" CssClass="PopupCancelButtonText"></asp:LinkButton>
             </div>
         </div>
     </div>
-    <div id="divImage" class="divImageNew">
+    <div id="divImage" class="divImageNew" role="dialog" aria-modal="true" aria-label="Photo gallery">
         <div class="divImagePanelInner">
             <%--<img id="Img2" src="<%=ResolveUrl("~/images/closelabel.png")%>" onclick="CloseGMapPopup('divImage');"
                 class="divImageCancelButtonNew" />--%>
@@ -509,8 +509,8 @@
             </div>
             <div class="divImageCancelButtonNew">
                  <%-- <asp:LinkButton ID="LinkButton2" runat="server" OnClientClick="CloseGMapPopup('divImage'); return false;"
-                    EnableViewState="false" Text="CLOSE X" CssClass="PopupCancelButtonText"></asp:LinkButton>--%>
-                <img id="Img2" alt="CLOSE X" src="<%=ResolveUrl("~/images/closelabel.gif")%>" onclick="CloseGMapPopup('divImage');" class="divImageCancelButtonNew" />
+                    EnableViewState="false" Text="Close" CssClass="PopupCancelButtonText"></asp:LinkButton>--%>
+                <img id="Img2" alt="Close photo gallery" src="<%=ResolveUrl("~/images/closelabel.gif")%>" onclick="CloseGMapPopup('divImage');" class="divImageCancelButtonNew" />
             </div>
         </div>
     </div>

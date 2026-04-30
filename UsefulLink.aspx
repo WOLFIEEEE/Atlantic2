@@ -9,7 +9,7 @@
                 <div>
                     <div>
                         <div class="CommunityTopBanner">
-                           <a href="http://www.bestrentnyc.com" style="text-decoration:none;"> <img id="imgTopBanner" runat="server" border="0" alt="" /></a>
+                           <a href="http://www.bestrentnyc.com" style="text-decoration:none;" aria-label="BestRentNYC.com - Return to homepage"> <img id="imgTopBanner" runat="server" border="0" alt="" /></a>
                         </div>
                         <div class="NewsTopSearchCriteria">
                             <div align="right" style="float: right; padding-right: 10px; color: Gray; text-align: right;

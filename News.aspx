@@ -5,58 +5,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">        
     <script type="text/javascript" language="javascript">
 
-        function ShowNewsDetails(CallId) {
-
-            if (document.getElementById('ctl00_ContentPlaceHolder1_hdnCallId').value == CallId) {
-                hideAll();
-            }
-            else if (document.getElementById('grdNews_NewsText_div_' + CallId).style.display == "block") {
-                document.getElementById('grdNews_NewsText_div_' + CallId).style.display = "none";
-                //$(document).ready(function() {
-                //    $("#grdNews_NewsText_div_" + CallId).slideToggle("slow");
-                //    $(this).toggleClass("active"); return false;
-                //});
-                document.getElementById('newsHeadLine_' + CallId).className = "newsGridLinkItemText";
-                document.getElementById('newsDate_' + CallId).className = "newsGridLinkItemText";
-                document.getElementById('ctl00_ContentPlaceHolder1_hdnCallId').value = "0";
-            }
-            else {
-                hideAll();
-                //$(document).ready(function() {
-                //    $("#grdNews_NewsText_div_" + CallId).slideToggle("slow");
-                //    $(this).toggleClass("active"); return false;
-                //});
-                document.getElementById('grdNews_NewsText_div_' + CallId).style.display = "block";
-                document.getElementById('newsHeadLine_' + CallId).className = "newsGridLinkItemTextBold";
-                document.getElementById('newsDate_' + CallId).className = "newsGridLinkItemTextBold";
-                document.getElementById('ctl00_ContentPlaceHolder1_hdnCallId').value = CallId;
-
-
-                //document.getElementById('grdNews_NewsText_div_' + CallId).style.display = "block";
-                //newsGridLinkItemTextBold
-
-            }
-            //document.getElementById('grdNews_NewsText_div_' + CallId).style.visibility =
-
-        }
-
-        function hideAll() {
-
-            var CallId = document.getElementById('ctl00_ContentPlaceHolder1_hdnCallId').value;
-            if (CallId != "0") {
-                document.getElementById('grdNews_NewsText_div_' + CallId).style.display = "none"
-                //$(document).ready(function() {
-                //    $("#grdNews_NewsText_div_" + CallId).slideToggle("slow");
-                //    $(this).toggleClass("active"); return false;                
-                //});
-                document.getElementById('newsHeadLine_' + CallId).className = "newsGridLinkItemText";
-                document.getElementById('newsDate_' + CallId).className = "newsGridLinkItemText";
-                document.getElementById('ctl00_ContentPlaceHolder1_hdnCallId').value = "0";
-            }
-
-        }
-
-
         function showInlineNewsImage(srcUrl) {
 
             document.getElementById("divGrayBGCommunity").className = "hfVisible";
@@ -146,7 +94,7 @@
                 <div>
                     <div>
                         <div class="CommunityTopBanner">
-                           <a href="http://www.bestrentnyc.com" style="text-decoration:none;"> <img id="imgTopBanner" runat="server" border="0" alt="" /></a>
+                           <a href="http://www.bestrentnyc.com" style="text-decoration:none;" aria-label="BestRentNYC.com - Return to homepage"> <img id="imgTopBanner" runat="server" border="0" alt="" /></a>
                         </div>
                         <div class="NewsTopSearchCriteria">
                             <div align="right" style="float: right; padding-right: 10px; color: Gray; text-align: right;
@@ -165,7 +113,7 @@
                         <div style="float: left; width: 948px; height: 100%; border-color: Gray; border-style: solid;
                             border-width: 1px;">
                             <div id="dvNews" style="padding-left: 10px; padding-top: 10px;">
-                                <span class="AboutUsPhoneTextBold">News</span>
+                                <h1 class="AboutUsPhoneTextBold" style="margin: 0; padding: 0; display: inline-block;">News</h1>
                             </div>
                             <div style="height: 8px; width: 100%; float: left;">
                             </div>
@@ -178,9 +126,8 @@
                                         <asp:TemplateColumn HeaderText="News Date" HeaderStyle-CssClass="newsGridItemText"
                                             ItemStyle-VerticalAlign="Top">
                                             <ItemTemplate>
-                                                <a id="newsDate_<%# DataBinder.Eval(Container, "DataItem.CallId") %>" class="newsGridLinkItemText"
-                                                    onclick='<%# "ShowNewsDetails(" + DataBinder.Eval(Container, "DataItem.CallId") + ")" %>'>
-                                                    <%#  DataBinder.Eval(Container, "DataItem.NewsDate", "{0:MM/dd/yyyy}")%></a>
+                                                <span id="newsDate_<%# DataBinder.Eval(Container, "DataItem.CallId") %>" class="newsGridLinkItemText">
+                                                    <%#  DataBinder.Eval(Container, "DataItem.NewsDate", "{0:MM/dd/yyyy}")%></span>
                                             </ItemTemplate>
                                             <ItemStyle Width="100" HorizontalAlign="Left" />
                                         </asp:TemplateColumn>
@@ -188,17 +135,18 @@
                                             <ItemTemplate>
                                                 <div id="grdNews_div_<%# DataBinder.Eval(Container, "DataItem.CallId") %>" style="position: relative;
                                                     text-align: left;">
-                                                    <a id="newsHeadLine_<%# DataBinder.Eval(Container, "DataItem.CallId") %>" onclick='<%# "ShowNewsDetails(" + DataBinder.Eval(Container, "DataItem.CallId") + ")" %>'
-                                                        class="newsGridLinkItemText">
-                                                        <%#DataBinder.Eval(Container, "DataItem.HeadLine")%></a>
+                                                    <h2 id="newsHeadLine_<%# DataBinder.Eval(Container, "DataItem.CallId") %>"
+                                                        class="newsGridLinkItemText" style="margin: 0; padding: 0; font-size: inherit; font-weight: inherit;">
+                                                        <%#DataBinder.Eval(Container, "DataItem.HeadLine")%></h2>
                                                 </div>
                                                 <div id="grdNews_NewsText_div_<%# DataBinder.Eval(Container, "DataItem.CallId") %>"
-                                                    style="display: none; width: 820px;">
-                                                    <table role="none">
+                                                    style="width: 820px;">
+                                                    <table role="presentation">
                                                         <tr>
                                                             <td align="left" valign="top">
                                                                 <div class="divNewsImageS" runat="server" id="dvNewsImage">
                                                                     <asp:Image runat="server" ID="imgNews" CssClass="NewsImageS" src='<%# DataBinder.Eval(Container, "DataItem.ThumbnailImageUrl") %>'
+                                                                        AlternateText='<%# DataBinder.Eval(Container, "DataItem.HeadLine") %>'
                                                                         Width="160px" Height="95px" />
                                                                     <asp:HiddenField ID="hdnImageUrl" runat="server" Value='<%# DataBinder.Eval(Container, "DataItem.ImageUrl") %>' />
                                                                 </div>
@@ -232,9 +180,9 @@
     </div>
     <div id="divGrayBGCommunity" class="hfGmapNone">
     </div>
-    <div id="divNewsImage" class="divNewsImagePopup">
+    <div id="divNewsImage" class="divNewsImagePopup" role="dialog" aria-modal="true" aria-label="News image preview">
         <div class="divNewsImagePopupInner">
-            <img id="Img4" src="images/closelabel.png" onclick="CloseGMapPopup();" class="divNewsImagePopupClose" />
+            <img id="Img4" src="images/closelabel.png" onclick="CloseGMapPopup();" alt="Close news image preview" class="divNewsImagePopupClose" />
             <div id="divImage" class="divGMapFrame" align="center">
                 <%--<iframe id="frmNewsImage" class="GmapFrame" name="frmNewsImage" src="blank.htm" frameborder="0"
                     scrolling="no" runat="server"></iframe>--%>
