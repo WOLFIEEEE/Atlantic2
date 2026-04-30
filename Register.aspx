@@ -60,7 +60,7 @@
                             <div style="padding-left: 10px; padding-right: 10px; margin-top: 6px;">
                                 <p id="registerFormHelp" class="AboutUsDetailsText" style="margin: 0 0 8px 0;">
                                     Complete all required fields marked with * and use Submit at the end of the form.
-                                  <p />
+                                  </p>
                             </div>
                             <div style="height: 8px; width: 100%; float: left;">
                             </div>

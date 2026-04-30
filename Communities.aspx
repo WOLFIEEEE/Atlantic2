@@ -263,13 +263,13 @@
                                 <div align="right" style="float: right; width: 240px; padding-right: 5px; color: Gray;
                                     text-align: right; font-family: Verdana; font-size: 10px;">
                                     <a href="#" onclick="history.go(-1);return false;" class="CommunitySearchCriteriaText"
-                                        id="lnkBackToSearch">� Return to search result</a>
+                                        id="lnkBackToSearch">&raquo; Return to search result</a>
                                 </div>
                                 <div style="height: 3px; width: 240px; float: left;">
                                 </div>
                                 <div align="right" style="float: right; width: 240px; padding-right: 5px; color: Gray;
                                     text-align: right; font-family: Verdana; font-size: 10px;">
-                                    <a href="<%=_Type%>" class="CommunitySearchCriteriaText" id="lnkNewSeach">� Start new
+                                    <a href="<%=_Type%>" class="CommunitySearchCriteriaText" id="lnkNewSeach">&raquo; Start new
                                         search</a>
                                 </div>
                                 <div style="float: right; padding-right: 5px; padding-top: 10px;">
