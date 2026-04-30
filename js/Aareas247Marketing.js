@@ -316,6 +316,145 @@ window.__applyA11yToRentalTable = function () {
 // Initial run after AJAX has had a moment to populate.
 window.__applyA11yToRentalTable();
 
+// =====================================================================
+// Communities.aspx (Tower 31, gramercy Place, The Continental, etc.)
+// =====================================================================
+// BES-SR-26 community-page issues: carousel image alts, carousel label,
+// modal heading/labelling, modal focus management, prev/next button
+// semantics, layout-table role, "CLOSE X" labels.
+window.__applyA11yToCommunityPage = function () {
+    var SR_ONLY = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;';
+
+    // BES-SR-26 (Carousel needs label/heading): wrap the carousel in a
+    // labelled region so AT users can recognise and skip the widget.
+    var carousel = document.querySelector('.jcarousel-skin-tango');
+    if (carousel && !carousel.getAttribute('aria-label')) {
+        carousel.setAttribute('role', 'region');
+        carousel.setAttribute('aria-label', 'Property photo gallery');
+    }
+
+    // BES-KN-26-5649619 — carousel slide images have onclick handlers but
+    // no keyboard activation. Promote each clickable thumbnail to a
+    // focusable button so keyboard users can open the lightbox via Enter
+    // or Space. Skip the decorative transparent overlay images so we don't
+    // create double tab stops on the same slide.
+    document.querySelectorAll('.jcarousel-list li img[onclick]').forEach(function (img) {
+        if (img.getAttribute('data-a11y-kb') === '1') return;
+        var src = img.getAttribute('src') || '';
+        if (/transparent_triangle_Overlay/i.test(src)) return; // decorative overlay
+        img.setAttribute('data-a11y-kb', '1');
+        if (!img.hasAttribute('tabindex')) img.setAttribute('tabindex', '0');
+        if (!img.getAttribute('role')) img.setAttribute('role', 'button');
+        img.addEventListener('keydown', function (e) {
+            var k = e.key || e.keyCode;
+            if (k === 'Enter' || k === ' ' || k === 'Spacebar' || k === 13 || k === 32) {
+                e.preventDefault();
+                img.click();
+            }
+        });
+    });
+
+    // BES-SR-26 (Image preview modal: Prev/Next buttons): the lightbox
+    // arrows are bare <div>s. Give them button semantics + names.
+    var lnkPrev = document.getElementById('lnkPrev');
+    if (lnkPrev) {
+        lnkPrev.setAttribute('role', 'button');
+        if (!lnkPrev.hasAttribute('tabindex')) lnkPrev.setAttribute('tabindex', '0');
+        if (!lnkPrev.getAttribute('aria-label')) lnkPrev.setAttribute('aria-label', 'Previous photo');
+    }
+    var lnkNext = document.getElementById('lnkNext');
+    if (lnkNext) {
+        lnkNext.setAttribute('role', 'button');
+        if (!lnkNext.hasAttribute('tabindex')) lnkNext.setAttribute('tabindex', '0');
+        if (!lnkNext.getAttribute('aria-label')) lnkNext.setAttribute('aria-label', 'Next photo');
+    }
+
+    // BES-SR-26 (Phone office hours = layout table): mark every layout
+    // <table> in the right sidebar (specials, phone/hours) as presentation
+    // since they aren't tabular data and have no headers. querySelectorAll
+    // is required: multiple tables can live in .CommunityRightContactDetails
+    // (e.g. panSpecials + panPhoneoffHours on Liberty Terrace).
+    document.querySelectorAll(
+        '#ctl00_ContentPlaceHolder1_panPhoneoffHours table, ' +
+        '#ctl00_ContentPlaceHolder1_panSpecials table, ' +
+        '.CommunityRightContactDetails table'
+    ).forEach(function (t) {
+        if (!t.getAttribute('role')) t.setAttribute('role', 'presentation');
+    });
+
+    // BES-SR-26-3281188 (Modal launched from floorplan links has visual
+    // heading but not semantic) — accepted by audit as 3rd-party because
+    // the actual modal content is rendered inside an iframe, where a
+    // wrapper-injected <h2> doesn't propagate. The wrapper-level
+    // role="dialog"/aria-modal/aria-label set in Communities.aspx markup
+    // remains; no JS heading injection here.
+
+    // BES-SR-26 (CLOSE X labels): any leftover "CLOSE X" text in close
+    // controls is shortened to "Close" so AT doesn't announce the X glyph.
+    document.querySelectorAll('a, button, span').forEach(function (el) {
+        if (el.children.length) return;
+        if (el.textContent && el.textContent.trim() === 'CLOSE X') {
+            el.textContent = 'Close';
+        }
+    });
+};
+window.__applyA11yToCommunityPage();
+
+// BES-SR-26 (Modals cannot be focused or TABBED into) — when any of the
+// community modals opens (display becomes "block"), move focus into it
+// and remember where focus was so we can restore it on close. Idempotent
+// per-modal via dataset flag.
+(function setupCommunityModalFocus() {
+    if (window.__communityModalFocusBound) return;
+    window.__communityModalFocusBound = true;
+    var ids = ['divImage', 'divFloorPlan', 'divRegister', 'divGMap', 'divLocalMap'];
+    var lastTrigger = null;
+
+    // Capture potential trigger before each click.
+    document.addEventListener('mousedown', function (e) {
+        var t = e.target.closest && e.target.closest('a, button, [role="button"]');
+        if (t) lastTrigger = t;
+    }, true);
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+            var t = e.target;
+            if (t && (t.tagName === 'A' || t.tagName === 'BUTTON' || t.getAttribute('role') === 'button')) {
+                lastTrigger = t;
+            }
+        }
+    }, true);
+
+    ids.forEach(function (id) {
+        var modal = document.getElementById(id);
+        if (!modal) return;
+        modal.setAttribute('tabindex', '-1');
+        var prevDisplay = modal.style.display;
+        var observer = new MutationObserver(function () {
+            var nowDisplay = modal.style.display;
+            var isOpen = nowDisplay && nowDisplay !== 'none';
+            var wasOpen = prevDisplay && prevDisplay !== 'none';
+            prevDisplay = nowDisplay;
+            if (isOpen && !wasOpen) {
+                modal.dataset.a11yReturnTo = lastTrigger ? '1' : '';
+                modal.__a11yReturnEl = lastTrigger;
+                setTimeout(function () {
+                    var firstFocusable = modal.querySelector(
+                        'a[href]:not([tabindex="-1"]), button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])'
+                    );
+                    (firstFocusable || modal).focus();
+                }, 50);
+            } else if (!isOpen && wasOpen) {
+                var ret = modal.__a11yReturnEl;
+                if (ret && typeof ret.focus === 'function') {
+                    try { ret.focus(); } catch (e) { /* noop */ }
+                }
+                modal.__a11yReturnEl = null;
+            }
+        });
+        observer.observe(modal, { attributes: true, attributeFilter: ['style'] });
+    });
+})();
+
 // Build a UL of .CommunityLinkText anchors only when such links exist on
 // the page; otherwise the previous code injected an empty <ul></ul>
 // after the last table row of any page (including News, polluting the
@@ -501,29 +640,40 @@ if (listItems.length > 0) {
         var footerlogo = document.querySelector(".footerText a:nth-child(4)");
         footerlogo.setAttribute("aria-label", "Home - Aareas interactive");
         
-    // (rental-table patches now handled by __applyA11yToRentalTable above
-    //  with a MutationObserver, so they re-apply on every AJAX repaint.)
+    // (rental-table + community-page patches now handled by the two
+    //  __applyA11yTo... functions above with a MutationObserver below,
+    //  so they re-apply on every AJAX repaint or carousel hydration.)
     if (typeof window.__applyA11yToRentalTable === 'function') {
         window.__applyA11yToRentalTable();
+    }
+    if (typeof window.__applyA11yToCommunityPage === 'function') {
+        window.__applyA11yToCommunityPage();
     }
 
     }, 500);
 
-    // BES-SR-26-* — observe the AJAX rental panels and re-apply patches
-    // every time the server replaces their innerHTML. This is the key
-    // change: previously these patches only ran once on DOMContentLoaded
-    // (before AJAX had populated the panels), so the bad markup survived.
-    var rentalContainers = ['AjaxPanelB', 'AjaxPanelC', 'divTopPanel']
+    // BES-SR-26-* — observe the AJAX rental panels and the community-page
+    // content body, and re-apply patches every time the server / jcarousel
+    // replaces their content. Previously these patches only ran once on
+    // DOMContentLoaded before AJAX had populated the panels.
+    var watchTargets = [
+        'AjaxPanelB', 'AjaxPanelC', 'divTopPanel',
+        'ctl00_ContentPlaceHolder1_wucMediaListBestRent_mListBody',
+        'divImage', 'divFloorPlan'
+    ]
         .map(function (id) { return document.getElementById(id); })
         .filter(Boolean);
-    if (rentalContainers.length && typeof MutationObserver !== 'undefined') {
-        var rentalObserver = new MutationObserver(function () {
+    if (watchTargets.length && typeof MutationObserver !== 'undefined') {
+        var watchObserver = new MutationObserver(function () {
             if (typeof window.__applyA11yToRentalTable === 'function') {
                 window.__applyA11yToRentalTable();
             }
+            if (typeof window.__applyA11yToCommunityPage === 'function') {
+                window.__applyA11yToCommunityPage();
+            }
         });
-        rentalContainers.forEach(function (c) {
-            rentalObserver.observe(c, { childList: true, subtree: true });
+        watchTargets.forEach(function (c) {
+            watchObserver.observe(c, { childList: true, subtree: true });
         });
     }
 });

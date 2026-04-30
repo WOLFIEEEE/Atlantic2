@@ -32,7 +32,11 @@ if (document.getElementById) {
 // make an array to store cached locations of objects called by fetch_object
 var Myobjects = new Array();
 
-const focusableSelector = [
+// `var` (not `const`) so a second include of this file — e.g. when a
+// content page also references Utility.js while the master already loads
+// it — re-assigns instead of throwing a "has already been declared"
+// SyntaxError that would halt the script.
+var focusableSelector = [
   "a[href]:not([tabindex='-1'])",
   "area[href]:not([tabindex='-1'])",
   "input:not([disabled]):not([tabindex='-1'])",

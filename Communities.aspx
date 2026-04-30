@@ -470,8 +470,12 @@
                 class="GMapCancelButtonNew" />--%>
             <%--<img id="Img5" src="<%=ResolveUrl("~/images/labelclose_shade.png")%>" class="GMapCancelButtonNewShadeHidden" />--%>
             <div class="divGMapFrame" align="center">
+                <%-- BES-KN-26-4677414: scrolling="auto" so keyboard users can
+                     scroll the floor plan content (incl. Legal Disclaimer
+                     button) into view; previously scrolling="no" trapped
+                     focus past content with no way back. --%>
                 <iframe id="frmFloorPlan" class="GmapFrameNew" name="frmFloorPlan" src="/blank.htm" title="Floor plan details"
-                    frameborder="0" scrolling="no"></iframe>
+                    frameborder="0" scrolling="auto"></iframe>
             </div>
             <div id="dvFloorPlanClose" class="GMapCancelButtonNew">
                 <asp:LinkButton ID="lnlFloorPlanClose" runat="server" OnClientClick="CloseGMapPopup('frmFloorPlan'); return false;"
